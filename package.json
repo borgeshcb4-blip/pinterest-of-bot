@@ -1,0 +1,28 @@
+{
+  "name": "pinterest-of-bot",
+  "version": "1.0.0",
+  "description": "Telegram Bot for Pinterest Video Download on Cloudflare Workers.",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "wrangler dev",
+    "build": "mkdir -p dist && cp src/index.js dist/index.js && cp src/i18n.js dist/i18n.js && cp src/pinterest.js dist/pinterest.js",
+    "deploy": "wrangler deploy"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "telegram",
+    "bot",
+    "pinterest",
+    "video",
+    "downloader"
+  ],
+  "author": "Manus AI",
+  "license": "ISC",
+  "dependencies": {
+    "itty-router": "^4.0.27"
+  },
+  "devDependencies": {
+    "wrangler": "^3.27.0"
+  }
+}
