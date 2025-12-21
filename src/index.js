@@ -133,7 +133,7 @@ async function handleMessage(chatId, text, firstName, languageCode) {
     const processingMessage = await sendMessage(chatId, processingMsg);
 
     // Obtém a URL da API pinterest-downloader-api do ambiente
-    const apiUrl = typeof PINTEREST_API_URL !== 'undefined' ? PINTEREST_API_URL : 'http://localhost:3000';
+    const apiUrl = typeof PINTEREST_API_URL !== 'undefined' ? PINTEREST_API_URL : 'https://pinterest-downloader-api.mogspm012.workers.dev';
 
     // Baixa o vídeo
     const downloadingMsg = getLocalizedMessage('downloading', language);

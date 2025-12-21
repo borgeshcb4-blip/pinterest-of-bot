@@ -62,8 +62,8 @@ export async function downloadPinterestVideo(url, apiUrl) {
       throw new Error('Invalid Pinterest URL');
     }
     
-    // Requisição à API pinterest-downloader-api
-    const response = await fetch(`${apiUrl}/download`, {
+    // Requisição à API pinterest-downloader-api (endpoint: /api/extract)
+    const response = await fetch(`${apiUrl}/api/extract`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -79,20 +79,18 @@ export async function downloadPinterestVideo(url, apiUrl) {
     
     // Verifica se a resposta foi bem-sucedida
     if (!data.success) {
-      throw new Error(data.error || data.message || 'Download failed');
+      throw new Error(data.error || 'Download failed');
     }
     
-    // Extrai a URL do vídeo da resposta
-    const videoUrl =
-      data.data?.videoUrl ||
-      data.data?.url ||
-      data.data?.media?.[0]?.url;
+    // Extrai a URL da mídia da resposta
+    // A API retorna: { success, type, url, resolution }
+    const mediaUrl = data.url;
     
-    if (!videoUrl) {
-      throw new Error('No video URL found in response');
+    if (!mediaUrl) {
+      throw new Error('No media URL found in response');
     }
     
-    return videoUrl;
+    return mediaUrl;
   } catch (error) {
     console.error('Error downloading Pinterest video:', error);
     return null;
