@@ -71,8 +71,14 @@ export async function downloadPinterestVideo(url, apiUrl) {
       body: JSON.stringify({ url }),
     });
     
+    // Verifica rate limit
+    if (response.status === 429) {
+      throw new Error('API rate limit exceeded. Please try again in 1 minute.');
+    }
+    
     if (!response.ok) {
-      throw new Error(`API error: ${response.status}`);
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.error || `API error: ${response.status}`);
     }
     
     const data = await response.json();
@@ -82,18 +88,20 @@ export async function downloadPinterestVideo(url, apiUrl) {
       throw new Error(data.error || 'Download failed');
     }
     
-    // Extrai a URL da mídia da resposta
+    // Retorna o objeto completo da resposta
     // A API retorna: { success, type, url, resolution }
-    const mediaUrl = data.url;
-    
-    if (!mediaUrl) {
-      throw new Error('No media URL found in response');
-    }
-    
-    return mediaUrl;
+    return {
+      success: true,
+      type: data.type,
+      url: data.url,
+      resolution: data.resolution,
+    };
   } catch (error) {
-    console.error('Error downloading Pinterest video:', error);
-    return null;
+    console.error('Error downloading Pinterest media:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    };
   }
 }
 

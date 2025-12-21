@@ -66,6 +66,15 @@ async function sendVideo(chatId, videoUrl, caption = '') {
   });
 }
 
+async function sendPhoto(chatId, photoUrl, caption = '') {
+  return telegramApi('sendPhoto', {
+    chat_id: chatId,
+    photo: photoUrl,
+    caption: caption,
+    parse_mode: 'Markdown',
+  });
+}
+
 // --- Funções de Tratamento ---
 
 function buildWelcomeMessage(firstName, userId, language) {
@@ -135,21 +144,23 @@ async function handleMessage(chatId, text, firstName, languageCode) {
     // Obtém a URL da API pinterest-downloader-api do ambiente
     const apiUrl = typeof PINTEREST_API_URL !== 'undefined' ? PINTEREST_API_URL : 'https://pinterest-downloader-api.mogspm012.workers.dev';
 
-    // Baixa o vídeo
+    // Baixa a mídia (vídeo, GIF ou imagem)
     const downloadingMsg = getLocalizedMessage('downloading', language);
     await editMessageText(chatId, processingMessage.result.message_id, downloadingMsg);
 
-    const videoUrl = await downloadPinterestVideo(url, apiUrl);
+    const mediaResult = await downloadPinterestVideo(url, apiUrl);
 
-    if (!videoUrl) {
+    if (!mediaResult || !mediaResult.success) {
       await deleteMessage(chatId, processingMessage.result.message_id);
       const errorMsg = getLocalizedMessage('error_download', language);
       await sendMessage(chatId, errorMsg);
       return;
     }
 
+    const { type, url: mediaUrl } = mediaResult;
+
     // Valida o tamanho do arquivo
-    const fileSize = await getVideoFileSize(videoUrl);
+    const fileSize = await getVideoFileSize(mediaUrl);
     if (fileSize && fileSize > MAX_FILE_SIZE) {
       await deleteMessage(chatId, processingMessage.result.message_id);
       const errorMsg = getLocalizedMessage('error_file_size', language);
@@ -161,10 +172,16 @@ async function handleMessage(chatId, text, firstName, languageCode) {
     const uploadingMsg = getLocalizedMessage('uploading', language);
     await editMessageText(chatId, processingMessage.result.message_id, uploadingMsg);
 
-    // Envia o vídeo
-    await sendChatAction(chatId, 'upload_video');
+    // Envia a mídia apropriada
     const successMsg = getLocalizedMessage('success_message', language);
-    await sendVideo(chatId, videoUrl, successMsg);
+    
+    if (type === 'video' || type === 'animated') {
+      await sendChatAction(chatId, 'upload_video');
+      await sendVideo(chatId, mediaUrl, successMsg);
+    } else if (type === 'image') {
+      await sendChatAction(chatId, 'upload_photo');
+      await sendPhoto(chatId, mediaUrl, successMsg);
+    }
 
     // Remove mensagem de processamento
     await deleteMessage(chatId, processingMessage.result.message_id);
