@@ -149,6 +149,17 @@ Ao utilizar este serviço, você concorda com:
     premium_title: '⭐ PinSave Premium',
     premium_description: 'Downloads ilimitados por 30 dias! Baixe quantos vídeos, fotos e GIFs quiser do Pinterest.',
     premium_activated: '🎉 *Parabéns!*\n\nSeu *Premium* foi ativado com sucesso!\n\n✅ Downloads ilimitados por 30 dias\n✅ Aproveite sem limites!\n\nObrigado por apoiar o PinSave! ❤️',
+    
+    // Mensagens de conta
+    btn_my_account: '👤 Minha Conta',
+    account_title: '👤 *Minha Conta*',
+    account_id: 'ID',
+    account_plan: 'Plano',
+    account_downloads: 'Downloads Hoje',
+    account_plan_free: '🆓 Free',
+    account_plan_premium: '⭐ Premium',
+    account_downloads_unlimited: '∞ Ilimitado',
+    account_premium_expires: '⏰ Premium expira em {{days}} dias',
   },
   
   // 🇺🇸 English
@@ -296,6 +307,17 @@ By using this service, you agree to:
     premium_title: '⭐ PinSave Premium',
     premium_description: 'Unlimited downloads for 30 days! Download as many videos, photos and GIFs as you want from Pinterest.',
     premium_activated: '🎉 *Congratulations!*\n\nYour *Premium* has been activated successfully!\n\n✅ Unlimited downloads for 30 days\n✅ Enjoy without limits!\n\nThank you for supporting PinSave! ❤️',
+    
+    // Account messages
+    btn_my_account: '👤 My Account',
+    account_title: '👤 *My Account*',
+    account_id: 'ID',
+    account_plan: 'Plan',
+    account_downloads: 'Downloads Today',
+    account_plan_free: '🆓 Free',
+    account_plan_premium: '⭐ Premium',
+    account_downloads_unlimited: '∞ Unlimited',
+    account_premium_expires: '⏰ Premium expires in {{days}} days',
   },
   
   // 🇪🇸 Español
@@ -461,6 +483,17 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
     premium_title: '⭐ PinSave Premium',
     premium_description: '¡Descargas ilimitadas por 30 días! Descarga todos los videos, fotos y GIFs que quieras de Pinterest.',
     premium_activated: '🎉 *¡Felicidades!*\n\n¡Tu *Premium* ha sido activado con éxito!\n\n✅ Descargas ilimitadas por 30 días\n✅ ¡Disfruta sin límites!\n\n¡Gracias por apoyar PinSave! ❤️',
+    
+    // Mensajes de cuenta
+    btn_my_account: '👤 Mi Cuenta',
+    account_title: '👤 *Mi Cuenta*',
+    account_id: 'ID',
+    account_plan: 'Plan',
+    account_downloads: 'Descargas Hoy',
+    account_plan_free: '🆓 Gratis',
+    account_plan_premium: '⭐ Premium',
+    account_downloads_unlimited: '∞ Ilimitado',
+    account_premium_expires: '⏰ Premium expira en {{days}} días',
   },
 
   // 🇨🇳 中文 (简体)
@@ -623,6 +656,17 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
     premium_title: '⭐ PinSave 高级版',
     premium_description: '30天无限下载！从Pinterest下载任意数量的视频、照片和GIF。',
     premium_activated: '🎉 *恭喜！*\n\n您的*高级版*已成功激活！\n\n✅ 30天无限下载\n✅ 无限制享用！\n\n感谢您支持PinSave！❤️',
+    
+    // 账户消息
+    btn_my_account: '👤 我的账户',
+    account_title: '👤 *我的账户*',
+    account_id: 'ID',
+    account_plan: '计划',
+    account_downloads: '今日下载',
+    account_plan_free: '🆓 免费',
+    account_plan_premium: '⭐ 高级版',
+    account_downloads_unlimited: '∞ 无限',
+    account_premium_expires: '⏰ 高级版将在 {{days}} 天后过期',
   },
 
   // 🇮🇳 हिन्दी (Hindi)
@@ -777,6 +821,17 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
     premium_title: '⭐ PinSave प्रीमियम',
     premium_description: '30 दिनों के लिए असीमित डाउनलोड! Pinterest से जितने चाहें वीडियो, फोटो और GIF डाउनलोड करें।',
     premium_activated: '🎉 *बधाई!*\n\nआपका *प्रीमियम* सफलतापूर्वक सक्रिय हो गया!\n\n✅ 30 दिनों के लिए असीमित डाउनलोड\n✅ बिना सीमा के आनंद लें!\n\nPinSave का समर्थन करने के लिए धन्यवाद! ❤️',
+    
+    // खाता संदेश
+    btn_my_account: '👤 मेरा खाता',
+    account_title: '👤 *मेरा खाता*',
+    account_id: 'ID',
+    account_plan: 'योजना',
+    account_downloads: 'आज के डाउनलोड',
+    account_plan_free: '🆓 मुफ्त',
+    account_plan_premium: '⭐ प्रीमियम',
+    account_downloads_unlimited: '∞ असीमित',
+    account_premium_expires: '⏰ प्रीमियम {{days}} दिनों में समाप्त होगा',
   },
 
   // 🇸🇦 العربية (Arabic)
@@ -932,6 +987,17 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
     premium_title: '⭐ PinSave بريميوم',
     premium_description: 'تحميلات غير محدودة لمدة 30 يوماً! حمّل ما تشاء من الفيديوهات والصور وGIF من Pinterest.',
     premium_activated: '🎉 *تهانينا!*\n\nتم تفعيل *البريميوم* بنجاح!\n\n✅ تحميلات غير محدودة لمدة 30 يوماً\n✅ استمتع بدون حدود!\n\nشكراً لدعمك PinSave! ❤️',
+    
+    // رسائل الحساب
+    btn_my_account: '👤 حسابي',
+    account_title: '👤 *حسابي*',
+    account_id: 'المعرف',
+    account_plan: 'الخطة',
+    account_downloads: 'تحميلات اليوم',
+    account_plan_free: '🆓 مجاني',
+    account_plan_premium: '⭐ بريميوم',
+    account_downloads_unlimited: '∞ غير محدود',
+    account_premium_expires: '⏰ البريميوم ينتهي في {{days}} يوم',
   },
 
   // 🇫🇷 Français
@@ -1087,6 +1153,17 @@ Collez le lien de la vidéo, photo ou GIF.`,
     premium_title: '⭐ PinSave Premium',
     premium_description: 'Téléchargements illimités pendant 30 jours! Téléchargez autant de vidéos, photos et GIFs que vous voulez de Pinterest.',
     premium_activated: '🎉 *Félicitations!*\n\nVotre *Premium* a été activé avec succès!\n\n✅ Téléchargements illimités pendant 30 jours\n✅ Profitez sans limites!\n\nMerci de soutenir PinSave! ❤️',
+    
+    // Messages de compte
+    btn_my_account: '👤 Mon Compte',
+    account_title: '👤 *Mon Compte*',
+    account_id: 'ID',
+    account_plan: 'Plan',
+    account_downloads: 'Téléchargements Aujourd\'hui',
+    account_plan_free: '🆓 Gratuit',
+    account_plan_premium: '⭐ Premium',
+    account_downloads_unlimited: '∞ Illimité',
+    account_premium_expires: '⏰ Premium expire dans {{days}} jours',
   },
 
   // 🇷🇺 Русский (Russian)
@@ -1242,6 +1319,17 @@ Collez le lien de la vidéo, photo ou GIF.`,
     premium_title: '⭐ PinSave Премиум',
     premium_description: 'Неограниченные загрузки на 30 дней! Скачивайте сколько угодно видео, фото и GIF с Pinterest.',
     premium_activated: '🎉 *Поздравляем!*\n\nВаш *Премиум* успешно активирован!\n\n✅ Неограниченные загрузки на 30 дней\n✅ Наслаждайтесь без ограничений!\n\nСпасибо за поддержку PinSave! ❤️',
+    
+    // Сообщения аккаунта
+    btn_my_account: '👤 Мой Аккаунт',
+    account_title: '👤 *Мой Аккаунт*',
+    account_id: 'ID',
+    account_plan: 'План',
+    account_downloads: 'Загрузки сегодня',
+    account_plan_free: '🆓 Бесплатный',
+    account_plan_premium: '⭐ Премиум',
+    account_downloads_unlimited: '∞ Неограниченно',
+    account_premium_expires: '⏰ Премиум истекает через {{days}} дней',
   },
 
   // 🇩🇪 Deutsch (German)
@@ -1397,6 +1485,17 @@ Fügen Sie den Link zum Video, Foto oder GIF ein.`,
     premium_title: '⭐ PinSave Premium',
     premium_description: 'Unbegrenzte Downloads für 30 Tage! Laden Sie so viele Videos, Fotos und GIFs von Pinterest herunter, wie Sie möchten.',
     premium_activated: '🎉 *Herzlichen Glückwunsch!*\n\nIhr *Premium* wurde erfolgreich aktiviert!\n\n✅ Unbegrenzte Downloads für 30 Tage\n✅ Genießen Sie ohne Limits!\n\nDanke für Ihre Unterstützung von PinSave! ❤️',
+    
+    // Konto-Nachrichten
+    btn_my_account: '👤 Mein Konto',
+    account_title: '👤 *Mein Konto*',
+    account_id: 'ID',
+    account_plan: 'Plan',
+    account_downloads: 'Downloads Heute',
+    account_plan_free: '🆓 Kostenlos',
+    account_plan_premium: '⭐ Premium',
+    account_downloads_unlimited: '∞ Unbegrenzt',
+    account_premium_expires: '⏰ Premium läuft in {{days}} Tagen ab',
   },
 
   // 🇯🇵 日本語 (Japanese)
@@ -1552,6 +1651,17 @@ Fügen Sie den Link zum Video, Foto oder GIF ein.`,
     premium_title: '⭐ PinSave プレミアム',
     premium_description: '30日間無制限ダウンロード！Pinterestから動画、写真、GIFを好きなだけダウンロード。',
     premium_activated: '🎉 *おめでとうございます！*\n\n*プレミアム*が正常に有効化されました！\n\n✅ 30日間無制限ダウンロード\n✅ 制限なくお楽しみください！\n\nPinSaveをご支援いただきありがとうございます！❤️',
+    
+    // アカウントメッセージ
+    btn_my_account: '👤 マイアカウント',
+    account_title: '👤 *マイアカウント*',
+    account_id: 'ID',
+    account_plan: 'プラン',
+    account_downloads: '今日のダウンロード',
+    account_plan_free: '🆓 無料',
+    account_plan_premium: '⭐ プレミアム',
+    account_downloads_unlimited: '∞ 無制限',
+    account_premium_expires: '⏰ プレミアムは{{days}}日後に期限切れ',
   },
 
   // 🇮🇹 Italiano
@@ -1707,6 +1817,17 @@ Incolla il link del video, foto o GIF.`,
     premium_title: '⭐ PinSave Premium',
     premium_description: 'Download illimitati per 30 giorni! Scarica quanti video, foto e GIF vuoi da Pinterest.',
     premium_activated: '🎉 *Congratulazioni!*\n\nIl tuo *Premium* è stato attivato con successo!\n\n✅ Download illimitati per 30 giorni\n✅ Goditi senza limiti!\n\nGrazie per supportare PinSave! ❤️',
+    
+    // Messaggi account
+    btn_my_account: '👤 Il Mio Account',
+    account_title: '👤 *Il Mio Account*',
+    account_id: 'ID',
+    account_plan: 'Piano',
+    account_downloads: 'Download Oggi',
+    account_plan_free: '🆓 Gratuito',
+    account_plan_premium: '⭐ Premium',
+    account_downloads_unlimited: '∞ Illimitato',
+    account_premium_expires: '⏰ Premium scade tra {{days}} giorni',
   },
 
   // 🇰🇷 한국어 (Korean)
@@ -1861,6 +1982,17 @@ Incolla il link del video, foto o GIF.`,
     premium_title: '⭐ PinSave 프리미엄',
     premium_description: '30일간 무제한 다운로드! Pinterest에서 원하는 만큼 동영상, 사진, GIF를 다운로드하세요.',
     premium_activated: '🎉 *축하합니다!*\n\n*프리미엄*이 성공적으로 활성화되었습니다!\n\n✅ 30일간 무제한 다운로드\n✅ 제한 없이 즐기세요!\n\nPinSave를 지원해 주셔서 감사합니다! ❤️',
+    
+    // 계정 메시지
+    btn_my_account: '👤 내 계정',
+    account_title: '👤 *내 계정*',
+    account_id: 'ID',
+    account_plan: '플랜',
+    account_downloads: '오늘 다운로드',
+    account_plan_free: '🆓 무료',
+    account_plan_premium: '⭐ 프리미엄',
+    account_downloads_unlimited: '∞ 무제한',
+    account_premium_expires: '⏰ 프리미엄이 {{days}}일 후 만료',
   },
 
   // 🇹🇷 Türkçe (Turkish)
@@ -2017,6 +2149,17 @@ Video, fotoğraf veya GIF linkini yapıştırın.`,
     premium_title: '⭐ PinSave Premium',
     premium_description: '30 gün sınırsız indirme! Pinterest\'ten istediğiniz kadar video, fotoğraf ve GIF indirin.',
     premium_activated: '🎉 *Tebrikler!*\n\n*Premium*\'unuz başarıyla etkinleştirildi!\n\n✅ 30 gün sınırsız indirme\n✅ Limitsiz keyfini çıkarın!\n\nPinSave\'i desteklediğiniz için teşekkürler! ❤️',
+    
+    // Hesap mesajları
+    btn_my_account: '👤 Hesabım',
+    account_title: '👤 *Hesabım*',
+    account_id: 'ID',
+    account_plan: 'Plan',
+    account_downloads: 'Bugünkü İndirmeler',
+    account_plan_free: '🆓 Ücretsiz',
+    account_plan_premium: '⭐ Premium',
+    account_downloads_unlimited: '∞ Sınırsız',
+    account_premium_expires: '⏰ Premium {{days}} gün içinde sona eriyor',
   },
 };
 

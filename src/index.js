@@ -809,6 +809,7 @@ function buildMainKeyboard(language) {
   const btnTerms = getLocalizedMessage('btn_terms', language);
   const btnChangeLanguage = getLocalizedMessage('btn_change_language', language);
   const btnDownloadMedia = getLocalizedMessage('btn_download_media', language);
+  const btnMyAccount = getLocalizedMessage('btn_my_account', language);
 
   return {
     inline_keyboard: [
@@ -820,6 +821,10 @@ function buildMainKeyboard(language) {
       [
         { text: btnHowItWorks, callback_data: 'how_it_works' },
         { text: btnTerms, callback_data: 'terms' },
+      ],
+      // Botão Minha Conta
+      [
+        { text: btnMyAccount, callback_data: 'my_account' },
       ],
       // Botão de trocar idioma
       [
@@ -1067,6 +1072,75 @@ async function handleDownloadMedia(chatId, messageId, language, hasMedia = false
 }
 
 /**
+ * Handler para "Minha Conta"
+ */
+async function handleMyAccount(chatId, messageId, userId, language, env, hasMedia = false) {
+  // Obtém status do usuário
+  const downloadStatus = await checkDownloadLimit(userId, env);
+  const isPremium = downloadStatus.isPremium;
+  
+  // Formata as informações da conta
+  const planName = isPremium 
+    ? getLocalizedMessage('account_plan_premium', language)
+    : getLocalizedMessage('account_plan_free', language);
+  
+  const downloadLimit = isPremium
+    ? getLocalizedMessage('account_downloads_unlimited', language)
+    : `${downloadStatus.used}/${downloadStatus.limit}`;
+  
+  // Calcula dias restantes do premium (se aplicável)
+  let premiumExpiry = '';
+  if (isPremium) {
+    const premiumData = await env.USER_PREFERENCES.get(`premium:${userId}`);
+    if (premiumData) {
+      const data = JSON.parse(premiumData);
+      const expiresAt = new Date(data.expiresAt);
+      const now = new Date();
+      const daysRemaining = Math.ceil((expiresAt - now) / (1000 * 60 * 60 * 24));
+      premiumExpiry = getLocalizedMessage('account_premium_expires', language, { days: daysRemaining });
+    }
+  }
+  
+  // Monta a mensagem
+  const title = getLocalizedMessage('account_title', language);
+  const idLabel = getLocalizedMessage('account_id', language);
+  const planLabel = getLocalizedMessage('account_plan', language);
+  const downloadsLabel = getLocalizedMessage('account_downloads', language);
+  
+  let message = `${title}\n\n`;
+  message += `🆔 ${idLabel}: \`${userId}\`\n`;
+  message += `💳 ${planLabel}: ${planName}\n`;
+  message += `📥 ${downloadsLabel}: ${downloadLimit}\n`;
+  
+  if (premiumExpiry) {
+    message += `\n${premiumExpiry}`;
+  }
+  
+  // Adiciona botão de upgrade se for free
+  let keyboard;
+  if (!isPremium) {
+    const btnGetPremium = getLocalizedMessage('btn_get_premium', language);
+    const btnBack = getLocalizedMessage('btn_back', language);
+    keyboard = {
+      inline_keyboard: [
+        [{ text: btnGetPremium, callback_data: 'get_premium' }],
+        [{ text: btnBack, callback_data: 'start' }],
+      ],
+    };
+  } else {
+    keyboard = buildBackKeyboard(language);
+  }
+  
+  // Se tem foto, deleta a mensagem e envia uma nova sem foto
+  if (hasMedia) {
+    await deleteMessage(chatId, messageId);
+    await sendMessage(chatId, message, keyboard);
+  } else {
+    await editMessageText(chatId, messageId, message, keyboard);
+  }
+}
+
+/**
  * Handler para pre_checkout_query (pagamento com Stars)
  */
 async function handlePreCheckoutQuery(preCheckoutQuery) {
@@ -1187,6 +1261,9 @@ async function handleCallbackQuery(query, env) {
         break;
       case 'get_premium':
         await handleGetPremium(chatId, language);
+        break;
+      case 'my_account':
+        await handleMyAccount(chatId, messageId, userId, language, env, hasMedia);
         break;
       default:
         // Callback desconhecido, volta ao início
