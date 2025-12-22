@@ -8,6 +8,9 @@ const TELEGRAM_API = 'https://api.telegram.org/bot';
 // URL do Mini App (substitua pela URL real do seu Mini App)
 const MINI_APP_URL = 'https://example.com/miniapp';
 
+// URL da imagem de boas-vindas
+const WELCOME_IMAGE_URL = 'https://iili.io/fERCEQ4.png';
+
 // Armazenamento em memória para preferências de idioma (será substituído por KV em produção)
 const userLanguagePreferences = new Map();
 
@@ -64,6 +67,21 @@ async function deleteMessage(chatId, messageId) {
     chat_id: chatId,
     message_id: messageId,
   });
+}
+
+async function sendPhoto(chatId, photoUrl, caption, replyMarkup = null) {
+  const body = {
+    chat_id: chatId,
+    photo: photoUrl,
+    caption: caption,
+    parse_mode: 'Markdown',
+  };
+  
+  if (replyMarkup) {
+    body.reply_markup = replyMarkup;
+  }
+
+  return telegramApi('sendPhoto', body);
 }
 
 // --- Funções de Idioma ---
@@ -229,13 +247,14 @@ function getLanguageFlag(code) {
 async function handleStart(chatId, firstName, userId, languageCode, env) {
   const language = await getUserLanguage(userId, languageCode, env);
   
-  await sendChatAction(chatId, 'typing');
+  await sendChatAction(chatId, 'upload_photo');
   
   const title = getLocalizedMessage('welcome_title', language);
   const message = getLocalizedMessage('welcome_message', language, { name: firstName });
   const keyboard = buildMainKeyboard(language);
 
-  await sendMessage(chatId, `${title}\n\n${message}`, keyboard);
+  // Envia foto com legenda
+  await sendPhoto(chatId, WELCOME_IMAGE_URL, `${title}\n\n${message}`, keyboard);
 }
 
 /**
