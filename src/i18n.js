@@ -25,104 +25,60 @@ export const translations = {
 Clique no botão abaixo para começar! 👇`,
     
     btn_open_app: '🚀 Abrir PinSave',
-    btn_how_it_works: '❓ Como Funciona',
-    btn_terms: '📜 Termos',
+    btn_how_it_works: 'Como Funciona',
+    btn_terms: 'Termos',
     
-    how_it_works_title: '❓ Como Funciona',
-    how_it_works_message: `Olá, {{name}}! 👋
+    how_it_works_title: 'Como Funciona',
+    how_it_works_message: `Olá, {{name}}.
 
-━━━━━━━━━━━━━━━━━━━━━━
-📖 *Guia de Uso | PinSave*
-━━━━━━━━━━━━━━━━━━━━━━
+Este guia apresenta as instruções para utilizar o PinSave e baixar conteúdos do Pinterest.
 
-Siga os passos abaixo para baixar seu conteúdo:
+*Passo a Passo:*
 
-┌─────────────────────────┐
-│  *PASSO A PASSO*
-├─────────────────────────┤
-│
-│  1️⃣ │ Abra o Mini App
-│      └─ Clique em "Abrir PinSave"
-│
-│  2️⃣ │ Cole o Link
-│      └─ Copie a URL do Pinterest
-│
-│  3️⃣ │ Baixe
-│      └─ Aguarde o processamento
-│
-│  4️⃣ │ Pronto!
-│      └─ Conteúdo salvo ✓
-│
-└─────────────────────────┘
+1. *Abra o Mini App:* Clique no botão "Abrir PinSave".
+2. *Cole o Link:* Insira a URL do conteúdo que deseja baixar.
+3. *Baixe:* Aguarde o processamento do seu pedido.
+4. *Pronto:* O conteúdo será salvo no seu dispositivo.
 
-━━━━━━━━━━━━━━━━━━━━━━
-🔗 *Links Aceitos:*
-━━━━━━━━━━━━━━━━━━━━━━
-│
-├─ ° pinterest.com/pin/...
-└─ ° pin.it/...
+*Informações Adicionais:*
 
-━━━━━━━━━━━━━━━━━━━━━━
-📦 *Tipos de Conteúdo:*
-━━━━━━━━━━━━━━━━━━━━━━
-│
-├─ 🎬 Vídeos
-├─ 📷 Fotos
-└─ 🎞️ GIFs
+*Links Aceitos:*
+• pinterest.com/pin/...
+• pin.it/...
 
-━━━━━━━━━━━━━━━━━━━━━━
-⚙️ *Limitações:*
-━━━━━━━━━━━━━━━━━━━━━━
-│
-├─ ° Máx. 100 MB por arquivo
-└─ ° Apenas conteúdo público`,
+*Tipos de Conteúdo Suportados:*
+• Vídeos
+• Fotos
+• GIFs
 
-    terms_title: '📜 Termos de Uso',
-    terms_message: `━━━━━━━━━━━━━━━━━━━━━━
-📜 *Termos de Uso | PinSave*
-━━━━━━━━━━━━━━━━━━━━━━
+*Limitações:*
+• Tamanho máximo de 100 MB por arquivo.
+• Apenas conteúdo de acesso público pode ser baixado.`,
 
-Ao utilizar este serviço, você concorda com:
+    terms_title: 'Termos de Uso',
+    terms_message: `*Termos de Uso do PinSave*
 
-┌─────────────────────────┐
-│  ⚠️ *AVISO IMPORTANTE*
-├─────────────────────────┤
-│  Este serviço NÃO possui
-│  vínculo oficial com o
-│  Pinterest Inc.
-└─────────────────────────┘
+Ao utilizar os serviços do PinSave, você concorda com os seguintes termos e condições:
 
-━━━━━━━━━━━━━━━━━━━━━━
-📋 *Termos:*
-━━━━━━━━━━━━━━━━━━━━━━
+*1. Natureza do Serviço*
+O PinSave é um serviço comercial que permite o download de conteúdo público da plataforma Pinterest. Este serviço não possui qualquer vínculo oficial com o Pinterest, Inc.
 
-1️⃣ │ *Natureza do Serviço*
-    └─ Serviço comercial de download
-       de conteúdo público do Pinterest
+*2. Direitos Autorais e Propriedade Intelectual*
+O usuário é inteiramente responsável por garantir que o uso do conteúdo baixado esteja em conformidade com as leis de direitos autorais e os termos de serviço do Pinterest. O PinSave não se responsabiliza pelo uso indevido do material baixado.
 
-2️⃣ │ *Direitos Autorais*
-    └─ O usuário é responsável por
-       respeitar os direitos autorais
+*3. Disponibilidade e Garantia*
+O serviço é fornecido "como está", sem garantias de qualquer tipo, expressas ou implícitas. Não garantimos a disponibilidade contínua, ininterrupta ou isenta de erros do serviço.
 
-3️⃣ │ *Disponibilidade*
-    └─ Serviço fornecido "como está"
-       sem garantia de disponibilidade
+*4. Privacidade e Proteção de Dados*
+O PinSave compromete-se a proteger a sua privacidade. Não armazenamos cópias dos conteúdos baixados nem coletamos dados pessoais dos nossos usuários.
 
-4️⃣ │ *Privacidade*
-    └─ Não armazenamos seus arquivos
-       ou dados pessoais
+*5. Limitação de Responsabilidade*
+Em nenhuma circunstância o PinSave será responsável por quaisquer danos diretos, indiretos, incidentais, especiais ou consequentes resultantes do uso ou da incapacidade de usar o serviço.
 
-5️⃣ │ *Responsabilidade*
-    └─ Não nos responsabilizamos pelo
-       uso indevido dos conteúdos
+*6. Modificações nos Termos de Uso*
+Reservamo-nos o direito de modificar estes termos a qualquer momento, a nosso exclusivo critério. As alterações entrarão em vigor imediatamente após a sua publicação. É da sua responsabilidade rever periodicamente os termos de uso.
 
-6️⃣ │ *Modificações*
-    └─ Reservamos o direito de alterar
-       estes termos a qualquer momento
-
-━━━━━━━━━━━━━━━━━━━━━━
-✅ Ao continuar, você aceita os termos
-━━━━━━━━━━━━━━━━━━━━━━`,
+Ao continuar a utilizar o serviço, você confirma que leu, compreendeu e concorda em ficar vinculado a estes termos.`,
 
     btn_back: '⬅️ Voltar',
     btn_accept: '✅ Aceitar e Continuar',
