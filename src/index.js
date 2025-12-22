@@ -195,30 +195,51 @@ function isPinterestUrl(text) {
  */
 async function extractPinterestMedia(url) {
   try {
-    console.log('Extracting Pinterest media from:', url);
+    console.log('[PINTEREST] Starting extraction for URL:', url);
+    console.log('[PINTEREST] API URL:', PINTEREST_API_URL);
+    
+    const requestBody = JSON.stringify({ url: url.trim() });
+    console.log('[PINTEREST] Request body:', requestBody);
     
     const response = await fetch(PINTEREST_API_URL, {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
         'Accept': 'application/json',
+        'User-Agent': 'PinSave-Bot/3.0',
       },
-      body: JSON.stringify({ url: url.trim() }),
+      body: requestBody,
     });
 
-    console.log('API Response status:', response.status);
+    console.log('[PINTEREST] Response status:', response.status);
+    console.log('[PINTEREST] Response ok:', response.ok);
     
     if (!response.ok) {
-      console.error('API returned error status:', response.status);
-      return { success: false, error: `API returned status ${response.status}` };
+      const errorText = await response.text();
+      console.error('[PINTEREST] API error response:', errorText);
+      return { success: false, error: `API returned status ${response.status}: ${errorText}` };
     }
 
-    const data = await response.json();
-    console.log('API Response data:', JSON.stringify(data));
+    const responseText = await response.text();
+    console.log('[PINTEREST] Raw response:', responseText);
+    
+    let data;
+    try {
+      data = JSON.parse(responseText);
+    } catch (parseError) {
+      console.error('[PINTEREST] JSON parse error:', parseError.message);
+      return { success: false, error: 'Invalid JSON response from API' };
+    }
+    
+    console.log('[PINTEREST] Parsed data:', JSON.stringify(data));
+    console.log('[PINTEREST] Success:', data.success, 'Type:', data.type, 'URL:', data.url);
     
     return data;
   } catch (error) {
-    console.error('Error extracting Pinterest media:', error.message || error);
+    console.error('[PINTEREST] Exception caught:', error);
+    console.error('[PINTEREST] Error name:', error.name);
+    console.error('[PINTEREST] Error message:', error.message);
+    console.error('[PINTEREST] Error stack:', error.stack);
     return { success: false, error: 'Failed to connect to Pinterest API: ' + (error.message || 'Unknown error') };
   }
 }
@@ -227,21 +248,30 @@ async function extractPinterestMedia(url) {
  * Handler para download do Pinterest
  */
 async function handlePinterestDownload(chatId, url, firstName, language) {
+  console.log('[DOWNLOAD] ========== START ==========');
+  console.log('[DOWNLOAD] Chat ID:', chatId);
+  console.log('[DOWNLOAD] URL:', url);
+  console.log('[DOWNLOAD] First Name:', firstName);
+  console.log('[DOWNLOAD] Language:', language);
+  
   // Envia ação de "enviando vídeo"
   await sendChatAction(chatId, 'upload_video');
 
   // Mensagem de processamento
   const processingMsg = getLocalizedMessage('processing', language);
+  console.log('[DOWNLOAD] Processing message:', processingMsg);
   const sentMsg = await sendMessage(chatId, processingMsg);
+  console.log('[DOWNLOAD] Sent processing message:', JSON.stringify(sentMsg));
 
   try {
     // Extrai a mídia do Pinterest
-    console.log('Starting Pinterest download for URL:', url);
+    console.log('[DOWNLOAD] Calling extractPinterestMedia...');
     const result = await extractPinterestMedia(url);
-    console.log('Extract result:', JSON.stringify(result));
+    console.log('[DOWNLOAD] Extract result:', JSON.stringify(result));
 
-    if (!result.success) {
-      console.log('Download failed - API returned success: false');
+    if (!result || !result.success) {
+      console.log('[DOWNLOAD] FAILED - result.success is false or result is null');
+      console.log('[DOWNLOAD] Result object:', result);
       // Deleta mensagem de processamento
       if (sentMsg.result && sentMsg.result.message_id) {
         await deleteMessage(chatId, sentMsg.result.message_id);
@@ -249,10 +279,13 @@ async function handlePinterestDownload(chatId, url, firstName, language) {
 
       const errorMsg = getLocalizedMessage('download_error', language);
       await sendMessage(chatId, errorMsg);
+      console.log('[DOWNLOAD] ========== END (ERROR) ==========');
       return;
     }
     
-    console.log('Download success - Type:', result.type, 'URL:', result.url);
+    console.log('[DOWNLOAD] SUCCESS!');
+    console.log('[DOWNLOAD] Type:', result.type);
+    console.log('[DOWNLOAD] Media URL:', result.url);
 
     // Deleta mensagem de processamento
     if (sentMsg.result && sentMsg.result.message_id) {
@@ -261,6 +294,7 @@ async function handlePinterestDownload(chatId, url, firstName, language) {
 
     // Prepara a legenda
     const caption = getLocalizedMessage('download_success', language, { name: firstName });
+    console.log('[DOWNLOAD] Caption:', caption);
     
     // Botão para baixar mais
     const btnDownloadMore = getLocalizedMessage('btn_download_more', language);
@@ -271,29 +305,46 @@ async function handlePinterestDownload(chatId, url, firstName, language) {
     };
 
     // Envia a mídia baseado no tipo
+    console.log('[DOWNLOAD] Sending media of type:', result.type);
+    
     if (result.type === 'video' || result.type === 'animated') {
       await sendChatAction(chatId, 'upload_video');
+      console.log('[DOWNLOAD] Sending as video...');
       const videoResult = await sendVideo(chatId, result.url, caption, keyboard);
+      console.log('[DOWNLOAD] Video send result:', JSON.stringify(videoResult));
       
       // Se falhar como vídeo, tenta como documento
       if (!videoResult.ok) {
-        await sendDocument(chatId, result.url, caption, keyboard);
+        console.log('[DOWNLOAD] Video failed, trying as document...');
+        const docResult = await sendDocument(chatId, result.url, caption, keyboard);
+        console.log('[DOWNLOAD] Document send result:', JSON.stringify(docResult));
       }
     } else if (result.type === 'image') {
       await sendChatAction(chatId, 'upload_photo');
+      console.log('[DOWNLOAD] Sending as photo...');
       const photoResult = await sendPhoto(chatId, result.url, caption, keyboard);
+      console.log('[DOWNLOAD] Photo send result:', JSON.stringify(photoResult));
       
       // Se falhar como foto, tenta como documento
       if (!photoResult.ok) {
-        await sendDocument(chatId, result.url, caption, keyboard);
+        console.log('[DOWNLOAD] Photo failed, trying as document...');
+        const docResult = await sendDocument(chatId, result.url, caption, keyboard);
+        console.log('[DOWNLOAD] Document send result:', JSON.stringify(docResult));
       }
     } else {
       // Tipo desconhecido, envia como documento
-      await sendDocument(chatId, result.url, caption, keyboard);
+      console.log('[DOWNLOAD] Unknown type, sending as document...');
+      const docResult = await sendDocument(chatId, result.url, caption, keyboard);
+      console.log('[DOWNLOAD] Document send result:', JSON.stringify(docResult));
     }
+    
+    console.log('[DOWNLOAD] ========== END (SUCCESS) ==========');
 
   } catch (error) {
-    console.error('Error in handlePinterestDownload:', error);
+    console.error('[DOWNLOAD] EXCEPTION:', error);
+    console.error('[DOWNLOAD] Error name:', error.name);
+    console.error('[DOWNLOAD] Error message:', error.message);
+    console.error('[DOWNLOAD] Error stack:', error.stack);
     
     // Deleta mensagem de processamento se existir
     if (sentMsg.result && sentMsg.result.message_id) {
@@ -302,6 +353,7 @@ async function handlePinterestDownload(chatId, url, firstName, language) {
 
     const errorMsg = getLocalizedMessage('download_error', language);
     await sendMessage(chatId, errorMsg);
+    console.log('[DOWNLOAD] ========== END (EXCEPTION) ==========');
   }
 }
 
