@@ -737,8 +737,11 @@ async function handleLanguageSelection(chatId, messageId, userId, newLanguage, e
   };
 
   const fullMessage = `${title}\n\n${message}`;
+  
+  // Se tem foto, deleta a mensagem e envia uma nova sem foto
   if (hasPhoto) {
-    await editMessageCaption(chatId, messageId, fullMessage, keyboard);
+    await deleteMessage(chatId, messageId);
+    await sendMessage(chatId, fullMessage, keyboard);
   } else {
     await editMessageText(chatId, messageId, fullMessage, keyboard);
   }
@@ -753,8 +756,11 @@ async function handleChangeLanguage(chatId, messageId, language, hasPhoto = fals
   const keyboard = buildLanguageKeyboard();
 
   const fullMessage = `${title}\n\n${message}`;
+  
+  // Se tem foto, deleta a mensagem e envia uma nova sem foto
   if (hasPhoto) {
-    await editMessageCaption(chatId, messageId, fullMessage, keyboard);
+    await deleteMessage(chatId, messageId);
+    await sendMessage(chatId, fullMessage, keyboard);
   } else {
     await editMessageText(chatId, messageId, fullMessage, keyboard);
   }
@@ -769,8 +775,11 @@ async function handleHowItWorks(chatId, messageId, firstName, language, hasPhoto
   const keyboard = buildBackKeyboard(language);
 
   const fullMessage = `${title}\n\n${message}`;
+  
+  // Se tem foto, deleta a mensagem e envia uma nova sem foto
   if (hasPhoto) {
-    await editMessageCaption(chatId, messageId, fullMessage, keyboard);
+    await deleteMessage(chatId, messageId);
+    await sendMessage(chatId, fullMessage, keyboard);
   } else {
     await editMessageText(chatId, messageId, fullMessage, keyboard);
   }
@@ -785,8 +794,11 @@ async function handleTerms(chatId, messageId, language, hasPhoto = false) {
   const keyboard = buildTermsKeyboard(language);
 
   const fullMessage = `${title}\n\n${message}`;
+  
+  // Se tem foto, deleta a mensagem e envia uma nova sem foto
   if (hasPhoto) {
-    await editMessageCaption(chatId, messageId, fullMessage, keyboard);
+    await deleteMessage(chatId, messageId);
+    await sendMessage(chatId, fullMessage, keyboard);
   } else {
     await editMessageText(chatId, messageId, fullMessage, keyboard);
   }
@@ -801,11 +813,9 @@ async function handleBackToStart(chatId, messageId, firstName, language, hasPhot
   const keyboard = buildMainKeyboard(language);
 
   const fullMessage = `${title}\n\n${message}`;
-  if (hasPhoto) {
-    await editMessageCaption(chatId, messageId, fullMessage, keyboard);
-  } else {
-    await editMessageText(chatId, messageId, fullMessage, keyboard);
-  }
+  
+  // Sempre edita a mensagem de texto (não envia foto novamente)
+  await editMessageText(chatId, messageId, fullMessage, keyboard);
 }
 
 /**
@@ -815,8 +825,10 @@ async function handleDownloadMedia(chatId, messageId, language, hasPhoto = false
   const message = getLocalizedMessage('download_media_prompt', language);
   const keyboard = buildBackKeyboard(language);
 
+  // Se tem foto, deleta a mensagem e envia uma nova sem foto
   if (hasPhoto) {
-    await editMessageCaption(chatId, messageId, message, keyboard);
+    await deleteMessage(chatId, messageId);
+    await sendMessage(chatId, message, keyboard);
   } else {
     await editMessageText(chatId, messageId, message, keyboard);
   }
