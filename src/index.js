@@ -283,6 +283,21 @@ async function editMessageText(chatId, messageId, text, replyMarkup = null) {
   return telegramApi('editMessageText', body);
 }
 
+async function editMessageCaption(chatId, messageId, caption, replyMarkup = null) {
+  const body = {
+    chat_id: chatId,
+    message_id: messageId,
+    caption: caption,
+    parse_mode: 'Markdown',
+  };
+  
+  if (replyMarkup) {
+    body.reply_markup = replyMarkup;
+  }
+  
+  return telegramApi('editMessageCaption', body);
+}
+
 async function deleteMessage(chatId, messageId) {
   return telegramApi('deleteMessage', {
     chat_id: chatId,
@@ -702,7 +717,7 @@ async function handleLanguageCommand(chatId, userId, languageCode, env) {
 /**
  * Handler para seleção de idioma
  */
-async function handleLanguageSelection(chatId, messageId, userId, newLanguage, env) {
+async function handleLanguageSelection(chatId, messageId, userId, newLanguage, env, hasPhoto = false) {
   // Salva a preferência
   await setUserLanguage(userId, newLanguage, env);
   
@@ -721,61 +736,90 @@ async function handleLanguageSelection(chatId, messageId, userId, newLanguage, e
     ],
   };
 
-  await editMessageText(chatId, messageId, `${title}\n\n${message}`, keyboard);
+  const fullMessage = `${title}\n\n${message}`;
+  if (hasPhoto) {
+    await editMessageCaption(chatId, messageId, fullMessage, keyboard);
+  } else {
+    await editMessageText(chatId, messageId, fullMessage, keyboard);
+  }
 }
 
 /**
  * Handler para trocar idioma (via botão)
  */
-async function handleChangeLanguage(chatId, messageId, language) {
+async function handleChangeLanguage(chatId, messageId, language, hasPhoto = false) {
   const title = getLocalizedMessage('language_title', language);
   const message = getLocalizedMessage('language_message', language);
   const keyboard = buildLanguageKeyboard();
 
-  await editMessageText(chatId, messageId, `${title}\n\n${message}`, keyboard);
+  const fullMessage = `${title}\n\n${message}`;
+  if (hasPhoto) {
+    await editMessageCaption(chatId, messageId, fullMessage, keyboard);
+  } else {
+    await editMessageText(chatId, messageId, fullMessage, keyboard);
+  }
 }
 
 /**
  * Handler para "Como Funciona"
  */
-async function handleHowItWorks(chatId, messageId, firstName, language) {
+async function handleHowItWorks(chatId, messageId, firstName, language, hasPhoto = false) {
   const title = getLocalizedMessage('how_it_works_title', language);
   const message = getLocalizedMessage('how_it_works_message', language, { name: firstName });
   const keyboard = buildBackKeyboard(language);
 
-  await editMessageText(chatId, messageId, `${title}\n\n${message}`, keyboard);
+  const fullMessage = `${title}\n\n${message}`;
+  if (hasPhoto) {
+    await editMessageCaption(chatId, messageId, fullMessage, keyboard);
+  } else {
+    await editMessageText(chatId, messageId, fullMessage, keyboard);
+  }
 }
 
 /**
  * Handler para "Termos de Uso"
  */
-async function handleTerms(chatId, messageId, language) {
+async function handleTerms(chatId, messageId, language, hasPhoto = false) {
   const title = getLocalizedMessage('terms_title', language);
   const message = getLocalizedMessage('terms_message', language);
   const keyboard = buildTermsKeyboard(language);
 
-  await editMessageText(chatId, messageId, `${title}\n\n${message}`, keyboard);
+  const fullMessage = `${title}\n\n${message}`;
+  if (hasPhoto) {
+    await editMessageCaption(chatId, messageId, fullMessage, keyboard);
+  } else {
+    await editMessageText(chatId, messageId, fullMessage, keyboard);
+  }
 }
 
 /**
  * Handler para voltar ao menu principal (via edição de mensagem)
  */
-async function handleBackToStart(chatId, messageId, firstName, language) {
+async function handleBackToStart(chatId, messageId, firstName, language, hasPhoto = false) {
   const title = getLocalizedMessage('welcome_title', language);
   const message = getLocalizedMessage('welcome_message', language, { name: firstName });
   const keyboard = buildMainKeyboard(language);
 
-  await editMessageText(chatId, messageId, `${title}\n\n${message}`, keyboard);
+  const fullMessage = `${title}\n\n${message}`;
+  if (hasPhoto) {
+    await editMessageCaption(chatId, messageId, fullMessage, keyboard);
+  } else {
+    await editMessageText(chatId, messageId, fullMessage, keyboard);
+  }
 }
 
 /**
  * Handler para o botão "Baixar Mídia"
  */
-async function handleDownloadMedia(chatId, messageId, language) {
+async function handleDownloadMedia(chatId, messageId, language, hasPhoto = false) {
   const message = getLocalizedMessage('download_media_prompt', language);
   const keyboard = buildBackKeyboard(language);
 
-  await editMessageText(chatId, messageId, message, keyboard);
+  if (hasPhoto) {
+    await editMessageCaption(chatId, messageId, message, keyboard);
+  } else {
+    await editMessageText(chatId, messageId, message, keyboard);
+  }
 }
 
 /**
@@ -811,6 +855,9 @@ async function handleCallbackQuery(query, env) {
   const userId = query.from.id;
   const languageCode = query.from.language_code;
   const language = await getUserLanguage(userId, languageCode, env);
+  
+  // Verifica se a mensagem original tem foto (para usar editMessageCaption)
+  const hasPhoto = query.message.photo && query.message.photo.length > 0;
 
   try {
     // Responde ao callback para remover o "loading"
@@ -822,30 +869,30 @@ async function handleCallbackQuery(query, env) {
     if (data.startsWith('lang:')) {
       const newLanguage = data.split(':')[1];
       if (SUPPORTED_LANGUAGES[newLanguage]) {
-        await handleLanguageSelection(chatId, messageId, userId, newLanguage, env);
+        await handleLanguageSelection(chatId, messageId, userId, newLanguage, env, hasPhoto);
       }
       return;
     }
 
     switch (data) {
       case 'how_it_works':
-        await handleHowItWorks(chatId, messageId, firstName, language);
+        await handleHowItWorks(chatId, messageId, firstName, language, hasPhoto);
         break;
       case 'terms':
-        await handleTerms(chatId, messageId, language);
+        await handleTerms(chatId, messageId, language, hasPhoto);
         break;
       case 'start':
-        await handleBackToStart(chatId, messageId, firstName, language);
+        await handleBackToStart(chatId, messageId, firstName, language, hasPhoto);
         break;
       case 'change_language':
-        await handleChangeLanguage(chatId, messageId, language);
+        await handleChangeLanguage(chatId, messageId, language, hasPhoto);
         break;
       case 'download_media':
-        await handleDownloadMedia(chatId, messageId, language);
+        await handleDownloadMedia(chatId, messageId, language, hasPhoto);
         break;
       default:
         // Callback desconhecido, volta ao início
-        await handleBackToStart(chatId, messageId, firstName, language);
+        await handleBackToStart(chatId, messageId, firstName, language, hasPhoto);
     }
   } catch (error) {
     console.error('Error in handleCallbackQuery:', error);
