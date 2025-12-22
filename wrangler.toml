@@ -4,11 +4,9 @@ compatibility_date = "2024-01-01"
 workers_dev = true
 
 # KV Namespace para armazenar preferências de idioma dos usuários
-# Para criar o KV, execute: wrangler kv:namespace create "USER_PREFERENCES"
-# Depois substitua o ID abaixo pelo ID retornado
 [[kv_namespaces]]
 binding = "USER_PREFERENCES"
-id = "SUBSTITUA_PELO_SEU_KV_ID"
+id = "9bde2d07fc6b435f95f7f5355af23950"
 
 [env.production]
 vars = { ENVIRONMENT = "production" }
