@@ -232,16 +232,8 @@ async function extractMediaFromPage(pinId) {
 // URL da imagem de boas-vindas
 const WELCOME_IMAGE_URL = 'https://iili.io/fERCEQ4.png';
 
-// Configurações de limite de downloads
-const FREE_DAILY_LIMIT = 3;
-const PREMIUM_PRICE_STARS = 50; // Preço em Telegram Stars para premium
-
 // Armazenamento em memória para preferências de idioma (será substituído por KV em produção)
 const userLanguagePreferences = new Map();
-
-// Armazenamento em memória para contagem de downloads e status premium
-const userDownloadCounts = new Map();
-const userPremiumStatus = new Map();
 
 // --- Funções utilitárias para a API do Telegram ---
 
@@ -418,190 +410,6 @@ async function setUserLanguage(userId, language, env) {
   userLanguagePreferences.set(userId, language);
 }
 
-// --- Funções de Limite de Downloads e Premium ---
-
-/**
- * Obtém a data atual no formato YYYY-MM-DD
- */
-function getTodayDate() {
-  return new Date().toISOString().split('T')[0];
-}
-
-/**
- * Verifica se o usuário é premium
- */
-async function isUserPremium(userId, env) {
-  // Primeiro, tenta obter do KV
-  if (env && env.USER_PREFERENCES) {
-    try {
-      const premiumData = await env.USER_PREFERENCES.get(`premium:${userId}`);
-      if (premiumData) {
-        const data = JSON.parse(premiumData);
-        // Verifica se o premium ainda é válido (expira em 30 dias)
-        if (data.expiresAt && new Date(data.expiresAt) > new Date()) {
-          return true;
-        }
-      }
-    } catch (e) {
-      console.error('Error reading premium status from KV:', e);
-    }
-  }
-  
-  // Fallback para memória
-  if (userPremiumStatus.has(userId)) {
-    const data = userPremiumStatus.get(userId);
-    if (data.expiresAt && new Date(data.expiresAt) > new Date()) {
-      return true;
-    }
-  }
-  
-  return false;
-}
-
-/**
- * Define o usuário como premium
- */
-async function setUserPremium(userId, env) {
-  const expiresAt = new Date();
-  expiresAt.setDate(expiresAt.getDate() + 30); // Premium por 30 dias
-  
-  const data = {
-    isPremium: true,
-    activatedAt: new Date().toISOString(),
-    expiresAt: expiresAt.toISOString(),
-  };
-  
-  // Salva no KV se disponível
-  if (env && env.USER_PREFERENCES) {
-    try {
-      await env.USER_PREFERENCES.put(`premium:${userId}`, JSON.stringify(data));
-    } catch (e) {
-      console.error('Error writing premium status to KV:', e);
-    }
-  }
-  
-  // Também salva em memória
-  userPremiumStatus.set(userId, data);
-}
-
-/**
- * Obtém a contagem de downloads do usuário hoje
- */
-async function getUserDownloadCount(userId, env) {
-  const today = getTodayDate();
-  
-  // Primeiro, tenta obter do KV
-  if (env && env.USER_PREFERENCES) {
-    try {
-      const countData = await env.USER_PREFERENCES.get(`downloads:${userId}`);
-      if (countData) {
-        const data = JSON.parse(countData);
-        if (data.date === today) {
-          return data.count;
-        }
-      }
-    } catch (e) {
-      console.error('Error reading download count from KV:', e);
-    }
-  }
-  
-  // Fallback para memória
-  if (userDownloadCounts.has(userId)) {
-    const data = userDownloadCounts.get(userId);
-    if (data.date === today) {
-      return data.count;
-    }
-  }
-  
-  return 0;
-}
-
-/**
- * Incrementa a contagem de downloads do usuário
- */
-async function incrementUserDownloadCount(userId, env) {
-  const today = getTodayDate();
-  let currentCount = await getUserDownloadCount(userId, env);
-  currentCount++;
-  
-  const data = {
-    date: today,
-    count: currentCount,
-  };
-  
-  // Salva no KV se disponível
-  if (env && env.USER_PREFERENCES) {
-    try {
-      await env.USER_PREFERENCES.put(`downloads:${userId}`, JSON.stringify(data));
-    } catch (e) {
-      console.error('Error writing download count to KV:', e);
-    }
-  }
-  
-  // Também salva em memória
-  userDownloadCounts.set(userId, data);
-  
-  return currentCount;
-}
-
-/**
- * Verifica se o usuário pode fazer download
- */
-async function canUserDownload(userId, env) {
-  // Premium pode baixar ilimitado
-  if (await isUserPremium(userId, env)) {
-    return { canDownload: true, isPremium: true, remaining: -1 };
-  }
-  
-  // Usuário free - verifica limite
-  const count = await getUserDownloadCount(userId, env);
-  const remaining = FREE_DAILY_LIMIT - count;
-  
-  return {
-    canDownload: remaining > 0,
-    isPremium: false,
-    remaining: remaining,
-    used: count,
-    limit: FREE_DAILY_LIMIT,
-  };
-}
-
-/**
- * Envia invoice para compra de premium com Telegram Stars
- */
-async function sendPremiumInvoice(chatId, language) {
-  const title = getLocalizedMessage('premium_title', language);
-  const description = getLocalizedMessage('premium_description', language);
-  
-  const body = {
-    chat_id: chatId,
-    title: title,
-    description: description,
-    payload: `premium_${chatId}_${Date.now()}`,
-    currency: 'XTR',
-    prices: [{ label: title, amount: PREMIUM_PRICE_STARS }],
-    provider_token: '', // Vazio para Telegram Stars
-  };
-  
-  return telegramApi('sendInvoice', body);
-}
-
-/**
- * Responde ao pre_checkout_query
- */
-async function answerPreCheckoutQuery(preCheckoutQueryId, ok, errorMessage = null) {
-  const body = {
-    pre_checkout_query_id: preCheckoutQueryId,
-    ok: ok,
-  };
-  
-  if (!ok && errorMessage) {
-    body.error_message = errorMessage;
-  }
-  
-  return telegramApi('answerPreCheckoutQuery', body);
-}
-
 // --- Funções do Pinterest ---
 
 /**
@@ -658,37 +466,12 @@ async function extractPinterestMedia(url) {
 /**
  * Handler para download do Pinterest
  */
-async function handlePinterestDownload(chatId, url, firstName, language, userId, env) {
+async function handlePinterestDownload(chatId, url, firstName, language) {
   console.log('[DOWNLOAD] ========== START ==========');
   console.log('[DOWNLOAD] Chat ID:', chatId);
   console.log('[DOWNLOAD] URL:', url);
   console.log('[DOWNLOAD] First Name:', firstName);
   console.log('[DOWNLOAD] Language:', language);
-  console.log('[DOWNLOAD] User ID:', userId);
-  
-  // Verifica se o usuário pode fazer download
-  const downloadStatus = await canUserDownload(userId, env);
-  console.log('[DOWNLOAD] Download status:', JSON.stringify(downloadStatus));
-  
-  if (!downloadStatus.canDownload) {
-    // Usuário atingiu o limite diário
-    const limitMsg = getLocalizedMessage('limit_reached', language, {
-      used: downloadStatus.used,
-      limit: downloadStatus.limit,
-    });
-    
-    // Botão para assinar premium
-    const btnPremium = getLocalizedMessage('btn_get_premium', language);
-    const keyboard = {
-      inline_keyboard: [
-        [{ text: btnPremium, callback_data: 'get_premium' }],
-      ],
-    };
-    
-    await sendMessage(chatId, limitMsg, keyboard);
-    console.log('[DOWNLOAD] ========== END (LIMIT REACHED) ==========');
-    return;
-  }
   
   // Envia ação de "enviando vídeo"
   await sendChatAction(chatId, 'upload_video');
@@ -774,12 +557,6 @@ async function handlePinterestDownload(chatId, url, firstName, language, userId,
       console.log('[DOWNLOAD] Document send result:', JSON.stringify(docResult));
     }
     
-    // Incrementa a contagem de downloads (apenas para usuários free)
-    if (!downloadStatus.isPremium) {
-      await incrementUserDownloadCount(userId, env);
-      console.log('[DOWNLOAD] Download count incremented');
-    }
-    
     console.log('[DOWNLOAD] ========== END (SUCCESS) ==========');
 
   } catch (error) {
@@ -809,7 +586,6 @@ function buildMainKeyboard(language) {
   const btnTerms = getLocalizedMessage('btn_terms', language);
   const btnChangeLanguage = getLocalizedMessage('btn_change_language', language);
   const btnDownloadMedia = getLocalizedMessage('btn_download_media', language);
-  const btnMyAccount = getLocalizedMessage('btn_my_account', language);
 
   return {
     inline_keyboard: [
@@ -821,10 +597,6 @@ function buildMainKeyboard(language) {
       [
         { text: btnHowItWorks, callback_data: 'how_it_works' },
         { text: btnTerms, callback_data: 'terms' },
-      ],
-      // Botão Minha Conta
-      [
-        { text: btnMyAccount, callback_data: 'my_account' },
       ],
       // Botão de trocar idioma
       [
@@ -1072,123 +844,6 @@ async function handleDownloadMedia(chatId, messageId, language, hasMedia = false
 }
 
 /**
- * Handler para "Minha Conta"
- */
-async function handleMyAccount(chatId, messageId, userId, language, env, hasMedia = false) {
-  // Obtém status do usuário
-  const downloadStatus = await checkDownloadLimit(userId, env);
-  const isPremium = downloadStatus.isPremium;
-  
-  // Formata as informações da conta
-  const planName = isPremium 
-    ? getLocalizedMessage('account_plan_premium', language)
-    : getLocalizedMessage('account_plan_free', language);
-  
-  const downloadLimit = isPremium
-    ? getLocalizedMessage('account_downloads_unlimited', language)
-    : `${downloadStatus.used}/${downloadStatus.limit}`;
-  
-  // Calcula dias restantes do premium (se aplicável)
-  let premiumExpiry = '';
-  if (isPremium) {
-    const premiumData = await env.USER_PREFERENCES.get(`premium:${userId}`);
-    if (premiumData) {
-      const data = JSON.parse(premiumData);
-      const expiresAt = new Date(data.expiresAt);
-      const now = new Date();
-      const daysRemaining = Math.ceil((expiresAt - now) / (1000 * 60 * 60 * 24));
-      premiumExpiry = getLocalizedMessage('account_premium_expires', language, { days: daysRemaining });
-    }
-  }
-  
-  // Monta a mensagem
-  const title = getLocalizedMessage('account_title', language);
-  const idLabel = getLocalizedMessage('account_id', language);
-  const planLabel = getLocalizedMessage('account_plan', language);
-  const downloadsLabel = getLocalizedMessage('account_downloads', language);
-  
-  let message = `${title}\n\n`;
-  message += `🆔 ${idLabel}: \`${userId}\`\n`;
-  message += `💳 ${planLabel}: ${planName}\n`;
-  message += `📥 ${downloadsLabel}: ${downloadLimit}\n`;
-  
-  if (premiumExpiry) {
-    message += `\n${premiumExpiry}`;
-  }
-  
-  // Adiciona botão de upgrade se for free
-  let keyboard;
-  if (!isPremium) {
-    const btnGetPremium = getLocalizedMessage('btn_get_premium', language);
-    const btnBack = getLocalizedMessage('btn_back', language);
-    keyboard = {
-      inline_keyboard: [
-        [{ text: btnGetPremium, callback_data: 'get_premium' }],
-        [{ text: btnBack, callback_data: 'start' }],
-      ],
-    };
-  } else {
-    keyboard = buildBackKeyboard(language);
-  }
-  
-  // Se tem foto, deleta a mensagem e envia uma nova sem foto
-  if (hasMedia) {
-    await deleteMessage(chatId, messageId);
-    await sendMessage(chatId, message, keyboard);
-  } else {
-    await editMessageText(chatId, messageId, message, keyboard);
-  }
-}
-
-/**
- * Handler para pre_checkout_query (pagamento com Stars)
- */
-async function handlePreCheckoutQuery(preCheckoutQuery) {
-  console.log('[PAYMENT] Pre-checkout query received:', JSON.stringify(preCheckoutQuery));
-  
-  // Sempre aprova o pagamento (você pode adicionar validações aqui se necessário)
-  await answerPreCheckoutQuery(preCheckoutQuery.id, true);
-  
-  console.log('[PAYMENT] Pre-checkout approved');
-}
-
-/**
- * Handler para pagamento bem-sucedido
- */
-async function handleSuccessfulPayment(message, env) {
-  const chatId = message.chat.id;
-  const userId = message.from.id;
-  const firstName = message.from.first_name || 'User';
-  const languageCode = message.from.language_code;
-  const payment = message.successful_payment;
-  
-  console.log('[PAYMENT] Successful payment received:', JSON.stringify(payment));
-  console.log('[PAYMENT] User ID:', userId);
-  console.log('[PAYMENT] Amount:', payment.total_amount, payment.currency);
-  
-  // Ativa o premium para o usuário
-  await setUserPremium(userId, env);
-  
-  // Obtém o idioma do usuário
-  const language = await getUserLanguage(userId, languageCode, env);
-  
-  // Envia mensagem de confirmação
-  const successMsg = getLocalizedMessage('premium_activated', language);
-  const keyboard = buildMainKeyboard(language);
-  
-  await sendMessage(chatId, successMsg, keyboard);
-  
-  console.log('[PAYMENT] Premium activated for user:', userId);
-}
-
-/**
- * Handler para o botão "Obter Premium"
- */
-async function handleGetPremium(chatId, language) {
-  await sendPremiumInvoice(chatId, language);
-}
-
-/**
  * Handler para mensagens de texto
  */
 async function handleMessage(chatId, text, firstName, userId, languageCode, env) {
@@ -1201,7 +856,7 @@ async function handleMessage(chatId, text, firstName, userId, languageCode, env)
 
   // Verifica se é uma URL do Pinterest
   if (isPinterestUrl(text)) {
-    await handlePinterestDownload(chatId, text.trim(), firstName, language, userId, env);
+    await handlePinterestDownload(chatId, text.trim(), firstName, language);
     return;
   }
 
@@ -1259,12 +914,6 @@ async function handleCallbackQuery(query, env) {
       case 'download_media':
         await handleDownloadMedia(chatId, messageId, language, hasMedia);
         break;
-      case 'get_premium':
-        await handleGetPremium(chatId, language);
-        break;
-      case 'my_account':
-        await handleMyAccount(chatId, messageId, userId, language, env, hasMedia);
-        break;
       default:
         // Callback desconhecido, volta ao início
         await handleBackToStart(chatId, messageId, firstName, language, hasMedia);
@@ -1310,12 +959,6 @@ router.post('/', async (request, env) => {
       }
     } else if (update.callback_query) {
       await handleCallbackQuery(update.callback_query, env);
-    } else if (update.pre_checkout_query) {
-      // Handler para pré-checkout de pagamento com Stars
-      await handlePreCheckoutQuery(update.pre_checkout_query);
-    } else if (update.message && update.message.successful_payment) {
-      // Handler para pagamento bem-sucedido
-      await handleSuccessfulPayment(update.message, env);
     }
     
     // O Telegram espera um status 200 OK o mais rápido possível
