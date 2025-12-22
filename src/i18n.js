@@ -142,6 +142,13 @@ Ao utilizar este serviço, você concorda com:
     btn_download_more: '📥 Baixar Mais',
     btn_download_media: '📥 Baixar Mídia',
     download_media_prompt: '📌 *Baixar Mídia do Pinterest*\n\nEnvie a URL do Pinterest que deseja baixar:\n\n🔗 *Formatos aceitos:*\n• pinterest.com/pin/...\n• pin.it/...',
+    
+    // Mensagens de limite e premium
+    limit_reached: '⚠️ *Limite Diário Atingido*\n\nVocê usou {{used}}/{{limit}} downloads gratuitos hoje.\n\n⭐ *Assine o Premium* para downloads ilimitados!\n\n✅ Downloads ilimitados\n✅ Sem espera\n✅ Suporte prioritário',
+    btn_get_premium: '⭐ Obter Premium',
+    premium_title: '⭐ PinSave Premium',
+    premium_description: 'Downloads ilimitados por 30 dias! Baixe quantos vídeos, fotos e GIFs quiser do Pinterest.',
+    premium_activated: '🎉 *Parabéns!*\n\nSeu *Premium* foi ativado com sucesso!\n\n✅ Downloads ilimitados por 30 dias\n✅ Aproveite sem limites!\n\nObrigado por apoiar o PinSave! ❤️',
   },
   
   // 🇺🇸 English
@@ -282,6 +289,13 @@ By using this service, you agree to:
     btn_download_more: '📥 Download More',
     btn_download_media: '📥 Download Media',
     download_media_prompt: '📌 *Download Pinterest Media*\n\nSend the Pinterest URL you want to download:\n\n🔗 *Accepted formats:*\n• pinterest.com/pin/...\n• pin.it/...',
+    
+    // Limit and premium messages
+    limit_reached: '⚠️ *Daily Limit Reached*\n\nYou have used {{used}}/{{limit}} free downloads today.\n\n⭐ *Get Premium* for unlimited downloads!\n\n✅ Unlimited downloads\n✅ No waiting\n✅ Priority support',
+    btn_get_premium: '⭐ Get Premium',
+    premium_title: '⭐ PinSave Premium',
+    premium_description: 'Unlimited downloads for 30 days! Download as many videos, photos and GIFs as you want from Pinterest.',
+    premium_activated: '🎉 *Congratulations!*\n\nYour *Premium* has been activated successfully!\n\n✅ Unlimited downloads for 30 days\n✅ Enjoy without limits!\n\nThank you for supporting PinSave! ❤️',
   },
   
   // 🇪🇸 Español
@@ -440,6 +454,13 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
     btn_download_more: '📥 Descargar Más',
     btn_download_media: '📥 Descargar Medios',
     download_media_prompt: '📌 *Descargar Medios de Pinterest*\n\nEnvía la URL de Pinterest que deseas descargar:\n\n🔗 *Formatos aceptados:*\n• pinterest.com/pin/...\n• pin.it/...',
+    
+    // Mensajes de límite y premium
+    limit_reached: '⚠️ *Límite Diario Alcanzado*\n\nHas usado {{used}}/{{limit}} descargas gratuitas hoy.\n\n⭐ *Obtén Premium* para descargas ilimitadas!\n\n✅ Descargas ilimitadas\n✅ Sin esperas\n✅ Soporte prioritario',
+    btn_get_premium: '⭐ Obtener Premium',
+    premium_title: '⭐ PinSave Premium',
+    premium_description: '¡Descargas ilimitadas por 30 días! Descarga todos los videos, fotos y GIFs que quieras de Pinterest.',
+    premium_activated: '🎉 *¡Felicidades!*\n\n¡Tu *Premium* ha sido activado con éxito!\n\n✅ Descargas ilimitadas por 30 días\n✅ ¡Disfruta sin límites!\n\n¡Gracias por apoyar PinSave! ❤️',
   },
 
   // 🇨🇳 中文 (简体)
@@ -595,6 +616,13 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
     btn_download_more: '📥 下载更多',
     btn_download_media: '📥 下载媒体',
     download_media_prompt: '📌 *下载Pinterest媒体*\n\n发送您要下载的Pinterest链接：\n\n🔗 *支持的格式：*\n• pinterest.com/pin/...\n• pin.it/...',
+    
+    // 限制和高级消息
+    limit_reached: '⚠️ *已达到每日限制*\n\n您今天已使用 {{used}}/{{limit}} 次免费下载。\n\n⭐ *购买高级版* 获取无限下载！\n\n✅ 无限下载\n✅ 无需等待\n✅ 优先支持',
+    btn_get_premium: '⭐ 获取高级版',
+    premium_title: '⭐ PinSave 高级版',
+    premium_description: '30天无限下载！从Pinterest下载任意数量的视频、照片和GIF。',
+    premium_activated: '🎉 *恭喜！*\n\n您的*高级版*已成功激活！\n\n✅ 30天无限下载\n✅ 无限制享用！\n\n感谢您支持PinSave！❤️',
   },
 
   // 🇮🇳 हिन्दी (Hindi)
@@ -742,6 +770,13 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
     btn_download_more: '📥 और डाउनलोड करें',
     btn_download_media: '📥 मीडिया डाउनलोड करें',
     download_media_prompt: '📌 *Pinterest मीडिया डाउनलोड करें*\n\nवह Pinterest URL भेजें जिसे आप डाउनलोड करना चाहते हैं।',
+    
+    // सीमा और प्रीमियम संदेश
+    limit_reached: '⚠️ *दैनिक सीमा पूरी*\n\nआपने आज {{used}}/{{limit}} मुफ्त डाउनलोड का उपयोग किया।\n\n⭐ असीमित डाउनलोड के लिए *प्रीमियम* प्राप्त करें!\n\n✅ असीमित डाउनलोड\n✅ कोई प्रतीक्षा नहीं\n✅ प्राथमिकता समर्थन',
+    btn_get_premium: '⭐ प्रीमियम प्राप्त करें',
+    premium_title: '⭐ PinSave प्रीमियम',
+    premium_description: '30 दिनों के लिए असीमित डाउनलोड! Pinterest से जितने चाहें वीडियो, फोटो और GIF डाउनलोड करें।',
+    premium_activated: '🎉 *बधाई!*\n\nआपका *प्रीमियम* सफलतापूर्वक सक्रिय हो गया!\n\n✅ 30 दिनों के लिए असीमित डाउनलोड\n✅ बिना सीमा के आनंद लें!\n\nPinSave का समर्थन करने के लिए धन्यवाद! ❤️',
   },
 
   // 🇸🇦 العربية (Arabic)
@@ -889,7 +924,14 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
 الصق رابط الفيديو أو الصورة.`,
     btn_download_more: '📥 تحميل المزيد',
     btn_download_media: '📥 تحميل الوسائط',
-    download_media_prompt: '📌 *تحميل وسائط Pinterest*\n\nأرسل رابط Pinterest الذي تريد تحميله।',
+    download_media_prompt: '📌 *تحميل وسائط Pinterest*\n\nأرسل رابط Pinterest الذي تريئ تحميله।',
+    
+    // رسائل الحد والبريميوم
+    limit_reached: '⚠️ *تم الوصول للحد اليومي*\n\nلقد استخدمت {{used}}/{{limit}} تحميلات مجانية اليوم.\n\n⭐ احصل على *البريميوم* لتحميلات غير محدودة!\n\n✅ تحميلات غير محدودة\n✅ بدون انتظار\n✅ دعم أولوي',
+    btn_get_premium: '⭐ احصل على البريميوم',
+    premium_title: '⭐ PinSave بريميوم',
+    premium_description: 'تحميلات غير محدودة لمدة 30 يوماً! حمّل ما تشاء من الفيديوهات والصور وGIF من Pinterest.',
+    premium_activated: '🎉 *تهانينا!*\n\nتم تفعيل *البريميوم* بنجاح!\n\n✅ تحميلات غير محدودة لمدة 30 يوماً\n✅ استمتع بدون حدود!\n\nشكراً لدعمك PinSave! ❤️',
   },
 
   // 🇫🇷 Français
@@ -1038,6 +1080,13 @@ Collez le lien de la vidéo, photo ou GIF.`,
     btn_download_more: '📥 Télécharger Plus',
     btn_download_media: '📥 Télécharger Média',
     download_media_prompt: '📌 *Télécharger Média Pinterest*\n\nEnvoyez l\'URL Pinterest que vous souhaitez télécharger:\n\n🔗 *Formats acceptés:*\n• pinterest.com/pin/...\n• pin.it/...',
+    
+    // Messages de limite et premium
+    limit_reached: '⚠️ *Limite Quotidienne Atteinte*\n\nVous avez utilisé {{used}}/{{limit}} téléchargements gratuits aujourd\'hui.\n\n⭐ *Obtenez Premium* pour des téléchargements illimités!\n\n✅ Téléchargements illimités\n✅ Sans attente\n✅ Support prioritaire',
+    btn_get_premium: '⭐ Obtenir Premium',
+    premium_title: '⭐ PinSave Premium',
+    premium_description: 'Téléchargements illimités pendant 30 jours! Téléchargez autant de vidéos, photos et GIFs que vous voulez de Pinterest.',
+    premium_activated: '🎉 *Félicitations!*\n\nVotre *Premium* a été activé avec succès!\n\n✅ Téléchargements illimités pendant 30 jours\n✅ Profitez sans limites!\n\nMerci de soutenir PinSave! ❤️',
   },
 
   // 🇷🇺 Русский (Russian)
@@ -1186,6 +1235,13 @@ Collez le lien de la vidéo, photo ou GIF.`,
     btn_download_more: '📥 Скачать Ещё',
     btn_download_media: '📥 Скачать Медиа',
     download_media_prompt: '📌 *Скачать медиа Pinterest*\n\nОтправьте URL Pinterest, который хотите скачать:\n\n🔗 *Поддерживаемые форматы:*\n• pinterest.com/pin/...\n• pin.it/...',
+    
+    // Сообщения о лимите и премиум
+    limit_reached: '⚠️ *Дневной лимит достигнут*\n\nВы использовали {{used}}/{{limit}} бесплатных загрузок сегодня.\n\n⭐ *Получите Премиум* для неограниченных загрузок!\n\n✅ Неограниченные загрузки\n✅ Без ожидания\n✅ Приоритетная поддержка',
+    btn_get_premium: '⭐ Получить Премиум',
+    premium_title: '⭐ PinSave Премиум',
+    premium_description: 'Неограниченные загрузки на 30 дней! Скачивайте сколько угодно видео, фото и GIF с Pinterest.',
+    premium_activated: '🎉 *Поздравляем!*\n\nВаш *Премиум* успешно активирован!\n\n✅ Неограниченные загрузки на 30 дней\n✅ Наслаждайтесь без ограничений!\n\nСпасибо за поддержку PinSave! ❤️',
   },
 
   // 🇩🇪 Deutsch (German)
@@ -1334,6 +1390,13 @@ Fügen Sie den Link zum Video, Foto oder GIF ein.`,
     btn_download_more: '📥 Mehr Herunterladen',
     btn_download_media: '📥 Medien Herunterladen',
     download_media_prompt: '📌 *Pinterest-Medien Herunterladen*\n\nSenden Sie die Pinterest-URL, die Sie herunterladen möchten:\n\n🔗 *Akzeptierte Formate:*\n• pinterest.com/pin/...\n• pin.it/...',
+    
+    // Limit- und Premium-Nachrichten
+    limit_reached: '⚠️ *Tägliches Limit Erreicht*\n\nSie haben heute {{used}}/{{limit}} kostenlose Downloads verwendet.\n\n⭐ *Holen Sie sich Premium* für unbegrenzte Downloads!\n\n✅ Unbegrenzte Downloads\n✅ Keine Wartezeit\n✅ Prioritäts-Support',
+    btn_get_premium: '⭐ Premium Holen',
+    premium_title: '⭐ PinSave Premium',
+    premium_description: 'Unbegrenzte Downloads für 30 Tage! Laden Sie so viele Videos, Fotos und GIFs von Pinterest herunter, wie Sie möchten.',
+    premium_activated: '🎉 *Herzlichen Glückwunsch!*\n\nIhr *Premium* wurde erfolgreich aktiviert!\n\n✅ Unbegrenzte Downloads für 30 Tage\n✅ Genießen Sie ohne Limits!\n\nDanke für Ihre Unterstützung von PinSave! ❤️',
   },
 
   // 🇯🇵 日本語 (Japanese)
@@ -1482,6 +1545,13 @@ Fügen Sie den Link zum Video, Foto oder GIF ein.`,
     btn_download_more: '📥 もっとダウンロード',
     btn_download_media: '📥 メディアをダウンロード',
     download_media_prompt: '📌 *Pinterestメディアをダウンロード*\n\nダウンロードしたいPinterest URLを送信してください。',
+    
+    // 制限とプレミアムメッセージ
+    limit_reached: '⚠️ *日次制限に達しました*\n\n今日{{used}}/{{limit}}回の無料ダウンロードを使用しました。\n\n⭐ *プレミアム*で無制限ダウンロード！\n\n✅ 無制限ダウンロード\n✅ 待ち時間なし\n✅ 優先サポート',
+    btn_get_premium: '⭐ プレミアムを取得',
+    premium_title: '⭐ PinSave プレミアム',
+    premium_description: '30日間無制限ダウンロード！Pinterestから動画、写真、GIFを好きなだけダウンロード。',
+    premium_activated: '🎉 *おめでとうございます！*\n\n*プレミアム*が正常に有効化されました！\n\n✅ 30日間無制限ダウンロード\n✅ 制限なくお楽しみください！\n\nPinSaveをご支援いただきありがとうございます！❤️',
   },
 
   // 🇮🇹 Italiano
@@ -1630,6 +1700,13 @@ Incolla il link del video, foto o GIF.`,
     btn_download_more: '📥 Scarica Altro',
     btn_download_media: '📥 Scarica Media',
     download_media_prompt: '📌 *Scarica Media Pinterest*\n\nInvia l\'URL Pinterest che vuoi scaricare:\n\n🔗 *Formati accettati:*\n• pinterest.com/pin/...\n• pin.it/...',
+    
+    // Messaggi limite e premium
+    limit_reached: '⚠️ *Limite Giornaliero Raggiunto*\n\nHai usato {{used}}/{{limit}} download gratuiti oggi.\n\n⭐ *Ottieni Premium* per download illimitati!\n\n✅ Download illimitati\n✅ Nessuna attesa\n✅ Supporto prioritario',
+    btn_get_premium: '⭐ Ottieni Premium',
+    premium_title: '⭐ PinSave Premium',
+    premium_description: 'Download illimitati per 30 giorni! Scarica quanti video, foto e GIF vuoi da Pinterest.',
+    premium_activated: '🎉 *Congratulazioni!*\n\nIl tuo *Premium* è stato attivato con successo!\n\n✅ Download illimitati per 30 giorni\n✅ Goditi senza limiti!\n\nGrazie per supportare PinSave! ❤️',
   },
 
   // 🇰🇷 한국어 (Korean)
@@ -1777,6 +1854,13 @@ Incolla il link del video, foto o GIF.`,
     btn_download_more: '📥 더 다운로드',
     btn_download_media: '📥 미디어 다운로드',
     download_media_prompt: '📌 *Pinterest 미디어 다운로드*\n\n다운로드하려는 Pinterest URL을 보내주세요.',
+    
+    // 제한 및 프리미엄 메시지
+    limit_reached: '⚠️ *일일 한도 도달*\n\n오늘 {{used}}/{{limit}}회 무료 다운로드를 사용했습니다.\n\n⭐ *프리미엄*으로 무제한 다운로드!\n\n✅ 무제한 다운로드\n✅ 대기 시간 없음\n✅ 우선 지원',
+    btn_get_premium: '⭐ 프리미엄 받기',
+    premium_title: '⭐ PinSave 프리미엄',
+    premium_description: '30일간 무제한 다운로드! Pinterest에서 원하는 만큼 동영상, 사진, GIF를 다운로드하세요.',
+    premium_activated: '🎉 *축하합니다!*\n\n*프리미엄*이 성공적으로 활성화되었습니다!\n\n✅ 30일간 무제한 다운로드\n✅ 제한 없이 즐기세요!\n\nPinSave를 지원해 주셔서 감사합니다! ❤️',
   },
 
   // 🇹🇷 Türkçe (Turkish)
@@ -1926,6 +2010,13 @@ Video, fotoğraf veya GIF linkini yapıştırın.`,
     btn_download_more: '📥 Daha Fazla İndir',
     btn_download_media: '📥 Medya İndir',
     download_media_prompt: '📌 *Pinterest Medya İndir*\n\nİndirmek istediğiniz Pinterest URL\'sini gönderin:\n\n🔗 *Kabul edilen formatlar:*\n• pinterest.com/pin/...\n• pin.it/...',
+    
+    // Limit ve premium mesajları
+    limit_reached: '⚠️ *Günlük Limite Ulaşıldı*\n\nBugün {{used}}/{{limit}} ücretsiz indirme kullandınız.\n\n⭐ Sınırsız indirme için *Premium* alın!\n\n✅ Sınırsız indirme\n✅ Bekleme yok\n✅ Öncelikli destek',
+    btn_get_premium: '⭐ Premium Al',
+    premium_title: '⭐ PinSave Premium',
+    premium_description: '30 gün sınırsız indirme! Pinterest\'ten istediğiniz kadar video, fotoğraf ve GIF indirin.',
+    premium_activated: '🎉 *Tebrikler!*\n\n*Premium*\'unuz başarıyla etkinleştirildi!\n\n✅ 30 gün sınırsız indirme\n✅ Limitsiz keyfini çıkarın!\n\nPinSave\'i desteklediğiniz için teşekkürler! ❤️',
   },
 };
 
