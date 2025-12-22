@@ -130,6 +130,12 @@ Ao utilizar este serviço, você concorda com:
 
     btn_back: '⬅️ Voltar',
     btn_accept: '✅ Aceitar e Continuar',
+    btn_back_to_start: '🏠 Voltar ao Início',
+    
+    // Mensagens de idioma
+    language_title: '🌍 Selecionar Idioma',
+    language_message: 'Escolha seu idioma preferido:',
+    language_changed: '✅ Idioma alterado com sucesso!',
   },
   
   // 🇺🇸 English
@@ -258,6 +264,12 @@ By using this service, you agree to:
 
     btn_back: '⬅️ Back',
     btn_accept: '✅ Accept and Continue',
+    btn_back_to_start: '🏠 Back to Start',
+    
+    // Language messages
+    language_title: '🌍 Select Language',
+    language_message: 'Choose your preferred language:',
+    language_changed: '✅ Language changed successfully!',
   },
 
   // 🇪🇸 Español
@@ -386,6 +398,12 @@ Al usar este servicio, aceptas:
 
     btn_back: '⬅️ Volver',
     btn_accept: '✅ Aceptar y Continuar',
+    btn_back_to_start: '🏠 Volver al Inicio',
+    
+    // Mensajes de idioma
+    language_title: '🌍 Seleccionar Idioma',
+    language_message: 'Elige tu idioma preferido:',
+    language_changed: '✅ ¡Idioma cambiado con éxito!',
   },
 
   // 🇨🇳 中文 (简体)
@@ -511,6 +529,12 @@ Al usar este servicio, aceptas:
 
     btn_back: '⬅️ 返回',
     btn_accept: '✅ 接受并继续',
+    btn_back_to_start: '🏠 返回首页',
+    
+    // 语言消息
+    language_title: '🌍 选择语言',
+    language_message: '选择您的首选语言：',
+    language_changed: '✅ 语言更改成功！',
   },
 
   // 🇮🇳 हिन्दी (Hindi)
@@ -638,6 +662,12 @@ Al usar este servicio, aceptas:
 
     btn_back: '⬅️ वापस',
     btn_accept: '✅ स्वीकार करें और जारी रखें',
+    btn_back_to_start: '🏠 शुरू पर वापस',
+    
+    // भाषा संदेश
+    language_title: '🌍 भाषा चुनें',
+    language_message: 'अपनी पसंदीदा भाषा चुनें:',
+    language_changed: '✅ भाषा सफलतापूर्वक बदली गई!',
   },
 
   // 🇸🇦 العربية (Arabic)
@@ -766,6 +796,12 @@ Al usar este servicio, aceptas:
 
     btn_back: '⬅️ رجوع',
     btn_accept: '✅ قبول والمتابعة',
+    btn_back_to_start: '🏠 العودة للبداية',
+    
+    // رسائل اللغة
+    language_title: '🌍 اختر اللغة',
+    language_message: 'اختر لغتك المفضلة:',
+    language_changed: '✅ تم تغيير اللغة بنجاح!',
   },
 
   // 🇫🇷 Français
@@ -894,6 +930,12 @@ En utilisant ce service, vous acceptez:
 
     btn_back: '⬅️ Retour',
     btn_accept: '✅ Accepter et Continuer',
+    btn_back_to_start: '🏠 Retour au Début',
+    
+    // Messages de langue
+    language_title: '🌍 Sélectionner la Langue',
+    language_message: 'Choisissez votre langue préférée:',
+    language_changed: '✅ Langue changée avec succès!',
   },
 
   // 🇷🇺 Русский (Russian)
@@ -1022,6 +1064,12 @@ En utilisant ce service, vous acceptez:
 
     btn_back: '⬅️ Назад',
     btn_accept: '✅ Принять и продолжить',
+    btn_back_to_start: '🏠 Вернуться в начало',
+    
+    // Сообщения о языке
+    language_title: '🌍 Выбрать язык',
+    language_message: 'Выберите предпочитаемый язык:',
+    language_changed: '✅ Язык успешно изменён!',
   },
 
   // 🇩🇪 Deutsch (German)
@@ -1150,6 +1198,12 @@ Durch die Nutzung stimmen Sie zu:
 
     btn_back: '⬅️ Zurück',
     btn_accept: '✅ Akzeptieren und fortfahren',
+    btn_back_to_start: '🏠 Zurück zum Start',
+    
+    // Sprachnachrichten
+    language_title: '🌍 Sprache auswählen',
+    language_message: 'Wählen Sie Ihre bevorzugte Sprache:',
+    language_changed: '✅ Sprache erfolgreich geändert!',
   },
 
   // 🇯🇵 日本語 (Japanese)
@@ -1278,6 +1332,12 @@ Durch die Nutzung stimmen Sie zu:
 
     btn_back: '⬅️ 戻る',
     btn_accept: '✅ 同意して続ける',
+    btn_back_to_start: '🏠 スタートに戻る',
+    
+    // 言語メッセージ
+    language_title: '🌍 言語を選択',
+    language_message: 'ご希望の言語を選択してください：',
+    language_changed: '✅ 言語が正常に変更されました！',
   },
 
   // 🇮🇹 Italiano
@@ -1406,6 +1466,12 @@ Usando questo servizio, accetti:
 
     btn_back: '⬅️ Indietro',
     btn_accept: '✅ Accetta e Continua',
+    btn_back_to_start: '🏠 Torna all\'Inizio',
+    
+    // Messaggi lingua
+    language_title: '🌍 Seleziona Lingua',
+    language_message: 'Scegli la tua lingua preferita:',
+    language_changed: '✅ Lingua cambiata con successo!',
   },
 
   // 🇰🇷 한국어 (Korean)
@@ -1533,6 +1599,12 @@ Usando questo servizio, accetti:
 
     btn_back: '⬅️ 뒤로',
     btn_accept: '✅ 동의하고 계속',
+    btn_back_to_start: '🏠 시작으로 돌아가기',
+    
+    // 언어 메시지
+    language_title: '🌍 언어 선택',
+    language_message: '원하는 언어를 선택하세요:',
+    language_changed: '✅ 언어가 성공적으로 변경되었습니다!',
   },
 
   // 🇹🇷 Türkçe (Turkish)
@@ -1662,6 +1734,12 @@ Bu hizmeti kullanarak kabul edersiniz:
 
     btn_back: '⬅️ Geri',
     btn_accept: '✅ Kabul Et ve Devam Et',
+    btn_back_to_start: '🏠 Başa Dön',
+    
+    // Dil mesajları
+    language_title: '🌍 Dil Seç',
+    language_message: 'Tercih ettiğiniz dili seçin:',
+    language_changed: '✅ Dil başarıyla değiştirildi!',
   },
 };
 
