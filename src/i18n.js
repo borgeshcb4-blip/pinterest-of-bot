@@ -140,6 +140,8 @@ Ao utilizar este serviço, você concorda com:
     download_error: '❌ *Erro no download*\n\nNão foi possível baixar o conteúdo. Verifique se:\n\n• A URL está correta\n• O pin é público\n• O conteúdo ainda existe\n\nTente novamente com outra URL.',
     send_pinterest_url: '📌 *Envie uma URL do Pinterest*\n\nCole aqui o link do vídeo, foto ou GIF que deseja baixar:\n\n🔗 *Formatos aceitos:*\n• pinterest.com/pin/...\n• pin.it/...',
     btn_download_more: '📥 Baixar Mais',
+    btn_download_media: '📥 Baixar Mídia',
+    download_media_prompt: '📌 *Baixar Mídia do Pinterest*\n\nEnvie a URL do Pinterest que deseja baixar:\n\n🔗 *Formatos aceitos:*\n• pinterest.com/pin/...\n• pin.it/...',
   },
   
   // 🇺🇸 English
@@ -278,6 +280,8 @@ By using this service, you agree to:
     download_error: '❌ *Download error*\n\nCould not download the content. Please check if:\n\n• The URL is correct\n• The pin is public\n• The content still exists\n\nTry again with another URL.',
     send_pinterest_url: '📌 *Send a Pinterest URL*\n\nPaste here the link to the video, photo or GIF you want to download:\n\n🔗 *Accepted formats:*\n• pinterest.com/pin/...\n• pin.it/...',
     btn_download_more: '📥 Download More',
+    btn_download_media: '📥 Download Media',
+    download_media_prompt: '📌 *Download Pinterest Media*\n\nSend the Pinterest URL you want to download:\n\n🔗 *Accepted formats:*\n• pinterest.com/pin/...\n• pin.it/...',
   },
   
   // 🇪🇸 Español
@@ -434,6 +438,8 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
 • pinterest.com/pin/...
 • pin.it/...`,
     btn_download_more: '📥 Descargar Más',
+    btn_download_media: '📥 Descargar Medios',
+    download_media_prompt: '📌 *Descargar Medios de Pinterest*\n\nEnvía la URL de Pinterest que deseas descargar:\n\n🔗 *Formatos aceptados:*\n• pinterest.com/pin/...\n• pin.it/...',
   },
 
   // 🇨🇳 中文 (简体)
@@ -587,6 +593,8 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
 • pinterest.com/pin/...
 • pin.it/...`,
     btn_download_more: '📥 下载更多',
+    btn_download_media: '📥 下载媒体',
+    download_media_prompt: '📌 *下载Pinterest媒体*\n\n发送您要下载的Pinterest链接：\n\n🔗 *支持的格式：*\n• pinterest.com/pin/...\n• pin.it/...',
   },
 
   // 🇮🇳 हिन्दी (Hindi)
@@ -732,6 +740,8 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
 
 वीडियो, फोटो या GIF का लिंक पेस्ट करें।`,
     btn_download_more: '📥 और डाउनलोड करें',
+    btn_download_media: '📥 मीडिया डाउनलोड करें',
+    download_media_prompt: '📌 *Pinterest मीडिया डाउनलोड करें*\n\nवह Pinterest URL भेजें जिसे आप डाउनलोड करना चाहते हैं।',
   },
 
   // 🇸🇦 العربية (Arabic)
@@ -878,6 +888,8 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
 
 الصق رابط الفيديو أو الصورة.`,
     btn_download_more: '📥 تحميل المزيد',
+    btn_download_media: '📥 تحميل الوسائط',
+    download_media_prompt: '📌 *تحميل وسائط Pinterest*\n\nأرسل رابط Pinterest الذي تريد تحميله।',
   },
 
   // 🇫🇷 Français
@@ -1024,6 +1036,8 @@ Impossible de télécharger.`,
 
 Collez le lien de la vidéo, photo ou GIF.`,
     btn_download_more: '📥 Télécharger Plus',
+    btn_download_media: '📥 Télécharger Média',
+    download_media_prompt: '📌 *Télécharger Média Pinterest*\n\nEnvoyez l\'URL Pinterest que vous souhaitez télécharger:\n\n🔗 *Formats acceptés:*\n• pinterest.com/pin/...\n• pin.it/...',
   },
 
   // 🇷🇺 Русский (Russian)
@@ -1170,6 +1184,8 @@ Collez le lien de la vidéo, photo ou GIF.`,
 
 Вставьте ссылку на видео, фото или GIF.`,
     btn_download_more: '📥 Скачать Ещё',
+    btn_download_media: '📥 Скачать Медиа',
+    download_media_prompt: '📌 *Скачать медиа Pinterest*\n\nОтправьте URL Pinterest, который хотите скачать:\n\n🔗 *Поддерживаемые форматы:*\n• pinterest.com/pin/...\n• pin.it/...',
   },
 
   // 🇩🇪 Deutsch (German)
@@ -1316,6 +1332,8 @@ Inhalt konnte nicht heruntergeladen werden.`,
 
 Fügen Sie den Link zum Video, Foto oder GIF ein.`,
     btn_download_more: '📥 Mehr Herunterladen',
+    btn_download_media: '📥 Medien Herunterladen',
+    download_media_prompt: '📌 *Pinterest-Medien Herunterladen*\n\nSenden Sie die Pinterest-URL, die Sie herunterladen möchten:\n\n🔗 *Akzeptierte Formate:*\n• pinterest.com/pin/...\n• pin.it/...',
   },
 
   // 🇯🇵 日本語 (Japanese)
@@ -1462,6 +1480,8 @@ Fügen Sie den Link zum Video, Foto oder GIF ein.`,
 
 動画、写真、GIFのリンクを貼り付けてください。`,
     btn_download_more: '📥 もっとダウンロード',
+    btn_download_media: '📥 メディアをダウンロード',
+    download_media_prompt: '📌 *Pinterestメディアをダウンロード*\n\nダウンロードしたいPinterest URLを送信してください。',
   },
 
   // 🇮🇹 Italiano
@@ -1608,6 +1628,8 @@ Impossibile scaricare il contenuto.`,
 
 Incolla il link del video, foto o GIF.`,
     btn_download_more: '📥 Scarica Altro',
+    btn_download_media: '📥 Scarica Media',
+    download_media_prompt: '📌 *Scarica Media Pinterest*\n\nInvia l\'URL Pinterest che vuoi scaricare:\n\n🔗 *Formati accettati:*\n• pinterest.com/pin/...\n• pin.it/...',
   },
 
   // 🇰🇷 한국어 (Korean)
@@ -1753,6 +1775,8 @@ Incolla il link del video, foto o GIF.`,
 
 동영상, 사진 또는 GIF 링크를 붙여넣으세요.`,
     btn_download_more: '📥 더 다운로드',
+    btn_download_media: '📥 미디어 다운로드',
+    download_media_prompt: '📌 *Pinterest 미디어 다운로드*\n\n다운로드하려는 Pinterest URL을 보내주세요.',
   },
 
   // 🇹🇷 Türkçe (Turkish)
@@ -1900,6 +1924,8 @@ Lütfen bekleyin.`,
 
 Video, fotoğraf veya GIF linkini yapıştırın.`,
     btn_download_more: '📥 Daha Fazla İndir',
+    btn_download_media: '📥 Medya İndir',
+    download_media_prompt: '📌 *Pinterest Medya İndir*\n\nİndirmek istediğiniz Pinterest URL\'sini gönderin:\n\n🔗 *Kabul edilen formatlar:*\n• pinterest.com/pin/...\n• pin.it/...',
   },
 };
 

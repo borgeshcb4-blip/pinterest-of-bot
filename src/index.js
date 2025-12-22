@@ -570,9 +570,14 @@ function buildMainKeyboard(language) {
   const btnHowItWorks = getLocalizedMessage('btn_how_it_works', language);
   const btnTerms = getLocalizedMessage('btn_terms', language);
   const btnChangeLanguage = getLocalizedMessage('btn_change_language', language);
+  const btnDownloadMedia = getLocalizedMessage('btn_download_media', language);
 
   return {
     inline_keyboard: [
+      // Botão principal de download
+      [
+        { text: btnDownloadMedia, callback_data: 'download_media' },
+      ],
       // Botões de informação
       [
         { text: btnHowItWorks, callback_data: 'how_it_works' },
@@ -764,6 +769,16 @@ async function handleBackToStart(chatId, messageId, firstName, language) {
 }
 
 /**
+ * Handler para o botão "Baixar Mídia"
+ */
+async function handleDownloadMedia(chatId, messageId, language) {
+  const message = getLocalizedMessage('download_media_prompt', language);
+  const keyboard = buildBackKeyboard(language);
+
+  await editMessageText(chatId, messageId, message, keyboard);
+}
+
+/**
  * Handler para mensagens de texto
  */
 async function handleMessage(chatId, text, firstName, userId, languageCode, env) {
@@ -824,6 +839,9 @@ async function handleCallbackQuery(query, env) {
         break;
       case 'change_language':
         await handleChangeLanguage(chatId, messageId, language);
+        break;
+      case 'download_media':
+        await handleDownloadMedia(chatId, messageId, language);
         break;
       default:
         // Callback desconhecido, volta ao início
