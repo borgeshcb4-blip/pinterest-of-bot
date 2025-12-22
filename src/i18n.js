@@ -19,808 +19,899 @@
 export const translations = {
   // 🇧🇷 Português
   pt: {
-    welcome_title: '🎬 Bem-vindo ao Pinterest Video Downloader!',
-    welcome_message: `Olá! Sou um bot que baixa vídeos do Pinterest para você.
+    welcome_title: '🎬 Pinterest Video Downloader',
+    welcome_message: `Olá! Bem-vindo ao melhor bot para baixar vídeos do Pinterest!
 
-*Como usar:*
-1️⃣ Copie a URL de um vídeo do Pinterest
-2️⃣ Envie a URL para mim
-3️⃣ Aguarde o processamento
-4️⃣ Receba o vídeo em alta qualidade!
+📱 *Nosso Mini App oferece:*
+• Download de vídeos em alta qualidade
+• Interface fácil e intuitiva
+• Processamento rápido
+• Suporte a múltiplos formatos
 
-*Formatos aceitos:*
+Clique no botão abaixo para começar a baixar seus vídeos favoritos!`,
+    
+    btn_open_app: '🚀 Abrir Bot',
+    btn_how_it_works: '❓ Como Funciona',
+    btn_terms: '📜 Termos de Uso',
+    
+    how_it_works_title: '❓ Como Funciona',
+    how_it_works_message: `*Como usar o Pinterest Video Downloader:*
+
+1️⃣ *Abra o Mini App*
+   Clique no botão "Abrir Bot" para acessar nossa interface
+
+2️⃣ *Cole a URL*
+   Copie o link do vídeo do Pinterest e cole no app
+
+3️⃣ *Baixe o Vídeo*
+   Clique em baixar e aguarde o processamento
+
+4️⃣ *Pronto!*
+   Seu vídeo será baixado em alta qualidade
+
+*Formatos Aceitos:*
 • https://www.pinterest.com/pin/...
 • https://pin.it/...
 
-Use /help para mais informações.`,
-    
-    help_title: '❓ Ajuda - Como Usar o Bot',
-    help_message: `*Instruções de Uso:*
+*Limitações:*
+• Máximo 100 MB por vídeo
+• Apenas vídeos públicos`,
 
-1. *Enviar URL do Pinterest*
-   Simplesmente copie e cole a URL de qualquer vídeo do Pinterest
+    terms_title: '📜 Termos de Uso',
+    terms_message: `*Termos de Uso - Pinterest Video Downloader*
 
-2. *Formatos Aceitos:*
-   • https://www.pinterest.com/pin/XXXXXX
-   • https://pin.it/XXXXXX
+Ao utilizar este bot, você concorda com os seguintes termos:
 
-3. *Tempo de Processamento:*
-   Geralmente leva 5-30 segundos dependendo do tamanho do vídeo
+1️⃣ *Uso Pessoal*
+   Este serviço é destinado apenas para uso pessoal e não comercial.
 
-4. *Limitações:*
-   • Máximo 100 MB por vídeo
-   • Apenas vídeos públicos
+2️⃣ *Direitos Autorais*
+   Você é responsável por respeitar os direitos autorais dos conteúdos baixados.
 
-*Problemas?*
-Se receber um erro, verifique se:
-• A URL é válida
-• O vídeo ainda existe no Pinterest
-• Você tem conexão com a internet
+3️⃣ *Disponibilidade*
+   O serviço é fornecido "como está", sem garantias de disponibilidade contínua.
 
-Use /start para voltar ao menu principal.`,
+4️⃣ *Privacidade*
+   Não armazenamos seus vídeos ou dados pessoais além do necessário para o funcionamento.
 
-    invalid_url: '❌ URL inválida! Por favor, envie uma URL válida do Pinterest.',
-    invalid_url_format: '❌ Formato de URL não reconhecido. Use:\n• https://www.pinterest.com/pin/...\n• https://pin.it/...',
-    processing: '⏳ Processando seu vídeo... Por favor, aguarde.',
-    downloading: '📥 Baixando vídeo do Pinterest...',
-    uploading: '📤 Enviando vídeo para você...',
-    success: '✅ Vídeo baixado com sucesso!',
-    success_message: 'Seu vídeo está pronto! Aproveite! 🎉',
-    error_generic: '❌ Ocorreu um erro ao processar seu vídeo. Tente novamente mais tarde.',
-    error_download: '❌ Erro ao baixar o vídeo. Verifique a URL e tente novamente.',
-    error_upload: '❌ Erro ao enviar o vídeo. Tente novamente mais tarde.',
-    error_timeout: '⏱️ O processamento demorou muito. Tente com um vídeo menor.',
-    error_file_size: '📦 O vídeo é muito grande (máximo 100 MB). Tente outro vídeo.',
-    error_not_found: '🔍 Vídeo não encontrado. Verifique se a URL está correta e se o vídeo ainda existe.',
-    error_api: '🔌 Erro ao conectar com a API do Pinterest. Tente novamente mais tarde.',
-    btn_help: '❓ Ajuda',
-    btn_start: '🏠 Menu Principal',
-    btn_retry: '🔄 Tentar Novamente',
+5️⃣ *Responsabilidade*
+   Não nos responsabilizamos pelo uso indevido dos conteúdos baixados.
+
+6️⃣ *Modificações*
+   Reservamos o direito de modificar estes termos a qualquer momento.
+
+Ao continuar usando o bot, você aceita estes termos.`,
+
     btn_back: '⬅️ Voltar',
+    btn_accept: '✅ Aceitar e Continuar',
   },
   
   // 🇺🇸 English
   en: {
-    welcome_title: '🎬 Welcome to Pinterest Video Downloader!',
-    welcome_message: `Hello! I'm a bot that downloads videos from Pinterest for you.
+    welcome_title: '🎬 Pinterest Video Downloader',
+    welcome_message: `Hello! Welcome to the best bot for downloading Pinterest videos!
 
-*How to use:*
-1️⃣ Copy the URL of a Pinterest video
-2️⃣ Send the URL to me
-3️⃣ Wait for processing
-4️⃣ Receive the video in high quality!
+📱 *Our Mini App offers:*
+• High quality video downloads
+• Easy and intuitive interface
+• Fast processing
+• Multiple format support
 
-*Accepted formats:*
+Click the button below to start downloading your favorite videos!`,
+    
+    btn_open_app: '🚀 Open Bot',
+    btn_how_it_works: '❓ How It Works',
+    btn_terms: '📜 Terms of Use',
+    
+    how_it_works_title: '❓ How It Works',
+    how_it_works_message: `*How to use Pinterest Video Downloader:*
+
+1️⃣ *Open the Mini App*
+   Click the "Open Bot" button to access our interface
+
+2️⃣ *Paste the URL*
+   Copy the Pinterest video link and paste it in the app
+
+3️⃣ *Download the Video*
+   Click download and wait for processing
+
+4️⃣ *Done!*
+   Your video will be downloaded in high quality
+
+*Accepted Formats:*
 • https://www.pinterest.com/pin/...
 • https://pin.it/...
 
-Use /help for more information.`,
-    
-    help_title: '❓ Help - How to Use the Bot',
-    help_message: `*Usage Instructions:*
+*Limitations:*
+• Maximum 100 MB per video
+• Only public videos`,
 
-1. *Send Pinterest URL*
-   Simply copy and paste the URL of any Pinterest video
+    terms_title: '📜 Terms of Use',
+    terms_message: `*Terms of Use - Pinterest Video Downloader*
 
-2. *Accepted Formats:*
-   • https://www.pinterest.com/pin/XXXXXX
-   • https://pin.it/XXXXXX
+By using this bot, you agree to the following terms:
 
-3. *Processing Time:*
-   Usually takes 5-30 seconds depending on video size
+1️⃣ *Personal Use*
+   This service is intended for personal, non-commercial use only.
 
-4. *Limitations:*
-   • Maximum 100 MB per video
-   • Only public videos
+2️⃣ *Copyright*
+   You are responsible for respecting the copyright of downloaded content.
 
-*Having issues?*
-If you get an error, check if:
-• The URL is valid
-• The video still exists on Pinterest
-• You have internet connection
+3️⃣ *Availability*
+   The service is provided "as is" without guarantees of continuous availability.
 
-Use /start to return to main menu.`,
+4️⃣ *Privacy*
+   We do not store your videos or personal data beyond what is necessary for operation.
 
-    invalid_url: '❌ Invalid URL! Please send a valid Pinterest URL.',
-    invalid_url_format: '❌ URL format not recognized. Use:\n• https://www.pinterest.com/pin/...\n• https://pin.it/...',
-    processing: '⏳ Processing your video... Please wait.',
-    downloading: '📥 Downloading video from Pinterest...',
-    uploading: '📤 Sending video to you...',
-    success: '✅ Video downloaded successfully!',
-    success_message: 'Your video is ready! Enjoy! 🎉',
-    error_generic: '❌ An error occurred while processing your video. Try again later.',
-    error_download: '❌ Error downloading the video. Check the URL and try again.',
-    error_upload: '❌ Error sending the video. Try again later.',
-    error_timeout: '⏱️ Processing took too long. Try with a smaller video.',
-    error_file_size: '📦 The video is too large (maximum 100 MB). Try another video.',
-    error_not_found: '🔍 Video not found. Check if the URL is correct and the video still exists.',
-    error_api: '🔌 Error connecting to Pinterest API. Try again later.',
-    btn_help: '❓ Help',
-    btn_start: '🏠 Main Menu',
-    btn_retry: '🔄 Retry',
+5️⃣ *Liability*
+   We are not responsible for misuse of downloaded content.
+
+6️⃣ *Modifications*
+   We reserve the right to modify these terms at any time.
+
+By continuing to use the bot, you accept these terms.`,
+
     btn_back: '⬅️ Back',
+    btn_accept: '✅ Accept and Continue',
   },
 
   // 🇪🇸 Español
   es: {
-    welcome_title: '🎬 ¡Bienvenido a Pinterest Video Downloader!',
-    welcome_message: `¡Hola! Soy un bot que descarga videos de Pinterest para ti.
+    welcome_title: '🎬 Pinterest Video Downloader',
+    welcome_message: `¡Hola! ¡Bienvenido al mejor bot para descargar videos de Pinterest!
 
-*Cómo usar:*
-1️⃣ Copia la URL de un video de Pinterest
-2️⃣ Envíame la URL
-3️⃣ Espera el procesamiento
-4️⃣ ¡Recibe el video en alta calidad!
+📱 *Nuestra Mini App ofrece:*
+• Descargas de video en alta calidad
+• Interfaz fácil e intuitiva
+• Procesamiento rápido
+• Soporte para múltiples formatos
 
-*Formatos aceptados:*
+¡Haz clic en el botón de abajo para comenzar a descargar tus videos favoritos!`,
+    
+    btn_open_app: '🚀 Abrir Bot',
+    btn_how_it_works: '❓ Cómo Funciona',
+    btn_terms: '📜 Términos de Uso',
+    
+    how_it_works_title: '❓ Cómo Funciona',
+    how_it_works_message: `*Cómo usar Pinterest Video Downloader:*
+
+1️⃣ *Abre la Mini App*
+   Haz clic en el botón "Abrir Bot" para acceder a nuestra interfaz
+
+2️⃣ *Pega la URL*
+   Copia el enlace del video de Pinterest y pégalo en la app
+
+3️⃣ *Descarga el Video*
+   Haz clic en descargar y espera el procesamiento
+
+4️⃣ *¡Listo!*
+   Tu video se descargará en alta calidad
+
+*Formatos Aceptados:*
 • https://www.pinterest.com/pin/...
 • https://pin.it/...
 
-Usa /help para más información.`,
-    
-    help_title: '❓ Ayuda - Cómo Usar el Bot',
-    help_message: `*Instrucciones de Uso:*
+*Limitaciones:*
+• Máximo 100 MB por video
+• Solo videos públicos`,
 
-1. *Enviar URL de Pinterest*
-   Simplemente copia y pega la URL de cualquier video de Pinterest
+    terms_title: '📜 Términos de Uso',
+    terms_message: `*Términos de Uso - Pinterest Video Downloader*
 
-2. *Formatos Aceptados:*
-   • https://www.pinterest.com/pin/XXXXXX
-   • https://pin.it/XXXXXX
+Al usar este bot, aceptas los siguientes términos:
 
-3. *Tiempo de Procesamiento:*
-   Generalmente toma 5-30 segundos dependiendo del tamaño del video
+1️⃣ *Uso Personal*
+   Este servicio está destinado solo para uso personal y no comercial.
 
-4. *Limitaciones:*
-   • Máximo 100 MB por video
-   • Solo videos públicos
+2️⃣ *Derechos de Autor*
+   Eres responsable de respetar los derechos de autor del contenido descargado.
 
-*¿Problemas?*
-Si recibes un error, verifica si:
-• La URL es válida
-• El video aún existe en Pinterest
-• Tienes conexión a internet
+3️⃣ *Disponibilidad*
+   El servicio se proporciona "tal cual" sin garantías de disponibilidad continua.
 
-Usa /start para volver al menú principal.`,
+4️⃣ *Privacidad*
+   No almacenamos tus videos ni datos personales más allá de lo necesario.
 
-    invalid_url: '❌ ¡URL inválida! Por favor, envía una URL válida de Pinterest.',
-    invalid_url_format: '❌ Formato de URL no reconocido. Usa:\n• https://www.pinterest.com/pin/...\n• https://pin.it/...',
-    processing: '⏳ Procesando tu video... Por favor, espera.',
-    downloading: '📥 Descargando video de Pinterest...',
-    uploading: '📤 Enviándote el video...',
-    success: '✅ ¡Video descargado con éxito!',
-    success_message: '¡Tu video está listo! ¡Disfrútalo! 🎉',
-    error_generic: '❌ Ocurrió un error al procesar tu video. Intenta más tarde.',
-    error_download: '❌ Error al descargar el video. Verifica la URL e intenta de nuevo.',
-    error_upload: '❌ Error al enviar el video. Intenta más tarde.',
-    error_timeout: '⏱️ El procesamiento tardó demasiado. Intenta con un video más pequeño.',
-    error_file_size: '📦 El video es muy grande (máximo 100 MB). Intenta con otro video.',
-    error_not_found: '🔍 Video no encontrado. Verifica si la URL es correcta y si el video aún existe.',
-    error_api: '🔌 Error al conectar con la API de Pinterest. Intenta más tarde.',
-    btn_help: '❓ Ayuda',
-    btn_start: '🏠 Menú Principal',
-    btn_retry: '🔄 Reintentar',
+5️⃣ *Responsabilidad*
+   No somos responsables del mal uso del contenido descargado.
+
+6️⃣ *Modificaciones*
+   Nos reservamos el derecho de modificar estos términos en cualquier momento.
+
+Al continuar usando el bot, aceptas estos términos.`,
+
     btn_back: '⬅️ Volver',
+    btn_accept: '✅ Aceptar y Continuar',
   },
 
   // 🇨🇳 中文 (简体)
   zh: {
-    welcome_title: '🎬 欢迎使用 Pinterest 视频下载器！',
-    welcome_message: `你好！我是一个帮你下载 Pinterest 视频的机器人。
+    welcome_title: '🎬 Pinterest 视频下载器',
+    welcome_message: `你好！欢迎使用最好的 Pinterest 视频下载机器人！
 
-*使用方法：*
-1️⃣ 复制 Pinterest 视频的链接
-2️⃣ 把链接发送给我
-3️⃣ 等待处理
-4️⃣ 获取高质量视频！
+📱 *我们的迷你应用提供：*
+• 高质量视频下载
+• 简单直观的界面
+• 快速处理
+• 多格式支持
+
+点击下面的按钮开始下载你喜欢的视频！`,
+    
+    btn_open_app: '🚀 打开机器人',
+    btn_how_it_works: '❓ 如何使用',
+    btn_terms: '📜 使用条款',
+    
+    how_it_works_title: '❓ 如何使用',
+    how_it_works_message: `*如何使用 Pinterest 视频下载器：*
+
+1️⃣ *打开迷你应用*
+   点击"打开机器人"按钮访问我们的界面
+
+2️⃣ *粘贴链接*
+   复制 Pinterest 视频链接并粘贴到应用中
+
+3️⃣ *下载视频*
+   点击下载并等待处理
+
+4️⃣ *完成！*
+   您的视频将以高质量下载
 
 *支持的格式：*
 • https://www.pinterest.com/pin/...
 • https://pin.it/...
 
-使用 /help 获取更多信息。`,
-    
-    help_title: '❓ 帮助 - 如何使用机器人',
-    help_message: `*使用说明：*
+*限制：*
+• 每个视频最大 100 MB
+• 仅支持公开视频`,
 
-1. *发送 Pinterest 链接*
-   只需复制粘贴任何 Pinterest 视频的链接
+    terms_title: '📜 使用条款',
+    terms_message: `*使用条款 - Pinterest 视频下载器*
 
-2. *支持的格式：*
-   • https://www.pinterest.com/pin/XXXXXX
-   • https://pin.it/XXXXXX
+使用此机器人即表示您同意以下条款：
 
-3. *处理时间：*
-   通常需要 5-30 秒，取决于视频大小
+1️⃣ *个人使用*
+   此服务仅供个人非商业使用。
 
-4. *限制：*
-   • 每个视频最大 100 MB
-   • 仅支持公开视频
+2️⃣ *版权*
+   您有责任尊重下载内容的版权。
 
-*遇到问题？*
-如果出现错误，请检查：
-• 链接是否有效
-• 视频是否仍在 Pinterest 上
-• 是否有网络连接
+3️⃣ *可用性*
+   服务按"原样"提供，不保证持续可用。
 
-使用 /start 返回主菜单。`,
+4️⃣ *隐私*
+   我们不会存储您的视频或超出必要范围的个人数据。
 
-    invalid_url: '❌ 链接无效！请发送有效的 Pinterest 链接。',
-    invalid_url_format: '❌ 链接格式不正确。请使用：\n• https://www.pinterest.com/pin/...\n• https://pin.it/...',
-    processing: '⏳ 正在处理你的视频... 请稍候。',
-    downloading: '📥 正在从 Pinterest 下载视频...',
-    uploading: '📤 正在发送视频给你...',
-    success: '✅ 视频下载成功！',
-    success_message: '你的视频已准备好！请享用！🎉',
-    error_generic: '❌ 处理视频时出错。请稍后重试。',
-    error_download: '❌ 下载视频时出错。请检查链接并重试。',
-    error_upload: '❌ 发送视频时出错。请稍后重试。',
-    error_timeout: '⏱️ 处理时间过长。请尝试较小的视频。',
-    error_file_size: '📦 视频太大（最大 100 MB）。请尝试其他视频。',
-    error_not_found: '🔍 未找到视频。请检查链接是否正确以及视频是否仍然存在。',
-    error_api: '🔌 连接 Pinterest API 时出错。请稍后重试。',
-    btn_help: '❓ 帮助',
-    btn_start: '🏠 主菜单',
-    btn_retry: '🔄 重试',
+5️⃣ *责任*
+   我们不对下载内容的滥用负责。
+
+6️⃣ *修改*
+   我们保留随时修改这些条款的权利。
+
+继续使用机器人即表示您接受这些条款。`,
+
     btn_back: '⬅️ 返回',
+    btn_accept: '✅ 接受并继续',
   },
 
   // 🇮🇳 हिन्दी (Hindi)
   hi: {
-    welcome_title: '🎬 Pinterest Video Downloader में आपका स्वागत है!',
-    welcome_message: `नमस्ते! मैं एक बॉट हूं जो आपके लिए Pinterest से वीडियो डाउनलोड करता है।
+    welcome_title: '🎬 Pinterest Video Downloader',
+    welcome_message: `नमस्ते! Pinterest वीडियो डाउनलोड करने के लिए सबसे अच्छे बॉट में आपका स्वागत है!
 
-*कैसे उपयोग करें:*
-1️⃣ Pinterest वीडियो का URL कॉपी करें
-2️⃣ मुझे URL भेजें
-3️⃣ प्रोसेसिंग का इंतजार करें
-4️⃣ उच्च गुणवत्ता में वीडियो प्राप्त करें!
+📱 *हमारा Mini App प्रदान करता है:*
+• उच्च गुणवत्ता वाले वीडियो डाउनलोड
+• आसान और सहज इंटरफ़ेस
+• तेज़ प्रोसेसिंग
+• कई प्रारूपों का समर्थन
+
+अपने पसंदीदा वीडियो डाउनलोड करना शुरू करने के लिए नीचे दिए गए बटन पर क्लिक करें!`,
+    
+    btn_open_app: '🚀 बॉट खोलें',
+    btn_how_it_works: '❓ यह कैसे काम करता है',
+    btn_terms: '📜 उपयोग की शर्तें',
+    
+    how_it_works_title: '❓ यह कैसे काम करता है',
+    how_it_works_message: `*Pinterest Video Downloader का उपयोग कैसे करें:*
+
+1️⃣ *Mini App खोलें*
+   हमारे इंटरफ़ेस तक पहुंचने के लिए "बॉट खोलें" बटन पर क्लिक करें
+
+2️⃣ *URL पेस्ट करें*
+   Pinterest वीडियो लिंक कॉपी करें और ऐप में पेस्ट करें
+
+3️⃣ *वीडियो डाउनलोड करें*
+   डाउनलोड पर क्लिक करें और प्रोसेसिंग की प्रतीक्षा करें
+
+4️⃣ *हो गया!*
+   आपका वीडियो उच्च गुणवत्ता में डाउनलोड होगा
 
 *स्वीकृत प्रारूप:*
 • https://www.pinterest.com/pin/...
 • https://pin.it/...
 
-अधिक जानकारी के लिए /help का उपयोग करें।`,
-    
-    help_title: '❓ सहायता - बॉट का उपयोग कैसे करें',
-    help_message: `*उपयोग निर्देश:*
+*सीमाएं:*
+• प्रति वीडियो अधिकतम 100 MB
+• केवल सार्वजनिक वीडियो`,
 
-1. *Pinterest URL भेजें*
-   बस किसी भी Pinterest वीडियो का URL कॉपी और पेस्ट करें
+    terms_title: '📜 उपयोग की शर्तें',
+    terms_message: `*उपयोग की शर्तें - Pinterest Video Downloader*
 
-2. *स्वीकृत प्रारूप:*
-   • https://www.pinterest.com/pin/XXXXXX
-   • https://pin.it/XXXXXX
+इस बॉट का उपयोग करके, आप निम्नलिखित शर्तों से सहमत हैं:
 
-3. *प्रोसेसिंग समय:*
-   वीडियो के आकार के आधार पर आमतौर पर 5-30 सेकंड लगते हैं
+1️⃣ *व्यक्तिगत उपयोग*
+   यह सेवा केवल व्यक्तिगत, गैर-व्यावसायिक उपयोग के लिए है।
 
-4. *सीमाएं:*
-   • प्रति वीडियो अधिकतम 100 MB
-   • केवल सार्वजनिक वीडियो
+2️⃣ *कॉपीराइट*
+   डाउनलोड की गई सामग्री के कॉपीराइट का सम्मान करना आपकी जिम्मेदारी है।
 
-*समस्या है?*
-यदि आपको त्रुटि मिलती है, तो जांचें:
-• URL वैध है या नहीं
-• वीडियो अभी भी Pinterest पर मौजूद है या नहीं
-• आपका इंटरनेट कनेक्शन है या नहीं
+3️⃣ *उपलब्धता*
+   सेवा "जैसी है" प्रदान की जाती है, निरंतर उपलब्धता की गारंटी के बिना।
 
-मुख्य मेनू पर वापस जाने के लिए /start का उपयोग करें।`,
+4️⃣ *गोपनीयता*
+   हम आपके वीडियो या व्यक्तिगत डेटा को आवश्यकता से अधिक संग्रहीत नहीं करते।
 
-    invalid_url: '❌ अमान्य URL! कृपया एक वैध Pinterest URL भेजें।',
-    invalid_url_format: '❌ URL प्रारूप पहचाना नहीं गया। उपयोग करें:\n• https://www.pinterest.com/pin/...\n• https://pin.it/...',
-    processing: '⏳ आपका वीडियो प्रोसेस हो रहा है... कृपया प्रतीक्षा करें।',
-    downloading: '📥 Pinterest से वीडियो डाउनलोड हो रहा है...',
-    uploading: '📤 आपको वीडियो भेजा जा रहा है...',
-    success: '✅ वीडियो सफलतापूर्वक डाउनलोड हुआ!',
-    success_message: 'आपका वीडियो तैयार है! आनंद लें! 🎉',
-    error_generic: '❌ आपके वीडियो को प्रोसेस करते समय त्रुटि हुई। बाद में पुनः प्रयास करें।',
-    error_download: '❌ वीडियो डाउनलोड करने में त्रुटि। URL जांचें और पुनः प्रयास करें।',
-    error_upload: '❌ वीडियो भेजने में त्रुटि। बाद में पुनः प्रयास करें।',
-    error_timeout: '⏱️ प्रोसेसिंग में बहुत समय लगा। छोटे वीडियो के साथ प्रयास करें।',
-    error_file_size: '📦 वीडियो बहुत बड़ा है (अधिकतम 100 MB)। कोई अन्य वीडियो आज़माएं।',
-    error_not_found: '🔍 वीडियो नहीं मिला। जांचें कि URL सही है और वीडियो अभी भी मौजूद है।',
-    error_api: '🔌 Pinterest API से कनेक्ट करने में त्रुटि। बाद में पुनः प्रयास करें।',
-    btn_help: '❓ सहायता',
-    btn_start: '🏠 मुख्य मेनू',
-    btn_retry: '🔄 पुनः प्रयास',
+5️⃣ *दायित्व*
+   डाउनलोड की गई सामग्री के दुरुपयोग के लिए हम जिम्मेदार नहीं हैं।
+
+6️⃣ *संशोधन*
+   हम किसी भी समय इन शर्तों को संशोधित करने का अधिकार सुरक्षित रखते हैं।
+
+बॉट का उपयोग जारी रखकर, आप इन शर्तों को स्वीकार करते हैं।`,
+
     btn_back: '⬅️ वापस',
+    btn_accept: '✅ स्वीकार करें और जारी रखें',
   },
 
   // 🇸🇦 العربية (Arabic)
   ar: {
-    welcome_title: '🎬 مرحباً بك في Pinterest Video Downloader!',
-    welcome_message: `مرحباً! أنا بوت يقوم بتحميل مقاطع الفيديو من Pinterest لك.
+    welcome_title: '🎬 Pinterest Video Downloader',
+    welcome_message: `مرحباً! مرحباً بك في أفضل بوت لتحميل فيديوهات Pinterest!
 
-*كيفية الاستخدام:*
-1️⃣ انسخ رابط فيديو Pinterest
-2️⃣ أرسل لي الرابط
-3️⃣ انتظر المعالجة
-4️⃣ احصل على الفيديو بجودة عالية!
+📱 *تطبيقنا المصغر يقدم:*
+• تحميل فيديو بجودة عالية
+• واجهة سهلة وبديهية
+• معالجة سريعة
+• دعم صيغ متعددة
+
+انقر على الزر أدناه لبدء تحميل مقاطع الفيديو المفضلة لديك!`,
+    
+    btn_open_app: '🚀 فتح البوت',
+    btn_how_it_works: '❓ كيف يعمل',
+    btn_terms: '📜 شروط الاستخدام',
+    
+    how_it_works_title: '❓ كيف يعمل',
+    how_it_works_message: `*كيفية استخدام Pinterest Video Downloader:*
+
+1️⃣ *افتح التطبيق المصغر*
+   انقر على زر "فتح البوت" للوصول إلى واجهتنا
+
+2️⃣ *الصق الرابط*
+   انسخ رابط فيديو Pinterest والصقه في التطبيق
+
+3️⃣ *حمّل الفيديو*
+   انقر على تحميل وانتظر المعالجة
+
+4️⃣ *تم!*
+   سيتم تحميل الفيديو بجودة عالية
 
 *الصيغ المقبولة:*
 • https://www.pinterest.com/pin/...
 • https://pin.it/...
 
-استخدم /help لمزيد من المعلومات.`,
-    
-    help_title: '❓ مساعدة - كيفية استخدام البوت',
-    help_message: `*تعليمات الاستخدام:*
+*القيود:*
+• الحد الأقصى 100 ميجابايت لكل فيديو
+• فقط مقاطع الفيديو العامة`,
 
-1. *إرسال رابط Pinterest*
-   ببساطة انسخ والصق رابط أي فيديو من Pinterest
+    terms_title: '📜 شروط الاستخدام',
+    terms_message: `*شروط الاستخدام - Pinterest Video Downloader*
 
-2. *الصيغ المقبولة:*
-   • https://www.pinterest.com/pin/XXXXXX
-   • https://pin.it/XXXXXX
+باستخدام هذا البوت، فإنك توافق على الشروط التالية:
 
-3. *وقت المعالجة:*
-   عادة يستغرق 5-30 ثانية حسب حجم الفيديو
+1️⃣ *الاستخدام الشخصي*
+   هذه الخدمة مخصصة للاستخدام الشخصي غير التجاري فقط.
 
-4. *القيود:*
-   • الحد الأقصى 100 ميجابايت لكل فيديو
-   • فقط مقاطع الفيديو العامة
+2️⃣ *حقوق النشر*
+   أنت مسؤول عن احترام حقوق النشر للمحتوى المحمّل.
 
-*هل تواجه مشاكل؟*
-إذا حصلت على خطأ، تحقق من:
-• صحة الرابط
-• وجود الفيديو على Pinterest
-• اتصالك بالإنترنت
+3️⃣ *التوفر*
+   يتم تقديم الخدمة "كما هي" دون ضمانات للتوفر المستمر.
 
-استخدم /start للعودة إلى القائمة الرئيسية.`,
+4️⃣ *الخصوصية*
+   لا نخزن مقاطع الفيديو أو البيانات الشخصية الخاصة بك بما يتجاوز ما هو ضروري.
 
-    invalid_url: '❌ رابط غير صالح! يرجى إرسال رابط Pinterest صالح.',
-    invalid_url_format: '❌ صيغة الرابط غير معروفة. استخدم:\n• https://www.pinterest.com/pin/...\n• https://pin.it/...',
-    processing: '⏳ جاري معالجة الفيديو... يرجى الانتظار.',
-    downloading: '📥 جاري تحميل الفيديو من Pinterest...',
-    uploading: '📤 جاري إرسال الفيديو إليك...',
-    success: '✅ تم تحميل الفيديو بنجاح!',
-    success_message: 'فيديوك جاهز! استمتع! 🎉',
-    error_generic: '❌ حدث خطأ أثناء معالجة الفيديو. حاول مرة أخرى لاحقاً.',
-    error_download: '❌ خطأ في تحميل الفيديو. تحقق من الرابط وحاول مرة أخرى.',
-    error_upload: '❌ خطأ في إرسال الفيديو. حاول مرة أخرى لاحقاً.',
-    error_timeout: '⏱️ استغرقت المعالجة وقتاً طويلاً. جرب فيديو أصغر.',
-    error_file_size: '📦 الفيديو كبير جداً (الحد الأقصى 100 ميجابايت). جرب فيديو آخر.',
-    error_not_found: '🔍 الفيديو غير موجود. تحقق من صحة الرابط ووجود الفيديو.',
-    error_api: '🔌 خطأ في الاتصال بـ Pinterest API. حاول مرة أخرى لاحقاً.',
-    btn_help: '❓ مساعدة',
-    btn_start: '🏠 القائمة الرئيسية',
-    btn_retry: '🔄 إعادة المحاولة',
+5️⃣ *المسؤولية*
+   نحن غير مسؤولين عن سوء استخدام المحتوى المحمّل.
+
+6️⃣ *التعديلات*
+   نحتفظ بالحق في تعديل هذه الشروط في أي وقت.
+
+بالاستمرار في استخدام البوت، فإنك تقبل هذه الشروط.`,
+
     btn_back: '⬅️ رجوع',
+    btn_accept: '✅ قبول والمتابعة',
   },
 
   // 🇫🇷 Français
   fr: {
-    welcome_title: '🎬 Bienvenue sur Pinterest Video Downloader!',
-    welcome_message: `Bonjour! Je suis un bot qui télécharge des vidéos Pinterest pour vous.
+    welcome_title: '🎬 Pinterest Video Downloader',
+    welcome_message: `Bonjour! Bienvenue sur le meilleur bot pour télécharger des vidéos Pinterest!
 
-*Comment utiliser:*
-1️⃣ Copiez l'URL d'une vidéo Pinterest
-2️⃣ Envoyez-moi l'URL
-3️⃣ Attendez le traitement
-4️⃣ Recevez la vidéo en haute qualité!
+📱 *Notre Mini App offre:*
+• Téléchargements vidéo haute qualité
+• Interface facile et intuitive
+• Traitement rapide
+• Support multi-formats
 
-*Formats acceptés:*
+Cliquez sur le bouton ci-dessous pour commencer à télécharger vos vidéos préférées!`,
+    
+    btn_open_app: '🚀 Ouvrir le Bot',
+    btn_how_it_works: '❓ Comment ça marche',
+    btn_terms: '📜 Conditions d\'utilisation',
+    
+    how_it_works_title: '❓ Comment ça marche',
+    how_it_works_message: `*Comment utiliser Pinterest Video Downloader:*
+
+1️⃣ *Ouvrez la Mini App*
+   Cliquez sur le bouton "Ouvrir le Bot" pour accéder à notre interface
+
+2️⃣ *Collez l'URL*
+   Copiez le lien de la vidéo Pinterest et collez-le dans l'app
+
+3️⃣ *Téléchargez la Vidéo*
+   Cliquez sur télécharger et attendez le traitement
+
+4️⃣ *Terminé!*
+   Votre vidéo sera téléchargée en haute qualité
+
+*Formats Acceptés:*
 • https://www.pinterest.com/pin/...
 • https://pin.it/...
 
-Utilisez /help pour plus d'informations.`,
-    
-    help_title: '❓ Aide - Comment Utiliser le Bot',
-    help_message: `*Instructions d'Utilisation:*
+*Limitations:*
+• Maximum 100 Mo par vidéo
+• Uniquement les vidéos publiques`,
 
-1. *Envoyer l'URL Pinterest*
-   Copiez et collez simplement l'URL de n'importe quelle vidéo Pinterest
+    terms_title: '📜 Conditions d\'utilisation',
+    terms_message: `*Conditions d'utilisation - Pinterest Video Downloader*
 
-2. *Formats Acceptés:*
-   • https://www.pinterest.com/pin/XXXXXX
-   • https://pin.it/XXXXXX
+En utilisant ce bot, vous acceptez les conditions suivantes:
 
-3. *Temps de Traitement:*
-   Généralement 5-30 secondes selon la taille de la vidéo
+1️⃣ *Usage Personnel*
+   Ce service est destiné uniquement à un usage personnel et non commercial.
 
-4. *Limitations:*
-   • Maximum 100 Mo par vidéo
-   • Uniquement les vidéos publiques
+2️⃣ *Droits d'Auteur*
+   Vous êtes responsable du respect des droits d'auteur du contenu téléchargé.
 
-*Des problèmes?*
-Si vous obtenez une erreur, vérifiez si:
-• L'URL est valide
-• La vidéo existe encore sur Pinterest
-• Vous avez une connexion internet
+3️⃣ *Disponibilité*
+   Le service est fourni "tel quel" sans garantie de disponibilité continue.
 
-Utilisez /start pour revenir au menu principal.`,
+4️⃣ *Confidentialité*
+   Nous ne stockons pas vos vidéos ou données personnelles au-delà du nécessaire.
 
-    invalid_url: '❌ URL invalide! Veuillez envoyer une URL Pinterest valide.',
-    invalid_url_format: '❌ Format d\'URL non reconnu. Utilisez:\n• https://www.pinterest.com/pin/...\n• https://pin.it/...',
-    processing: '⏳ Traitement de votre vidéo... Veuillez patienter.',
-    downloading: '📥 Téléchargement de la vidéo depuis Pinterest...',
-    uploading: '📤 Envoi de la vidéo...',
-    success: '✅ Vidéo téléchargée avec succès!',
-    success_message: 'Votre vidéo est prête! Profitez-en! 🎉',
-    error_generic: '❌ Une erreur s\'est produite lors du traitement. Réessayez plus tard.',
-    error_download: '❌ Erreur lors du téléchargement. Vérifiez l\'URL et réessayez.',
-    error_upload: '❌ Erreur lors de l\'envoi. Réessayez plus tard.',
-    error_timeout: '⏱️ Le traitement a pris trop de temps. Essayez une vidéo plus petite.',
-    error_file_size: '📦 La vidéo est trop grande (maximum 100 Mo). Essayez une autre vidéo.',
-    error_not_found: '🔍 Vidéo non trouvée. Vérifiez l\'URL et si la vidéo existe encore.',
-    error_api: '🔌 Erreur de connexion à l\'API Pinterest. Réessayez plus tard.',
-    btn_help: '❓ Aide',
-    btn_start: '🏠 Menu Principal',
-    btn_retry: '🔄 Réessayer',
+5️⃣ *Responsabilité*
+   Nous ne sommes pas responsables de l'utilisation abusive du contenu téléchargé.
+
+6️⃣ *Modifications*
+   Nous nous réservons le droit de modifier ces conditions à tout moment.
+
+En continuant à utiliser le bot, vous acceptez ces conditions.`,
+
     btn_back: '⬅️ Retour',
+    btn_accept: '✅ Accepter et Continuer',
   },
 
   // 🇷🇺 Русский (Russian)
   ru: {
-    welcome_title: '🎬 Добро пожаловать в Pinterest Video Downloader!',
-    welcome_message: `Привет! Я бот, который скачивает видео с Pinterest для вас.
+    welcome_title: '🎬 Pinterest Video Downloader',
+    welcome_message: `Привет! Добро пожаловать в лучший бот для скачивания видео с Pinterest!
 
-*Как использовать:*
-1️⃣ Скопируйте URL видео с Pinterest
-2️⃣ Отправьте мне URL
-3️⃣ Дождитесь обработки
-4️⃣ Получите видео в высоком качестве!
+📱 *Наше мини-приложение предлагает:*
+• Загрузка видео высокого качества
+• Простой и интуитивный интерфейс
+• Быстрая обработка
+• Поддержка нескольких форматов
 
-*Принимаемые форматы:*
+Нажмите кнопку ниже, чтобы начать скачивать любимые видео!`,
+    
+    btn_open_app: '🚀 Открыть Бот',
+    btn_how_it_works: '❓ Как это работает',
+    btn_terms: '📜 Условия использования',
+    
+    how_it_works_title: '❓ Как это работает',
+    how_it_works_message: `*Как использовать Pinterest Video Downloader:*
+
+1️⃣ *Откройте мини-приложение*
+   Нажмите кнопку "Открыть Бот" для доступа к интерфейсу
+
+2️⃣ *Вставьте URL*
+   Скопируйте ссылку на видео Pinterest и вставьте в приложение
+
+3️⃣ *Скачайте видео*
+   Нажмите скачать и дождитесь обработки
+
+4️⃣ *Готово!*
+   Ваше видео будет загружено в высоком качестве
+
+*Поддерживаемые форматы:*
 • https://www.pinterest.com/pin/...
 • https://pin.it/...
 
-Используйте /help для получения дополнительной информации.`,
-    
-    help_title: '❓ Помощь - Как Использовать Бота',
-    help_message: `*Инструкции по Использованию:*
+*Ограничения:*
+• Максимум 100 МБ на видео
+• Только публичные видео`,
 
-1. *Отправьте URL Pinterest*
-   Просто скопируйте и вставьте URL любого видео с Pinterest
+    terms_title: '📜 Условия использования',
+    terms_message: `*Условия использования - Pinterest Video Downloader*
 
-2. *Принимаемые Форматы:*
-   • https://www.pinterest.com/pin/XXXXXX
-   • https://pin.it/XXXXXX
+Используя этот бот, вы соглашаетесь со следующими условиями:
 
-3. *Время Обработки:*
-   Обычно занимает 5-30 секунд в зависимости от размера видео
+1️⃣ *Личное использование*
+   Этот сервис предназначен только для личного некоммерческого использования.
 
-4. *Ограничения:*
-   • Максимум 100 МБ на видео
-   • Только публичные видео
+2️⃣ *Авторские права*
+   Вы несете ответственность за соблюдение авторских прав загруженного контента.
 
-*Проблемы?*
-Если возникла ошибка, проверьте:
-• Действителен ли URL
-• Существует ли видео на Pinterest
-• Есть ли подключение к интернету
+3️⃣ *Доступность*
+   Сервис предоставляется "как есть" без гарантий постоянной доступности.
 
-Используйте /start для возврата в главное меню.`,
+4️⃣ *Конфиденциальность*
+   Мы не храним ваши видео или личные данные сверх необходимого.
 
-    invalid_url: '❌ Неверный URL! Пожалуйста, отправьте действительный URL Pinterest.',
-    invalid_url_format: '❌ Формат URL не распознан. Используйте:\n• https://www.pinterest.com/pin/...\n• https://pin.it/...',
-    processing: '⏳ Обработка вашего видео... Пожалуйста, подождите.',
-    downloading: '📥 Загрузка видео с Pinterest...',
-    uploading: '📤 Отправка видео вам...',
-    success: '✅ Видео успешно загружено!',
-    success_message: 'Ваше видео готово! Наслаждайтесь! 🎉',
-    error_generic: '❌ Произошла ошибка при обработке видео. Попробуйте позже.',
-    error_download: '❌ Ошибка загрузки видео. Проверьте URL и попробуйте снова.',
-    error_upload: '❌ Ошибка отправки видео. Попробуйте позже.',
-    error_timeout: '⏱️ Обработка заняла слишком много времени. Попробуйте видео поменьше.',
-    error_file_size: '📦 Видео слишком большое (максимум 100 МБ). Попробуйте другое видео.',
-    error_not_found: '🔍 Видео не найдено. Проверьте правильность URL и существование видео.',
-    error_api: '🔌 Ошибка подключения к API Pinterest. Попробуйте позже.',
-    btn_help: '❓ Помощь',
-    btn_start: '🏠 Главное Меню',
-    btn_retry: '🔄 Повторить',
+5️⃣ *Ответственность*
+   Мы не несем ответственности за неправомерное использование загруженного контента.
+
+6️⃣ *Изменения*
+   Мы оставляем за собой право изменять эти условия в любое время.
+
+Продолжая использовать бот, вы принимаете эти условия.`,
+
     btn_back: '⬅️ Назад',
+    btn_accept: '✅ Принять и продолжить',
   },
 
   // 🇩🇪 Deutsch (German)
   de: {
-    welcome_title: '🎬 Willkommen beim Pinterest Video Downloader!',
-    welcome_message: `Hallo! Ich bin ein Bot, der Videos von Pinterest für dich herunterlädt.
+    welcome_title: '🎬 Pinterest Video Downloader',
+    welcome_message: `Hallo! Willkommen beim besten Bot zum Herunterladen von Pinterest-Videos!
 
-*So funktioniert's:*
-1️⃣ Kopiere die URL eines Pinterest-Videos
-2️⃣ Sende mir die URL
-3️⃣ Warte auf die Verarbeitung
-4️⃣ Erhalte das Video in hoher Qualität!
+📱 *Unsere Mini App bietet:*
+• Hochwertige Video-Downloads
+• Einfache und intuitive Oberfläche
+• Schnelle Verarbeitung
+• Unterstützung mehrerer Formate
+
+Klicken Sie auf die Schaltfläche unten, um Ihre Lieblingsvideos herunterzuladen!`,
+    
+    btn_open_app: '🚀 Bot öffnen',
+    btn_how_it_works: '❓ Wie es funktioniert',
+    btn_terms: '📜 Nutzungsbedingungen',
+    
+    how_it_works_title: '❓ Wie es funktioniert',
+    how_it_works_message: `*So verwenden Sie Pinterest Video Downloader:*
+
+1️⃣ *Öffnen Sie die Mini App*
+   Klicken Sie auf "Bot öffnen" um auf unsere Oberfläche zuzugreifen
+
+2️⃣ *URL einfügen*
+   Kopieren Sie den Pinterest-Videolink und fügen Sie ihn in die App ein
+
+3️⃣ *Video herunterladen*
+   Klicken Sie auf Herunterladen und warten Sie auf die Verarbeitung
+
+4️⃣ *Fertig!*
+   Ihr Video wird in hoher Qualität heruntergeladen
 
 *Akzeptierte Formate:*
 • https://www.pinterest.com/pin/...
 • https://pin.it/...
 
-Verwende /help für weitere Informationen.`,
-    
-    help_title: '❓ Hilfe - So Verwendest du den Bot',
-    help_message: `*Nutzungsanleitung:*
+*Einschränkungen:*
+• Maximal 100 MB pro Video
+• Nur öffentliche Videos`,
 
-1. *Pinterest URL senden*
-   Kopiere und füge einfach die URL eines Pinterest-Videos ein
+    terms_title: '📜 Nutzungsbedingungen',
+    terms_message: `*Nutzungsbedingungen - Pinterest Video Downloader*
 
-2. *Akzeptierte Formate:*
-   • https://www.pinterest.com/pin/XXXXXX
-   • https://pin.it/XXXXXX
+Durch die Nutzung dieses Bots stimmen Sie folgenden Bedingungen zu:
 
-3. *Verarbeitungszeit:*
-   Normalerweise 5-30 Sekunden je nach Videogröße
+1️⃣ *Persönliche Nutzung*
+   Dieser Dienst ist nur für den persönlichen, nicht-kommerziellen Gebrauch bestimmt.
 
-4. *Einschränkungen:*
-   • Maximal 100 MB pro Video
-   • Nur öffentliche Videos
+2️⃣ *Urheberrecht*
+   Sie sind für die Einhaltung der Urheberrechte heruntergeladener Inhalte verantwortlich.
 
-*Probleme?*
-Bei einem Fehler überprüfe:
-• Ob die URL gültig ist
-• Ob das Video noch auf Pinterest existiert
-• Ob du eine Internetverbindung hast
+3️⃣ *Verfügbarkeit*
+   Der Dienst wird "wie besehen" ohne Garantie für ständige Verfügbarkeit bereitgestellt.
 
-Verwende /start um zum Hauptmenü zurückzukehren.`,
+4️⃣ *Datenschutz*
+   Wir speichern Ihre Videos oder persönlichen Daten nicht über das Notwendige hinaus.
 
-    invalid_url: '❌ Ungültige URL! Bitte sende eine gültige Pinterest-URL.',
-    invalid_url_format: '❌ URL-Format nicht erkannt. Verwende:\n• https://www.pinterest.com/pin/...\n• https://pin.it/...',
-    processing: '⏳ Dein Video wird verarbeitet... Bitte warte.',
-    downloading: '📥 Video von Pinterest wird heruntergeladen...',
-    uploading: '📤 Video wird gesendet...',
-    success: '✅ Video erfolgreich heruntergeladen!',
-    success_message: 'Dein Video ist fertig! Viel Spaß! 🎉',
-    error_generic: '❌ Ein Fehler ist aufgetreten. Versuche es später erneut.',
-    error_download: '❌ Fehler beim Herunterladen. Überprüfe die URL und versuche es erneut.',
-    error_upload: '❌ Fehler beim Senden. Versuche es später erneut.',
-    error_timeout: '⏱️ Verarbeitung hat zu lange gedauert. Versuche ein kleineres Video.',
-    error_file_size: '📦 Das Video ist zu groß (maximal 100 MB). Versuche ein anderes Video.',
-    error_not_found: '🔍 Video nicht gefunden. Überprüfe die URL und ob das Video noch existiert.',
-    error_api: '🔌 Fehler bei der Verbindung zur Pinterest API. Versuche es später erneut.',
-    btn_help: '❓ Hilfe',
-    btn_start: '🏠 Hauptmenü',
-    btn_retry: '🔄 Erneut versuchen',
+5️⃣ *Haftung*
+   Wir haften nicht für den Missbrauch heruntergeladener Inhalte.
+
+6️⃣ *Änderungen*
+   Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu ändern.
+
+Durch die weitere Nutzung des Bots akzeptieren Sie diese Bedingungen.`,
+
     btn_back: '⬅️ Zurück',
+    btn_accept: '✅ Akzeptieren und fortfahren',
   },
 
   // 🇯🇵 日本語 (Japanese)
   ja: {
-    welcome_title: '🎬 Pinterest Video Downloaderへようこそ！',
-    welcome_message: `こんにちは！Pinterestから動画をダウンロードするボットです。
+    welcome_title: '🎬 Pinterest Video Downloader',
+    welcome_message: `こんにちは！Pinterest動画をダウンロードする最高のボットへようこそ！
 
-*使い方：*
-1️⃣ Pinterest動画のURLをコピー
-2️⃣ URLを送信
-3️⃣ 処理を待つ
-4️⃣ 高画質で動画を受け取る！
+📱 *ミニアプリの特徴：*
+• 高画質動画ダウンロード
+• 簡単で直感的なインターフェース
+• 高速処理
+• 複数フォーマット対応
+
+下のボタンをクリックしてお気に入りの動画をダウンロードしましょう！`,
+    
+    btn_open_app: '🚀 ボットを開く',
+    btn_how_it_works: '❓ 使い方',
+    btn_terms: '📜 利用規約',
+    
+    how_it_works_title: '❓ 使い方',
+    how_it_works_message: `*Pinterest Video Downloaderの使い方：*
+
+1️⃣ *ミニアプリを開く*
+   「ボットを開く」ボタンをクリックしてインターフェースにアクセス
+
+2️⃣ *URLを貼り付け*
+   Pinterest動画のリンクをコピーしてアプリに貼り付け
+
+3️⃣ *動画をダウンロード*
+   ダウンロードをクリックして処理を待つ
+
+4️⃣ *完了！*
+   動画が高画質でダウンロードされます
 
 *対応フォーマット：*
 • https://www.pinterest.com/pin/...
 • https://pin.it/...
 
-詳細は /help をご利用ください。`,
-    
-    help_title: '❓ ヘルプ - ボットの使い方',
-    help_message: `*使用方法：*
+*制限：*
+• 動画あたり最大100MB
+• 公開動画のみ`,
 
-1. *Pinterest URLを送信*
-   Pinterest動画のURLをコピー＆ペーストするだけ
+    terms_title: '📜 利用規約',
+    terms_message: `*利用規約 - Pinterest Video Downloader*
 
-2. *対応フォーマット：*
-   • https://www.pinterest.com/pin/XXXXXX
-   • https://pin.it/XXXXXX
+このボットを使用することで、以下の規約に同意したことになります：
 
-3. *処理時間：*
-   動画サイズにより通常5〜30秒
+1️⃣ *個人使用*
+   このサービスは個人的な非商用目的のみを対象としています。
 
-4. *制限：*
-   • 動画あたり最大100MB
-   • 公開動画のみ
+2️⃣ *著作権*
+   ダウンロードしたコンテンツの著作権を尊重する責任があります。
 
-*問題がありますか？*
-エラーが発生した場合は確認してください：
-• URLが有効かどうか
-• 動画がPinterestに存在するか
-• インターネット接続があるか
+3️⃣ *可用性*
+   サービスは「現状のまま」提供され、継続的な可用性は保証されません。
 
-メインメニューに戻るには /start を使用してください。`,
+4️⃣ *プライバシー*
+   必要以上に動画や個人データを保存することはありません。
 
-    invalid_url: '❌ 無効なURL！有効なPinterest URLを送信してください。',
-    invalid_url_format: '❌ URL形式が認識されません。使用してください：\n• https://www.pinterest.com/pin/...\n• https://pin.it/...',
-    processing: '⏳ 動画を処理中... お待ちください。',
-    downloading: '📥 Pinterestから動画をダウンロード中...',
-    uploading: '📤 動画を送信中...',
-    success: '✅ 動画のダウンロードに成功しました！',
-    success_message: '動画の準備ができました！お楽しみください！🎉',
-    error_generic: '❌ 動画の処理中にエラーが発生しました。後でもう一度お試しください。',
-    error_download: '❌ ダウンロードエラー。URLを確認して再試行してください。',
-    error_upload: '❌ 送信エラー。後でもう一度お試しください。',
-    error_timeout: '⏱️ 処理に時間がかかりすぎました。小さい動画でお試しください。',
-    error_file_size: '📦 動画が大きすぎます（最大100MB）。別の動画をお試しください。',
-    error_not_found: '🔍 動画が見つかりません。URLが正しいか、動画が存在するか確認してください。',
-    error_api: '🔌 Pinterest APIへの接続エラー。後でもう一度お試しください。',
-    btn_help: '❓ ヘルプ',
-    btn_start: '🏠 メインメニュー',
-    btn_retry: '🔄 再試行',
+5️⃣ *責任*
+   ダウンロードしたコンテンツの悪用について責任を負いません。
+
+6️⃣ *変更*
+   これらの規約をいつでも変更する権利を留保します。
+
+ボットの使用を続けることで、これらの規約に同意したことになります。`,
+
     btn_back: '⬅️ 戻る',
+    btn_accept: '✅ 同意して続ける',
   },
 
   // 🇮🇹 Italiano
   it: {
-    welcome_title: '🎬 Benvenuto su Pinterest Video Downloader!',
-    welcome_message: `Ciao! Sono un bot che scarica video da Pinterest per te.
+    welcome_title: '🎬 Pinterest Video Downloader',
+    welcome_message: `Ciao! Benvenuto nel miglior bot per scaricare video da Pinterest!
 
-*Come usare:*
-1️⃣ Copia l'URL di un video Pinterest
-2️⃣ Inviami l'URL
-3️⃣ Attendi l'elaborazione
-4️⃣ Ricevi il video in alta qualità!
+📱 *La nostra Mini App offre:*
+• Download video di alta qualità
+• Interfaccia facile e intuitiva
+• Elaborazione veloce
+• Supporto multi-formato
 
-*Formati accettati:*
+Clicca il pulsante qui sotto per iniziare a scaricare i tuoi video preferiti!`,
+    
+    btn_open_app: '🚀 Apri Bot',
+    btn_how_it_works: '❓ Come Funziona',
+    btn_terms: '📜 Termini di Utilizzo',
+    
+    how_it_works_title: '❓ Come Funziona',
+    how_it_works_message: `*Come usare Pinterest Video Downloader:*
+
+1️⃣ *Apri la Mini App*
+   Clicca sul pulsante "Apri Bot" per accedere alla nostra interfaccia
+
+2️⃣ *Incolla l'URL*
+   Copia il link del video Pinterest e incollalo nell'app
+
+3️⃣ *Scarica il Video*
+   Clicca su scarica e attendi l'elaborazione
+
+4️⃣ *Fatto!*
+   Il tuo video sarà scaricato in alta qualità
+
+*Formati Accettati:*
 • https://www.pinterest.com/pin/...
 • https://pin.it/...
 
-Usa /help per maggiori informazioni.`,
-    
-    help_title: '❓ Aiuto - Come Usare il Bot',
-    help_message: `*Istruzioni d'Uso:*
+*Limitazioni:*
+• Massimo 100 MB per video
+• Solo video pubblici`,
 
-1. *Invia URL Pinterest*
-   Copia e incolla semplicemente l'URL di qualsiasi video Pinterest
+    terms_title: '📜 Termini di Utilizzo',
+    terms_message: `*Termini di Utilizzo - Pinterest Video Downloader*
 
-2. *Formati Accettati:*
-   • https://www.pinterest.com/pin/XXXXXX
-   • https://pin.it/XXXXXX
+Utilizzando questo bot, accetti i seguenti termini:
 
-3. *Tempo di Elaborazione:*
-   Di solito 5-30 secondi a seconda della dimensione del video
+1️⃣ *Uso Personale*
+   Questo servizio è destinato solo all'uso personale e non commerciale.
 
-4. *Limitazioni:*
-   • Massimo 100 MB per video
-   • Solo video pubblici
+2️⃣ *Copyright*
+   Sei responsabile del rispetto dei diritti d'autore dei contenuti scaricati.
 
-*Problemi?*
-Se ricevi un errore, verifica se:
-• L'URL è valido
-• Il video esiste ancora su Pinterest
-• Hai una connessione internet
+3️⃣ *Disponibilità*
+   Il servizio è fornito "così com'è" senza garanzie di disponibilità continua.
 
-Usa /start per tornare al menu principale.`,
+4️⃣ *Privacy*
+   Non memorizziamo i tuoi video o dati personali oltre il necessario.
 
-    invalid_url: '❌ URL non valido! Invia un URL Pinterest valido.',
-    invalid_url_format: '❌ Formato URL non riconosciuto. Usa:\n• https://www.pinterest.com/pin/...\n• https://pin.it/...',
-    processing: '⏳ Elaborazione del video... Attendere prego.',
-    downloading: '📥 Download del video da Pinterest...',
-    uploading: '📤 Invio del video...',
-    success: '✅ Video scaricato con successo!',
-    success_message: 'Il tuo video è pronto! Buona visione! 🎉',
-    error_generic: '❌ Si è verificato un errore. Riprova più tardi.',
-    error_download: '❌ Errore nel download. Verifica l\'URL e riprova.',
-    error_upload: '❌ Errore nell\'invio. Riprova più tardi.',
-    error_timeout: '⏱️ L\'elaborazione ha richiesto troppo tempo. Prova un video più piccolo.',
-    error_file_size: '📦 Il video è troppo grande (massimo 100 MB). Prova un altro video.',
-    error_not_found: '🔍 Video non trovato. Verifica l\'URL e se il video esiste ancora.',
-    error_api: '🔌 Errore di connessione all\'API Pinterest. Riprova più tardi.',
-    btn_help: '❓ Aiuto',
-    btn_start: '🏠 Menu Principale',
-    btn_retry: '🔄 Riprova',
+5️⃣ *Responsabilità*
+   Non siamo responsabili per l'uso improprio dei contenuti scaricati.
+
+6️⃣ *Modifiche*
+   Ci riserviamo il diritto di modificare questi termini in qualsiasi momento.
+
+Continuando a usare il bot, accetti questi termini.`,
+
     btn_back: '⬅️ Indietro',
+    btn_accept: '✅ Accetta e Continua',
   },
 
   // 🇰🇷 한국어 (Korean)
   ko: {
-    welcome_title: '🎬 Pinterest Video Downloader에 오신 것을 환영합니다!',
-    welcome_message: `안녕하세요! Pinterest에서 동영상을 다운로드해 드리는 봇입니다.
+    welcome_title: '🎬 Pinterest Video Downloader',
+    welcome_message: `안녕하세요! Pinterest 동영상 다운로드 최고의 봇에 오신 것을 환영합니다!
 
-*사용 방법:*
-1️⃣ Pinterest 동영상 URL 복사
-2️⃣ URL을 보내주세요
-3️⃣ 처리 대기
-4️⃣ 고화질 동영상 수신!
+📱 *미니 앱 기능:*
+• 고화질 동영상 다운로드
+• 쉽고 직관적인 인터페이스
+• 빠른 처리
+• 다양한 형식 지원
+
+아래 버튼을 클릭하여 좋아하는 동영상을 다운로드하세요!`,
+    
+    btn_open_app: '🚀 봇 열기',
+    btn_how_it_works: '❓ 사용 방법',
+    btn_terms: '📜 이용약관',
+    
+    how_it_works_title: '❓ 사용 방법',
+    how_it_works_message: `*Pinterest Video Downloader 사용 방법:*
+
+1️⃣ *미니 앱 열기*
+   "봇 열기" 버튼을 클릭하여 인터페이스에 접근
+
+2️⃣ *URL 붙여넣기*
+   Pinterest 동영상 링크를 복사하여 앱에 붙여넣기
+
+3️⃣ *동영상 다운로드*
+   다운로드를 클릭하고 처리를 기다리기
+
+4️⃣ *완료!*
+   동영상이 고화질로 다운로드됩니다
 
 *지원 형식:*
 • https://www.pinterest.com/pin/...
 • https://pin.it/...
 
-자세한 정보는 /help를 사용하세요.`,
-    
-    help_title: '❓ 도움말 - 봇 사용 방법',
-    help_message: `*사용 안내:*
+*제한 사항:*
+• 동영상당 최대 100MB
+• 공개 동영상만 가능`,
 
-1. *Pinterest URL 보내기*
-   Pinterest 동영상의 URL을 복사하여 붙여넣기만 하면 됩니다
+    terms_title: '📜 이용약관',
+    terms_message: `*이용약관 - Pinterest Video Downloader*
 
-2. *지원 형식:*
-   • https://www.pinterest.com/pin/XXXXXX
-   • https://pin.it/XXXXXX
+이 봇을 사용함으로써 다음 약관에 동의합니다:
 
-3. *처리 시간:*
-   동영상 크기에 따라 보통 5-30초 소요
+1️⃣ *개인 사용*
+   이 서비스는 개인적, 비상업적 용도로만 사용됩니다.
 
-4. *제한 사항:*
-   • 동영상당 최대 100MB
-   • 공개 동영상만 가능
+2️⃣ *저작권*
+   다운로드한 콘텐츠의 저작권을 존중할 책임이 있습니다.
 
-*문제가 있나요?*
-오류가 발생하면 확인하세요:
-• URL이 유효한지
-• 동영상이 Pinterest에 있는지
-• 인터넷 연결이 있는지
+3️⃣ *가용성*
+   서비스는 "있는 그대로" 제공되며 지속적인 가용성을 보장하지 않습니다.
 
-메인 메뉴로 돌아가려면 /start를 사용하세요.`,
+4️⃣ *개인정보*
+   필요 이상으로 동영상이나 개인 데이터를 저장하지 않습니다.
 
-    invalid_url: '❌ 잘못된 URL입니다! 유효한 Pinterest URL을 보내주세요.',
-    invalid_url_format: '❌ URL 형식을 인식할 수 없습니다. 사용:\n• https://www.pinterest.com/pin/...\n• https://pin.it/...',
-    processing: '⏳ 동영상 처리 중... 잠시만 기다려 주세요.',
-    downloading: '📥 Pinterest에서 동영상 다운로드 중...',
-    uploading: '📤 동영상 전송 중...',
-    success: '✅ 동영상 다운로드 성공!',
-    success_message: '동영상이 준비되었습니다! 즐기세요! 🎉',
-    error_generic: '❌ 동영상 처리 중 오류가 발생했습니다. 나중에 다시 시도하세요.',
-    error_download: '❌ 다운로드 오류. URL을 확인하고 다시 시도하세요.',
-    error_upload: '❌ 전송 오류. 나중에 다시 시도하세요.',
-    error_timeout: '⏱️ 처리 시간이 너무 오래 걸렸습니다. 작은 동영상으로 시도하세요.',
-    error_file_size: '📦 동영상이 너무 큽니다 (최대 100MB). 다른 동영상을 시도하세요.',
-    error_not_found: '🔍 동영상을 찾을 수 없습니다. URL이 올바른지, 동영상이 있는지 확인하세요.',
-    error_api: '🔌 Pinterest API 연결 오류. 나중에 다시 시도하세요.',
-    btn_help: '❓ 도움말',
-    btn_start: '🏠 메인 메뉴',
-    btn_retry: '🔄 재시도',
+5️⃣ *책임*
+   다운로드한 콘텐츠의 오용에 대해 책임지지 않습니다.
+
+6️⃣ *수정*
+   언제든지 이 약관을 수정할 권리를 보유합니다.
+
+봇을 계속 사용하면 이 약관에 동의하는 것입니다.`,
+
     btn_back: '⬅️ 뒤로',
+    btn_accept: '✅ 동의하고 계속',
   },
 
   // 🇹🇷 Türkçe (Turkish)
   tr: {
-    welcome_title: '🎬 Pinterest Video Downloader\'a Hoş Geldiniz!',
-    welcome_message: `Merhaba! Pinterest'ten sizin için video indiren bir botum.
+    welcome_title: '🎬 Pinterest Video Downloader',
+    welcome_message: `Merhaba! Pinterest videolarını indirmek için en iyi bota hoş geldiniz!
 
-*Nasıl kullanılır:*
-1️⃣ Pinterest video URL'sini kopyalayın
-2️⃣ URL'yi bana gönderin
-3️⃣ İşlenmesini bekleyin
-4️⃣ Yüksek kalitede video alın!
+📱 *Mini Uygulamamız sunuyor:*
+• Yüksek kaliteli video indirme
+• Kolay ve sezgisel arayüz
+• Hızlı işleme
+• Çoklu format desteği
 
-*Kabul edilen formatlar:*
+Favori videolarınızı indirmeye başlamak için aşağıdaki düğmeye tıklayın!`,
+    
+    btn_open_app: '🚀 Botu Aç',
+    btn_how_it_works: '❓ Nasıl Çalışır',
+    btn_terms: '📜 Kullanım Şartları',
+    
+    how_it_works_title: '❓ Nasıl Çalışır',
+    how_it_works_message: `*Pinterest Video Downloader nasıl kullanılır:*
+
+1️⃣ *Mini Uygulamayı Aç*
+   Arayüzümüze erişmek için "Botu Aç" düğmesine tıklayın
+
+2️⃣ *URL'yi Yapıştır*
+   Pinterest video bağlantısını kopyalayın ve uygulamaya yapıştırın
+
+3️⃣ *Videoyu İndir*
+   İndir'e tıklayın ve işlemeyi bekleyin
+
+4️⃣ *Tamam!*
+   Videonuz yüksek kalitede indirilecek
+
+*Kabul Edilen Formatlar:*
 • https://www.pinterest.com/pin/...
 • https://pin.it/...
 
-Daha fazla bilgi için /help kullanın.`,
-    
-    help_title: '❓ Yardım - Bot Nasıl Kullanılır',
-    help_message: `*Kullanım Talimatları:*
+*Sınırlamalar:*
+• Video başına maksimum 100 MB
+• Sadece herkese açık videolar`,
 
-1. *Pinterest URL'si Gönderin*
-   Herhangi bir Pinterest videosunun URL'sini kopyalayıp yapıştırın
+    terms_title: '📜 Kullanım Şartları',
+    terms_message: `*Kullanım Şartları - Pinterest Video Downloader*
 
-2. *Kabul Edilen Formatlar:*
-   • https://www.pinterest.com/pin/XXXXXX
-   • https://pin.it/XXXXXX
+Bu botu kullanarak aşağıdaki şartları kabul etmiş olursunuz:
 
-3. *İşlem Süresi:*
-   Video boyutuna bağlı olarak genellikle 5-30 saniye
+1️⃣ *Kişisel Kullanım*
+   Bu hizmet yalnızca kişisel, ticari olmayan kullanım içindir.
 
-4. *Sınırlamalar:*
-   • Video başına maksimum 100 MB
-   • Sadece herkese açık videolar
+2️⃣ *Telif Hakkı*
+   İndirilen içeriğin telif haklarına saygı göstermek sizin sorumluluğunuzdadır.
 
-*Sorun mu var?*
-Hata alırsanız kontrol edin:
-• URL'nin geçerli olup olmadığını
-• Videonun Pinterest'te hala var olup olmadığını
-• İnternet bağlantınızın olup olmadığını
+3️⃣ *Kullanılabilirlik*
+   Hizmet "olduğu gibi" sağlanır, sürekli kullanılabilirlik garantisi yoktur.
 
-Ana menüye dönmek için /start kullanın.`,
+4️⃣ *Gizlilik*
+   Videolarınızı veya kişisel verilerinizi gerekenden fazla saklamıyoruz.
 
-    invalid_url: '❌ Geçersiz URL! Lütfen geçerli bir Pinterest URL\'si gönderin.',
-    invalid_url_format: '❌ URL formatı tanınmadı. Kullanın:\n• https://www.pinterest.com/pin/...\n• https://pin.it/...',
-    processing: '⏳ Videonuz işleniyor... Lütfen bekleyin.',
-    downloading: '📥 Pinterest\'ten video indiriliyor...',
-    uploading: '📤 Video gönderiliyor...',
-    success: '✅ Video başarıyla indirildi!',
-    success_message: 'Videonuz hazır! Keyfini çıkarın! 🎉',
-    error_generic: '❌ Video işlenirken bir hata oluştu. Daha sonra tekrar deneyin.',
-    error_download: '❌ İndirme hatası. URL\'yi kontrol edip tekrar deneyin.',
-    error_upload: '❌ Gönderme hatası. Daha sonra tekrar deneyin.',
-    error_timeout: '⏱️ İşlem çok uzun sürdü. Daha küçük bir video deneyin.',
-    error_file_size: '📦 Video çok büyük (maksimum 100 MB). Başka bir video deneyin.',
-    error_not_found: '🔍 Video bulunamadı. URL\'nin doğru olduğunu ve videonun var olduğunu kontrol edin.',
-    error_api: '🔌 Pinterest API\'ye bağlanırken hata. Daha sonra tekrar deneyin.',
-    btn_help: '❓ Yardım',
-    btn_start: '🏠 Ana Menü',
-    btn_retry: '🔄 Tekrar Dene',
+5️⃣ *Sorumluluk*
+   İndirilen içeriğin kötüye kullanımından sorumlu değiliz.
+
+6️⃣ *Değişiklikler*
+   Bu şartları istediğimiz zaman değiştirme hakkını saklı tutarız.
+
+Botu kullanmaya devam ederek bu şartları kabul etmiş olursunuz.`,
+
     btn_back: '⬅️ Geri',
+    btn_accept: '✅ Kabul Et ve Devam Et',
   },
 };
 
@@ -866,46 +957,18 @@ export function detectLanguage(languageCode) {
   
   // Mapeamentos especiais para variantes de idiomas
   const languageMappings = {
-    // Chinês
-    'zh-cn': 'zh',
-    'zh-tw': 'zh',
-    'zh-hk': 'zh',
-    'zh-hans': 'zh',
-    'zh-hant': 'zh',
-    // Português
-    'pt-br': 'pt',
-    'pt-pt': 'pt',
-    // Espanhol
-    'es-es': 'es',
-    'es-mx': 'es',
-    'es-ar': 'es',
-    'es-419': 'es',
-    // Inglês
-    'en-us': 'en',
-    'en-gb': 'en',
-    'en-au': 'en',
-    // Francês
-    'fr-fr': 'fr',
-    'fr-ca': 'fr',
-    // Alemão
-    'de-de': 'de',
-    'de-at': 'de',
-    'de-ch': 'de',
-    // Árabe
-    'ar-sa': 'ar',
-    'ar-eg': 'ar',
-    'ar-ae': 'ar',
-    // Russo
+    'zh-cn': 'zh', 'zh-tw': 'zh', 'zh-hk': 'zh', 'zh-hans': 'zh', 'zh-hant': 'zh',
+    'pt-br': 'pt', 'pt-pt': 'pt',
+    'es-es': 'es', 'es-mx': 'es', 'es-ar': 'es', 'es-419': 'es',
+    'en-us': 'en', 'en-gb': 'en', 'en-au': 'en',
+    'fr-fr': 'fr', 'fr-ca': 'fr',
+    'de-de': 'de', 'de-at': 'de', 'de-ch': 'de',
+    'ar-sa': 'ar', 'ar-eg': 'ar', 'ar-ae': 'ar',
     'ru-ru': 'ru',
-    // Japonês
     'ja-jp': 'ja',
-    // Italiano
     'it-it': 'it',
-    // Coreano
     'ko-kr': 'ko',
-    // Turco
     'tr-tr': 'tr',
-    // Hindi
     'hi-in': 'hi',
   };
   
@@ -913,7 +976,6 @@ export function detectLanguage(languageCode) {
     return languageMappings[code];
   }
   
-  // Padrão é Inglês
   return 'en';
 }
 

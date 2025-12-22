@@ -1,11 +1,12 @@
 import { Router } from 'itty-router';
 import { detectLanguage, getLocalizedMessage } from './i18n.js';
-import { isPinterestUrl, downloadPinterestVideo, getVideoFileSize } from './pinterest.js';
 
 // Token do Bot do Telegram
 const BOT_TOKEN = '8326140110:AAGOufTHcRuFJ6DmzzSevt2OAk4I4qk9hMU';
 const TELEGRAM_API = 'https://api.telegram.org/bot';
-const MAX_FILE_SIZE = 100 * 1024 * 1024; // 100 MB
+
+// URL do Mini App (substitua pela URL real do seu Mini App)
+const MINI_APP_URL = 'https://example.com/miniapp';
 
 // --- Funções utilitárias para a API do Telegram ---
 
@@ -41,13 +42,18 @@ async function sendChatAction(chatId, action = 'typing') {
 }
 
 async function editMessageText(chatId, messageId, text, replyMarkup = null) {
-  return telegramApi('editMessageText', {
+  const body = {
     chat_id: chatId,
     message_id: messageId,
     text: text,
     parse_mode: 'Markdown',
-    reply_markup: replyMarkup,
-  });
+  };
+  
+  if (replyMarkup) {
+    body.reply_markup = replyMarkup;
+  }
+  
+  return telegramApi('editMessageText', body);
 }
 
 async function deleteMessage(chatId, messageId) {
@@ -57,163 +63,159 @@ async function deleteMessage(chatId, messageId) {
   });
 }
 
-async function sendVideo(chatId, videoUrl, caption = '') {
-  return telegramApi('sendVideo', {
-    chat_id: chatId,
-    video: videoUrl,
-    caption: caption,
-    parse_mode: 'Markdown',
-  });
-}
-
-async function sendPhoto(chatId, photoUrl, caption = '') {
-  return telegramApi('sendPhoto', {
-    chat_id: chatId,
-    photo: photoUrl,
-    caption: caption,
-    parse_mode: 'Markdown',
-  });
-}
-
 // --- Funções de Tratamento ---
 
-function buildWelcomeMessage(firstName, userId, language) {
-  const title = getLocalizedMessage('welcome_title', language);
-  const message = getLocalizedMessage('welcome_message', language);
-  return `${title}\n\n${message}`;
+/**
+ * Cria o teclado inline com os botões principais
+ */
+function buildMainKeyboard(language) {
+  const btnOpenApp = getLocalizedMessage('btn_open_app', language);
+  const btnHowItWorks = getLocalizedMessage('btn_how_it_works', language);
+  const btnTerms = getLocalizedMessage('btn_terms', language);
+
+  return {
+    inline_keyboard: [
+      // Botão para abrir o Mini App (Web App)
+      [{ 
+        text: btnOpenApp, 
+        web_app: { url: MINI_APP_URL }
+      }],
+      // Botões de informação
+      [
+        { text: btnHowItWorks, callback_data: 'how_it_works' },
+        { text: btnTerms, callback_data: 'terms' },
+      ],
+    ],
+  };
 }
 
+/**
+ * Cria o teclado com botão de voltar
+ */
+function buildBackKeyboard(language) {
+  const btnBack = getLocalizedMessage('btn_back', language);
+  
+  return {
+    inline_keyboard: [
+      [{ text: btnBack, callback_data: 'start' }],
+    ],
+  };
+}
+
+/**
+ * Cria o teclado para termos de uso
+ */
+function buildTermsKeyboard(language) {
+  const btnBack = getLocalizedMessage('btn_back', language);
+  const btnAccept = getLocalizedMessage('btn_accept', language);
+  
+  return {
+    inline_keyboard: [
+      [{ 
+        text: btnAccept, 
+        web_app: { url: MINI_APP_URL }
+      }],
+      [{ text: btnBack, callback_data: 'start' }],
+    ],
+  };
+}
+
+/**
+ * Handler para o comando /start
+ */
 async function handleStart(chatId, firstName, languageCode) {
   const language = detectLanguage(languageCode);
   
   await sendChatAction(chatId, 'typing');
   
-  const welcomeMessage = buildWelcomeMessage(firstName, chatId, language);
-  const helpBtn = getLocalizedMessage('btn_help', language);
-  
-  const keyboard = {
-    inline_keyboard: [
-      [{ text: helpBtn, callback_data: 'help' }],
-    ],
-  };
+  const title = getLocalizedMessage('welcome_title', language);
+  const message = getLocalizedMessage('welcome_message', language);
+  const keyboard = buildMainKeyboard(language);
 
-  await sendMessage(chatId, welcomeMessage, keyboard);
+  await sendMessage(chatId, `${title}\n\n${message}`, keyboard);
 }
 
-async function handleHelp(chatId, language) {
-  await sendChatAction(chatId, 'typing');
+/**
+ * Handler para "Como Funciona"
+ */
+async function handleHowItWorks(chatId, messageId, language) {
+  const title = getLocalizedMessage('how_it_works_title', language);
+  const message = getLocalizedMessage('how_it_works_message', language);
+  const keyboard = buildBackKeyboard(language);
 
-  const helpTitle = getLocalizedMessage('help_title', language);
-  const helpMessage = getLocalizedMessage('help_message', language);
-  const startBtn = getLocalizedMessage('btn_start', language);
-
-  const keyboard = {
-    inline_keyboard: [
-      [{ text: startBtn, callback_data: 'start' }],
-    ],
-  };
-
-  await sendMessage(chatId, `${helpTitle}\n\n${helpMessage}`, keyboard);
+  await editMessageText(chatId, messageId, `${title}\n\n${message}`, keyboard);
 }
 
+/**
+ * Handler para "Termos de Uso"
+ */
+async function handleTerms(chatId, messageId, language) {
+  const title = getLocalizedMessage('terms_title', language);
+  const message = getLocalizedMessage('terms_message', language);
+  const keyboard = buildTermsKeyboard(language);
+
+  await editMessageText(chatId, messageId, `${title}\n\n${message}`, keyboard);
+}
+
+/**
+ * Handler para voltar ao menu principal (via edição de mensagem)
+ */
+async function handleBackToStart(chatId, messageId, firstName, language) {
+  const title = getLocalizedMessage('welcome_title', language);
+  const message = getLocalizedMessage('welcome_message', language);
+  const keyboard = buildMainKeyboard(language);
+
+  await editMessageText(chatId, messageId, `${title}\n\n${message}`, keyboard);
+}
+
+/**
+ * Handler para mensagens de texto (redireciona para o Mini App)
+ */
 async function handleMessage(chatId, text, firstName, languageCode) {
   const language = detectLanguage(languageCode);
   
-  // Ignora comandos (já tratados por onText)
+  // Se for um comando, ignora (já tratado separadamente)
   if (text.startsWith('/')) {
     return;
   }
 
-  const url = text.trim();
-
-  // Valida se é uma URL do Pinterest
-  if (!isPinterestUrl(url)) {
-    const errorMsg = getLocalizedMessage('invalid_url_format', language);
-    await sendMessage(chatId, errorMsg);
-    return;
-  }
-
-  try {
-    // Mostra indicador de digitação
-    await sendChatAction(chatId, 'typing');
-
-    // Mensagem de processamento
-    const processingMsg = getLocalizedMessage('processing', language);
-    const processingMessage = await sendMessage(chatId, processingMsg);
-
-    // Obtém a URL da API pinterest-downloader-api do ambiente
-    const apiUrl = typeof PINTEREST_API_URL !== 'undefined' ? PINTEREST_API_URL : 'https://pinterest-downloader-api.mogspm012.workers.dev';
-
-    // Baixa a mídia (vídeo, GIF ou imagem)
-    const downloadingMsg = getLocalizedMessage('downloading', language);
-    await editMessageText(chatId, processingMessage.result.message_id, downloadingMsg);
-
-    const mediaResult = await downloadPinterestVideo(url, apiUrl);
-
-    if (!mediaResult || !mediaResult.success) {
-      await deleteMessage(chatId, processingMessage.result.message_id);
-      const errorMsg = getLocalizedMessage('error_download', language);
-      await sendMessage(chatId, errorMsg);
-      return;
-    }
-
-    const { type, url: mediaUrl } = mediaResult;
-
-    // Valida o tamanho do arquivo
-    const fileSize = await getVideoFileSize(mediaUrl);
-    if (fileSize && fileSize > MAX_FILE_SIZE) {
-      await deleteMessage(chatId, processingMessage.result.message_id);
-      const errorMsg = getLocalizedMessage('error_file_size', language);
-      await sendMessage(chatId, errorMsg);
-      return;
-    }
-
-    // Mensagem de upload
-    const uploadingMsg = getLocalizedMessage('uploading', language);
-    await editMessageText(chatId, processingMessage.result.message_id, uploadingMsg);
-
-    // Envia a mídia apropriada
-    const successMsg = getLocalizedMessage('success_message', language);
-    
-    if (type === 'video' || type === 'animated') {
-      await sendChatAction(chatId, 'upload_video');
-      await sendVideo(chatId, mediaUrl, successMsg);
-    } else if (type === 'image') {
-      await sendChatAction(chatId, 'upload_photo');
-      await sendPhoto(chatId, mediaUrl, successMsg);
-    }
-
-    // Remove mensagem de processamento
-    await deleteMessage(chatId, processingMessage.result.message_id);
-  } catch (error) {
-    console.error('Error in handleMessage:', error);
-    const errorMsg = getLocalizedMessage('error_generic', language);
-    await sendMessage(chatId, errorMsg);
-  }
+  // Para qualquer mensagem, mostra a tela inicial com o botão do Mini App
+  await handleStart(chatId, firstName, languageCode);
 }
 
+/**
+ * Handler para callback queries (botões inline)
+ */
 async function handleCallbackQuery(query) {
   const chatId = query.message.chat.id;
+  const messageId = query.message.message_id;
   const data = query.data;
   const firstName = query.from.first_name || 'User';
   const languageCode = query.from.language_code;
   const language = detectLanguage(languageCode);
 
   try {
-    // Responde ao callback
+    // Responde ao callback para remover o "loading"
     await telegramApi('answerCallbackQuery', {
       callback_query_id: query.id,
     });
 
-    if (data === 'help') {
-      await handleHelp(chatId, language);
-    } else if (data === 'start') {
-      await handleStart(chatId, firstName, languageCode);
+    switch (data) {
+      case 'how_it_works':
+        await handleHowItWorks(chatId, messageId, language);
+        break;
+      case 'terms':
+        await handleTerms(chatId, messageId, language);
+        break;
+      case 'start':
+        await handleBackToStart(chatId, messageId, firstName, language);
+        break;
+      default:
+        // Callback desconhecido, volta ao início
+        await handleBackToStart(chatId, messageId, firstName, language);
     }
   } catch (error) {
     console.error('Error in handleCallbackQuery:', error);
-    const errorMsg = getLocalizedMessage('error_generic', language);
-    await sendMessage(chatId, errorMsg);
   }
 }
 
@@ -227,10 +229,17 @@ router.post('/', async (request) => {
     
     if (update.message) {
       const { chat, text, from } = update.message;
+      const firstName = from.first_name || 'User';
+      const languageCode = from.language_code;
+      
       if (text) {
-        const firstName = from.first_name || 'User';
-        const languageCode = from.language_code;
-        await handleMessage(chat.id, text, firstName, languageCode);
+        // Verifica se é o comando /start
+        if (text === '/start' || text.startsWith('/start ')) {
+          await handleStart(chat.id, firstName, languageCode);
+        } else {
+          // Qualquer outra mensagem
+          await handleMessage(chat.id, text, firstName, languageCode);
+        }
       }
     } else if (update.callback_query) {
       await handleCallbackQuery(update.callback_query);
@@ -263,7 +272,12 @@ router.get('/setWebhook', async (request) => {
 
 // Rota para verificar status
 router.get('/status', async () => {
-  return new Response(JSON.stringify({ status: 'ok', bot: 'pinterest-downloader' }), {
+  return new Response(JSON.stringify({ 
+    status: 'ok', 
+    bot: 'pinterest-downloader',
+    mini_app_url: MINI_APP_URL,
+    version: '2.0.0'
+  }), {
     headers: { 'Content-Type': 'application/json' },
     status: 200,
   });
