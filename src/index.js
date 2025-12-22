@@ -5,8 +5,8 @@ import { detectLanguage, getLocalizedMessage, SUPPORTED_LANGUAGES } from './i18n
 const BOT_TOKEN = '8326140110:AAGOufTHcRuFJ6DmzzSevt2OAk4I4qk9hMU';
 const TELEGRAM_API = 'https://api.telegram.org/bot';
 
-// URL do Mini App (substitua pela URL real do seu Mini App)
-const MINI_APP_URL = 'https://example.com/miniapp';
+// URL da API do Pinterest Downloader
+const PINTEREST_API_URL = 'https://pinterest-downloader-api.mogspm012.workers.dev/api/extract';
 
 // URL da imagem de boas-vindas
 const WELCOME_IMAGE_URL = 'https://iili.io/fERCEQ4.png';
@@ -84,6 +84,52 @@ async function sendPhoto(chatId, photoUrl, caption, replyMarkup = null) {
   return telegramApi('sendPhoto', body);
 }
 
+async function sendVideo(chatId, videoUrl, caption = '', replyMarkup = null) {
+  const body = {
+    chat_id: chatId,
+    video: videoUrl,
+    caption: caption,
+    parse_mode: 'Markdown',
+    supports_streaming: true,
+  };
+  
+  if (replyMarkup) {
+    body.reply_markup = replyMarkup;
+  }
+
+  return telegramApi('sendVideo', body);
+}
+
+async function sendAnimation(chatId, animationUrl, caption = '', replyMarkup = null) {
+  const body = {
+    chat_id: chatId,
+    animation: animationUrl,
+    caption: caption,
+    parse_mode: 'Markdown',
+  };
+  
+  if (replyMarkup) {
+    body.reply_markup = replyMarkup;
+  }
+
+  return telegramApi('sendAnimation', body);
+}
+
+async function sendDocument(chatId, documentUrl, caption = '', replyMarkup = null) {
+  const body = {
+    chat_id: chatId,
+    document: documentUrl,
+    caption: caption,
+    parse_mode: 'Markdown',
+  };
+  
+  if (replyMarkup) {
+    body.reply_markup = replyMarkup;
+  }
+
+  return telegramApi('sendDocument', body);
+}
+
 // --- Funções de Idioma ---
 
 /**
@@ -128,24 +174,130 @@ async function setUserLanguage(userId, language, env) {
   userLanguagePreferences.set(userId, language);
 }
 
+// --- Funções do Pinterest ---
+
+/**
+ * Verifica se o texto é uma URL do Pinterest
+ */
+function isPinterestUrl(text) {
+  if (!text) return false;
+  const pinterestPatterns = [
+    /pinterest\.com\/pin\//i,
+    /pin\.it\//i,
+    /pinterest\.[a-z]+\/pin\//i,
+    /br\.pinterest\.com\/pin\//i,
+  ];
+  return pinterestPatterns.some(pattern => pattern.test(text));
+}
+
+/**
+ * Extrai mídia do Pinterest usando a API
+ */
+async function extractPinterestMedia(url) {
+  try {
+    const response = await fetch(PINTEREST_API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url }),
+    });
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error extracting Pinterest media:', error);
+    return { success: false, error: 'Failed to connect to Pinterest API' };
+  }
+}
+
+/**
+ * Handler para download do Pinterest
+ */
+async function handlePinterestDownload(chatId, url, firstName, language) {
+  // Envia ação de "enviando vídeo"
+  await sendChatAction(chatId, 'upload_video');
+
+  // Mensagem de processamento
+  const processingMsg = getLocalizedMessage('processing', language);
+  const sentMsg = await sendMessage(chatId, processingMsg);
+
+  try {
+    // Extrai a mídia do Pinterest
+    const result = await extractPinterestMedia(url);
+
+    if (!result.success) {
+      // Deleta mensagem de processamento
+      if (sentMsg.result && sentMsg.result.message_id) {
+        await deleteMessage(chatId, sentMsg.result.message_id);
+      }
+
+      const errorMsg = getLocalizedMessage('download_error', language);
+      await sendMessage(chatId, errorMsg);
+      return;
+    }
+
+    // Deleta mensagem de processamento
+    if (sentMsg.result && sentMsg.result.message_id) {
+      await deleteMessage(chatId, sentMsg.result.message_id);
+    }
+
+    // Prepara a legenda
+    const caption = getLocalizedMessage('download_success', language, { name: firstName });
+    
+    // Botão para baixar mais
+    const btnDownloadMore = getLocalizedMessage('btn_download_more', language);
+    const keyboard = {
+      inline_keyboard: [
+        [{ text: btnDownloadMore, callback_data: 'start' }],
+      ],
+    };
+
+    // Envia a mídia baseado no tipo
+    if (result.type === 'video' || result.type === 'animated') {
+      await sendChatAction(chatId, 'upload_video');
+      const videoResult = await sendVideo(chatId, result.url, caption, keyboard);
+      
+      // Se falhar como vídeo, tenta como documento
+      if (!videoResult.ok) {
+        await sendDocument(chatId, result.url, caption, keyboard);
+      }
+    } else if (result.type === 'image') {
+      await sendChatAction(chatId, 'upload_photo');
+      const photoResult = await sendPhoto(chatId, result.url, caption, keyboard);
+      
+      // Se falhar como foto, tenta como documento
+      if (!photoResult.ok) {
+        await sendDocument(chatId, result.url, caption, keyboard);
+      }
+    } else {
+      // Tipo desconhecido, envia como documento
+      await sendDocument(chatId, result.url, caption, keyboard);
+    }
+
+  } catch (error) {
+    console.error('Error in handlePinterestDownload:', error);
+    
+    // Deleta mensagem de processamento se existir
+    if (sentMsg.result && sentMsg.result.message_id) {
+      await deleteMessage(chatId, sentMsg.result.message_id);
+    }
+
+    const errorMsg = getLocalizedMessage('download_error', language);
+    await sendMessage(chatId, errorMsg);
+  }
+}
+
 // --- Funções de Tratamento ---
 
 /**
  * Cria o teclado inline com os botões principais
  */
 function buildMainKeyboard(language) {
-  const btnOpenApp = getLocalizedMessage('btn_open_app', language);
   const btnHowItWorks = getLocalizedMessage('btn_how_it_works', language);
   const btnTerms = getLocalizedMessage('btn_terms', language);
   const btnChangeLanguage = getLocalizedMessage('btn_change_language', language);
 
   return {
     inline_keyboard: [
-      // Botão para abrir o Mini App (Web App)
-      [{ 
-        text: btnOpenApp, 
-        web_app: { url: MINI_APP_URL }
-      }],
       // Botões de informação
       [
         { text: btnHowItWorks, callback_data: 'how_it_works' },
@@ -177,14 +329,9 @@ function buildBackKeyboard(language) {
  */
 function buildTermsKeyboard(language) {
   const btnBack = getLocalizedMessage('btn_back', language);
-  const btnAccept = getLocalizedMessage('btn_accept', language);
   
   return {
     inline_keyboard: [
-      [{ 
-        text: btnAccept, 
-        web_app: { url: MINI_APP_URL }
-      }],
       [{ text: btnBack, callback_data: 'start' }],
     ],
   };
@@ -342,16 +489,25 @@ async function handleBackToStart(chatId, messageId, firstName, language) {
 }
 
 /**
- * Handler para mensagens de texto (redireciona para o Mini App)
+ * Handler para mensagens de texto
  */
 async function handleMessage(chatId, text, firstName, userId, languageCode, env) {
+  const language = await getUserLanguage(userId, languageCode, env);
+
   // Se for um comando, ignora (já tratado separadamente)
   if (text.startsWith('/')) {
     return;
   }
 
-  // Para qualquer mensagem, mostra a tela inicial com o botão do Mini App
-  await handleStart(chatId, firstName, userId, languageCode, env);
+  // Verifica se é uma URL do Pinterest
+  if (isPinterestUrl(text)) {
+    await handlePinterestDownload(chatId, text.trim(), firstName, language);
+    return;
+  }
+
+  // Se não for URL do Pinterest, mostra mensagem de ajuda
+  const helpMsg = getLocalizedMessage('send_pinterest_url', language);
+  await sendMessage(chatId, helpMsg);
 }
 
 /**
@@ -426,8 +582,14 @@ router.post('/', async (request, env) => {
         else if (text === '/language' || text === '/idioma' || text === '/lang') {
           await handleLanguageCommand(chat.id, userId, languageCode, env);
         }
+        // Verifica se é o comando /help
+        else if (text === '/help' || text === '/ajuda') {
+          const language = await getUserLanguage(userId, languageCode, env);
+          const helpMsg = getLocalizedMessage('send_pinterest_url', language);
+          await sendMessage(chat.id, helpMsg);
+        }
         else {
-          // Qualquer outra mensagem
+          // Qualquer outra mensagem (inclui URLs do Pinterest)
           await handleMessage(chat.id, text, firstName, userId, languageCode, env);
         }
       }
@@ -465,8 +627,8 @@ router.get('/status', async () => {
   return new Response(JSON.stringify({ 
     status: 'ok', 
     bot: 'PinSave',
-    mini_app_url: MINI_APP_URL,
-    version: '2.2.0'
+    version: '3.0.0',
+    features: ['pinterest_download', 'multi_language', 'video', 'photo', 'gif']
   }), {
     headers: { 'Content-Type': 'application/json' },
     status: 200,

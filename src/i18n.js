@@ -133,6 +133,13 @@ Ao utilizar este serviço, você concorda com:
     language_title: '🌍 Selecionar Idioma',
     language_message: 'Escolha seu idioma preferido:',
     language_changed: '✅ Idioma alterado com sucesso!',
+    
+    // Mensagens de download
+    processing: '⏳ *Processando...*\n\nAguarde enquanto baixamos seu conteúdo do Pinterest.',
+    download_success: '✅ *Download concluído!*\n\nAqui está seu conteúdo, {{name}}! 🎉',
+    download_error: '❌ *Erro no download*\n\nNão foi possível baixar o conteúdo. Verifique se:\n\n• A URL está correta\n• O pin é público\n• O conteúdo ainda existe\n\nTente novamente com outra URL.',
+    send_pinterest_url: '📌 *Envie uma URL do Pinterest*\n\nCole aqui o link do vídeo, foto ou GIF que deseja baixar:\n\n🔗 *Formatos aceitos:*\n• pinterest.com/pin/...\n• pin.it/...',
+    btn_download_more: '📥 Baixar Mais',
   },
   
   // 🇺🇸 English
@@ -264,8 +271,15 @@ By using this service, you agree to:
     language_title: '🌍 Select Language',
     language_message: 'Choose your preferred language:',
     language_changed: '✅ Language changed successfully!',
+    
+    // Download messages
+    processing: '⏳ *Processing...*\n\nPlease wait while we download your Pinterest content.',
+    download_success: '✅ *Download complete!*\n\nHere is your content, {{name}}! 🎉',
+    download_error: '❌ *Download error*\n\nCould not download the content. Please check if:\n\n• The URL is correct\n• The pin is public\n• The content still exists\n\nTry again with another URL.',
+    send_pinterest_url: '📌 *Send a Pinterest URL*\n\nPaste here the link to the video, photo or GIF you want to download:\n\n🔗 *Accepted formats:*\n• pinterest.com/pin/...\n• pin.it/...',
+    btn_download_more: '📥 Download More',
   },
-
+  
   // 🇪🇸 Español
   es: {
     welcome_title: '📌 PinSave',
@@ -395,6 +409,31 @@ Al usar este servicio, aceptas:
     language_title: '🌍 Seleccionar Idioma',
     language_message: 'Elige tu idioma preferido:',
     language_changed: '✅ ¡Idioma cambiado con éxito!',
+    
+    // Download messages
+    processing: '⏳ *Procesando...*
+
+Espera mientras descargamos tu contenido de Pinterest.',
+    download_success: '✅ *¡Descarga completada!*
+
+¡Aquí está tu contenido, {{name}}! 🎉',
+    download_error: '❌ *Error de descarga*
+
+No se pudo descargar el contenido. Verifica si:
+
+• La URL es correcta
+• El pin es público
+• El contenido aún existe
+
+Intenta de nuevo con otra URL.',
+    send_pinterest_url: '📌 *Envía una URL de Pinterest*
+
+Pega aquí el enlace del video, foto o GIF que deseas descargar:
+
+🔗 *Formatos aceptados:*
+• pinterest.com/pin/...
+• pin.it/...',
+    btn_download_more: '📥 Descargar Más',
   },
 
   // 🇨🇳 中文 (简体)
@@ -523,6 +562,31 @@ Al usar este servicio, aceptas:
     language_title: '🌍 选择语言',
     language_message: '选择您的首选语言：',
     language_changed: '✅ 语言更改成功！',
+    
+    // Download messages
+    processing: '⏳ *处理中...*
+
+请稍候，我们正在下载您的Pinterest内容。',
+    download_success: '✅ *下载完成！*
+
+这是您的内容，{{name}}！🎉',
+    download_error: '❌ *下载错误*
+
+无法下载内容。请检查：
+
+• URL是否正确
+• Pin是否公开
+• 内容是否仍然存在
+
+请使用其他URL重试。',
+    send_pinterest_url: '📌 *发送Pinterest链接*
+
+粘贴您要下载的视频、照片或GIF链接：
+
+🔗 *支持的格式：*
+• pinterest.com/pin/...
+• pin.it/...',
+    btn_download_more: '📥 下载更多',
   },
 
   // 🇮🇳 हिन्दी (Hindi)
@@ -653,6 +717,21 @@ Al usar este servicio, aceptas:
     language_title: '🌍 भाषा चुनें',
     language_message: 'अपनी पसंदीदा भाषा चुनें:',
     language_changed: '✅ भाषा सफलतापूर्वक बदली गई!',
+    
+    // Download messages
+    processing: '⏳ *प्रोसेसिंग...*
+
+कृपया प्रतीक्षा करें।',
+    download_success: '✅ *डाउनलोड पूर्ण!*
+
+यहाँ आपकी सामग्री है, {{name}}! 🎉',
+    download_error: '❌ *डाउनलोड त्रुटि*
+
+सामग्री डाउनलोड नहीं हो सकी।',
+    send_pinterest_url: '📌 *Pinterest URL भेजें*
+
+वीडियो, फोटो या GIF का लिंक पेस्ट करें।',
+    btn_download_more: '📥 और डाउनलोड करें',
   },
 
   // 🇸🇦 العربية (Arabic)
@@ -784,6 +863,21 @@ Al usar este servicio, aceptas:
     language_title: '🌍 اختر اللغة',
     language_message: 'اختر لغتك المفضلة:',
     language_changed: '✅ تم تغيير اللغة بنجاح!',
+    
+    // Download messages
+    processing: '⏳ *جاري المعالجة...*
+
+يرجى الانتظار.',
+    download_success: '✅ *تم التحميل!*
+
+إليك المحتوى، {{name}}! 🎉',
+    download_error: '❌ *خطأ في التحميل*
+
+تعذر تحميل المحتوى.',
+    send_pinterest_url: '📌 *أرسل رابط Pinterest*
+
+الصق رابط الفيديو أو الصورة.',
+    btn_download_more: '📥 تحميل المزيد',
   },
 
   // 🇫🇷 Français
@@ -915,6 +1009,21 @@ En utilisant ce service, vous acceptez:
     language_title: '🌍 Sélectionner la Langue',
     language_message: 'Choisissez votre langue préférée:',
     language_changed: '✅ Langue changée avec succès!',
+    
+    // Download messages
+    processing: '⏳ *Traitement...*
+
+Veuillez patienter.',
+    download_success: '✅ *Téléchargement terminé!*
+
+Voici votre contenu, {{name}}! 🎉',
+    download_error: '❌ *Erreur de téléchargement*
+
+Impossible de télécharger.',
+    send_pinterest_url: '📌 *Envoyez une URL Pinterest*
+
+Collez le lien de la vidéo, photo ou GIF.',
+    btn_download_more: '📥 Télécharger Plus',
   },
 
   // 🇷🇺 Русский (Russian)
@@ -1046,6 +1155,21 @@ En utilisant ce service, vous acceptez:
     language_title: '🌍 Выбрать язык',
     language_message: 'Выберите предпочитаемый язык:',
     language_changed: '✅ Язык успешно изменён!',
+    
+    // Download messages
+    processing: '⏳ *Обработка...*
+
+Пожалуйста, подождите.',
+    download_success: '✅ *Загрузка завершена!*
+
+Вот ваш контент, {{name}}! 🎉',
+    download_error: '❌ *Ошибка загрузки*
+
+Не удалось загрузить контент.',
+    send_pinterest_url: '📌 *Отправьте URL Pinterest*
+
+Вставьте ссылку на видео, фото или GIF.',
+    btn_download_more: '📥 Скачать Ещё',
   },
 
   // 🇩🇪 Deutsch (German)
@@ -1177,6 +1301,21 @@ Durch die Nutzung stimmen Sie zu:
     language_title: '🌍 Sprache auswählen',
     language_message: 'Wählen Sie Ihre bevorzugte Sprache:',
     language_changed: '✅ Sprache erfolgreich geändert!',
+    
+    // Download messages
+    processing: '⏳ *Verarbeitung...*
+
+Bitte warten Sie.',
+    download_success: '✅ *Download abgeschlossen!*
+
+Hier ist Ihr Inhalt, {{name}}! 🎉',
+    download_error: '❌ *Download-Fehler*
+
+Inhalt konnte nicht heruntergeladen werden.',
+    send_pinterest_url: '📌 *Senden Sie eine Pinterest-URL*
+
+Fügen Sie den Link zum Video, Foto oder GIF ein.',
+    btn_download_more: '📥 Mehr Herunterladen',
   },
 
   // 🇯🇵 日本語 (Japanese)
@@ -1308,6 +1447,21 @@ Durch die Nutzung stimmen Sie zu:
     language_title: '🌍 言語を選択',
     language_message: 'ご希望の言語を選択してください：',
     language_changed: '✅ 言語が正常に変更されました！',
+    
+    // Download messages
+    processing: '⏳ *処理中...*
+
+お待ちください。',
+    download_success: '✅ *ダウンロード完了！*
+
+こちらがコンテンツです、{{name}}！🎉',
+    download_error: '❌ *ダウンロードエラー*
+
+コンテンツをダウンロードできませんでした。',
+    send_pinterest_url: '📌 *Pinterest URLを送信*
+
+動画、写真、GIFのリンクを貼り付けてください。',
+    btn_download_more: '📥 もっとダウンロード',
   },
 
   // 🇮🇹 Italiano
@@ -1439,6 +1593,21 @@ Usando questo servizio, accetti:
     language_title: '🌍 Seleziona Lingua',
     language_message: 'Scegli la tua lingua preferita:',
     language_changed: '✅ Lingua cambiata con successo!',
+    
+    // Download messages
+    processing: '⏳ *Elaborazione...*
+
+Attendi per favore.',
+    download_success: '✅ *Download completato!*
+
+Ecco il tuo contenuto, {{name}}! 🎉',
+    download_error: '❌ *Errore di download*
+
+Impossibile scaricare il contenuto.',
+    send_pinterest_url: '📌 *Invia un URL Pinterest*
+
+Incolla il link del video, foto o GIF.',
+    btn_download_more: '📥 Scarica Altro',
   },
 
   // 🇰🇷 한국어 (Korean)
@@ -1569,6 +1738,21 @@ Usando questo servizio, accetti:
     language_title: '🌍 언어 선택',
     language_message: '원하는 언어를 선택하세요:',
     language_changed: '✅ 언어가 성공적으로 변경되었습니다!',
+    
+    // Download messages
+    processing: '⏳ *처리 중...*
+
+잠시만 기다려 주세요.',
+    download_success: '✅ *다운로드 완료!*
+
+여기 콘텐츠입니다, {{name}}! 🎉',
+    download_error: '❌ *다운로드 오류*
+
+콘텐츠를 다운로드할 수 없습니다.',
+    send_pinterest_url: '📌 *Pinterest URL 보내기*
+
+동영상, 사진 또는 GIF 링크를 붙여넣으세요.',
+    btn_download_more: '📥 더 다운로드',
   },
 
   // 🇹🇷 Türkçe (Turkish)
@@ -1701,6 +1885,21 @@ Bu hizmeti kullanarak kabul edersiniz:
     language_title: '🌍 Dil Seç',
     language_message: 'Tercih ettiğiniz dili seçin:',
     language_changed: '✅ Dil başarıyla değiştirildi!',
+    
+    // Download messages
+    processing: '⏳ *İşleniyor...*
+
+Lütfen bekleyin.',
+    download_success: '✅ *İndirme tamamlandı!*
+
+İşte içeriğiniz, {{name}}! 🎉',
+    download_error: '❌ *İndirme hatası*
+
+İçerik indirilemedi.',
+    send_pinterest_url: '📌 *Pinterest URL gönderin*
+
+Video, fotoğraf veya GIF linkini yapıştırın.',
+    btn_download_more: '📥 Daha Fazla İndir',
   },
 };
 
