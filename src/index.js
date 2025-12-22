@@ -119,6 +119,7 @@ function buildMainKeyboard(language) {
   const btnOpenApp = getLocalizedMessage('btn_open_app', language);
   const btnHowItWorks = getLocalizedMessage('btn_how_it_works', language);
   const btnTerms = getLocalizedMessage('btn_terms', language);
+  const btnChangeLanguage = getLocalizedMessage('btn_change_language', language);
 
   return {
     inline_keyboard: [
@@ -131,6 +132,10 @@ function buildMainKeyboard(language) {
       [
         { text: btnHowItWorks, callback_data: 'how_it_works' },
         { text: btnTerms, callback_data: 'terms' },
+      ],
+      // Botão de trocar idioma
+      [
+        { text: btnChangeLanguage, callback_data: 'change_language' },
       ],
     ],
   };
@@ -274,6 +279,17 @@ async function handleLanguageSelection(chatId, messageId, userId, newLanguage, e
 }
 
 /**
+ * Handler para trocar idioma (via botão)
+ */
+async function handleChangeLanguage(chatId, messageId, language) {
+  const title = getLocalizedMessage('language_title', language);
+  const message = getLocalizedMessage('language_message', language);
+  const keyboard = buildLanguageKeyboard();
+
+  await editMessageText(chatId, messageId, `${title}\n\n${message}`, keyboard);
+}
+
+/**
  * Handler para "Como Funciona"
  */
 async function handleHowItWorks(chatId, messageId, firstName, language) {
@@ -355,6 +371,9 @@ async function handleCallbackQuery(query, env) {
         break;
       case 'start':
         await handleBackToStart(chatId, messageId, firstName, language);
+        break;
+      case 'change_language':
+        await handleChangeLanguage(chatId, messageId, language);
         break;
       default:
         // Callback desconhecido, volta ao início
