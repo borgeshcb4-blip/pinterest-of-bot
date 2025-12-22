@@ -129,7 +129,7 @@ async function handleStart(chatId, firstName, languageCode) {
   await sendChatAction(chatId, 'typing');
   
   const title = getLocalizedMessage('welcome_title', language);
-  const message = getLocalizedMessage('welcome_message', language);
+  const message = getLocalizedMessage('welcome_message', language, { name: firstName });
   const keyboard = buildMainKeyboard(language);
 
   await sendMessage(chatId, `${title}\n\n${message}`, keyboard);
@@ -138,9 +138,9 @@ async function handleStart(chatId, firstName, languageCode) {
 /**
  * Handler para "Como Funciona"
  */
-async function handleHowItWorks(chatId, messageId, language) {
+async function handleHowItWorks(chatId, messageId, firstName, language) {
   const title = getLocalizedMessage('how_it_works_title', language);
-  const message = getLocalizedMessage('how_it_works_message', language);
+  const message = getLocalizedMessage('how_it_works_message', language, { name: firstName });
   const keyboard = buildBackKeyboard(language);
 
   await editMessageText(chatId, messageId, `${title}\n\n${message}`, keyboard);
@@ -162,7 +162,7 @@ async function handleTerms(chatId, messageId, language) {
  */
 async function handleBackToStart(chatId, messageId, firstName, language) {
   const title = getLocalizedMessage('welcome_title', language);
-  const message = getLocalizedMessage('welcome_message', language);
+  const message = getLocalizedMessage('welcome_message', language, { name: firstName });
   const keyboard = buildMainKeyboard(language);
 
   await editMessageText(chatId, messageId, `${title}\n\n${message}`, keyboard);
@@ -202,7 +202,7 @@ async function handleCallbackQuery(query) {
 
     switch (data) {
       case 'how_it_works':
-        await handleHowItWorks(chatId, messageId, language);
+        await handleHowItWorks(chatId, messageId, firstName, language);
         break;
       case 'terms':
         await handleTerms(chatId, messageId, language);
@@ -276,7 +276,7 @@ router.get('/status', async () => {
     status: 'ok', 
     bot: 'pinterest-downloader',
     mini_app_url: MINI_APP_URL,
-    version: '2.0.0'
+    version: '2.1.0'
   }), {
     headers: { 'Content-Type': 'application/json' },
     status: 200,
