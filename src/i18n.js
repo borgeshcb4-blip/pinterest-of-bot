@@ -29,31 +29,40 @@ Clique no botão abaixo para começar! 👇`,
     btn_terms: '📜 Termos',
     
     how_it_works_title: '❓ Como Funciona',
-    how_it_works_message: `Olá, {{name}}.
+    how_it_works_message: `*Guia de Utilização do PinSave*
 
-Este guia apresenta as instruções para utilizar o PinSave e baixar conteúdos do Pinterest.
+Este guia apresenta as instruções detalhadas para utilizar o PinSave e realizar o download de conteúdos da plataforma Pinterest de forma eficiente.
 
 *Passo a Passo:*
 
-1. *Abra o Mini App:* Clique no botão "Abrir PinSave".
-2. *Cole o Link:* Insira a URL do conteúdo que deseja baixar.
-3. *Baixe:* Aguarde o processamento do seu pedido.
-4. *Pronto:* O conteúdo será salvo no seu dispositivo.
+*1. Acesso ao Serviço*
+Clique no botão "Baixar Mídia" para abrir a interface principal do Mini App.
+
+*2. Inserção do Link*
+Copie a URL do conteúdo desejado no Pinterest e cole-a no campo de entrada indicado.
+
+*3. Processamento*
+Aguarde alguns instantes enquanto o nosso sistema processa o seu pedido e prepara o arquivo para download.
+
+*4. Conclusão*
+Assim que o processamento for finalizado, o conteúdo será transferido e salvo automaticamente no seu dispositivo.
 
 *Informações Adicionais:*
 
 *Links Aceitos:*
+O serviço é compatível com os formatos de URL padrão da plataforma:
 • pinterest.com/pin/...
 • pin.it/...
 
 *Tipos de Conteúdo Suportados:*
-• Vídeos
-• Fotos
-• GIFs
+A ferramenta está otimizada para o download de:
+• Vídeos (MP4)
+• Fotos (JPEG/PNG)
+• GIFs Animados
 
-*Limitações:*
-• Tamanho máximo de 100 MB por arquivo.
-• Apenas conteúdo de acesso público pode ser baixado.`,
+*Limitações e Restrições:*
+• *Capacidade:* O tamanho máximo permitido é de 100 MB por arquivo.
+• *Privacidade:* Por questões de segurança e ética, apenas conteúdos de acesso público podem ser baixados. Perfis privados não são suportados.`,
 
     terms_title: '📜 Termos de Uso',
     terms_message: `*Termos de Uso do PinSave*
