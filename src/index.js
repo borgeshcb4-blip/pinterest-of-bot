@@ -635,7 +635,7 @@ function buildTermsKeyboard(language) {
 /**
  * Cria o teclado para seleção de idioma
  */
-function buildLanguageKeyboard() {
+function buildLanguageKeyboard(language) {
   const languages = Object.entries(SUPPORTED_LANGUAGES);
   const keyboard = [];
   
@@ -657,6 +657,10 @@ function buildLanguageKeyboard() {
     
     keyboard.push(row);
   }
+  
+  // Adiciona botão Voltar no final
+  const btnBack = getLocalizedMessage('btn_back', language);
+  keyboard.push([{ text: btnBack, callback_data: 'start' }]);
   
   return { inline_keyboard: keyboard };
 }
@@ -709,7 +713,7 @@ async function handleLanguageCommand(chatId, userId, languageCode, env) {
   
   const title = getLocalizedMessage('language_title', language);
   const message = getLocalizedMessage('language_message', language);
-  const keyboard = buildLanguageKeyboard();
+  const keyboard = buildLanguageKeyboard(language);
 
   await sendMessage(chatId, `${title}\n\n${message}`, keyboard);
 }
@@ -753,7 +757,7 @@ async function handleLanguageSelection(chatId, messageId, userId, newLanguage, e
 async function handleChangeLanguage(chatId, messageId, language, hasPhoto = false) {
   const title = getLocalizedMessage('language_title', language);
   const message = getLocalizedMessage('language_message', language);
-  const keyboard = buildLanguageKeyboard();
+  const keyboard = buildLanguageKeyboard(language);
 
   const fullMessage = `${title}\n\n${message}`;
   
