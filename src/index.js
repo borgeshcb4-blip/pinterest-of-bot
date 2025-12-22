@@ -195,17 +195,31 @@ function isPinterestUrl(text) {
  */
 async function extractPinterestMedia(url) {
   try {
+    console.log('Extracting Pinterest media from:', url);
+    
     const response = await fetch(PINTEREST_API_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url }),
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({ url: url.trim() }),
     });
 
+    console.log('API Response status:', response.status);
+    
+    if (!response.ok) {
+      console.error('API returned error status:', response.status);
+      return { success: false, error: `API returned status ${response.status}` };
+    }
+
     const data = await response.json();
+    console.log('API Response data:', JSON.stringify(data));
+    
     return data;
   } catch (error) {
-    console.error('Error extracting Pinterest media:', error);
-    return { success: false, error: 'Failed to connect to Pinterest API' };
+    console.error('Error extracting Pinterest media:', error.message || error);
+    return { success: false, error: 'Failed to connect to Pinterest API: ' + (error.message || 'Unknown error') };
   }
 }
 
@@ -222,9 +236,12 @@ async function handlePinterestDownload(chatId, url, firstName, language) {
 
   try {
     // Extrai a mídia do Pinterest
+    console.log('Starting Pinterest download for URL:', url);
     const result = await extractPinterestMedia(url);
+    console.log('Extract result:', JSON.stringify(result));
 
     if (!result.success) {
+      console.log('Download failed - API returned success: false');
       // Deleta mensagem de processamento
       if (sentMsg.result && sentMsg.result.message_id) {
         await deleteMessage(chatId, sentMsg.result.message_id);
@@ -234,6 +251,8 @@ async function handlePinterestDownload(chatId, url, firstName, language) {
       await sendMessage(chatId, errorMsg);
       return;
     }
+    
+    console.log('Download success - Type:', result.type, 'URL:', result.url);
 
     // Deleta mensagem de processamento
     if (sentMsg.result && sentMsg.result.message_id) {
