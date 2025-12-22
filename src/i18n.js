@@ -7,24 +7,20 @@ export const translations = {
   // 🇧🇷 Português
   pt: {
     welcome_title: '📌 PinSave',
-    welcome_message: `Olá, {{name}}! 👋
-
-Bem-vindo ao *PinSave* - o melhor bot para baixar conteúdo do Pinterest! 🎯
+    welcome_message: `Bem-vindo *{{name}}* ao PinSave - o melhor bot para baixar conteúdo do Pinterest! 🎯
 
 📥 *O que você pode baixar:*
 
-🎬 Vídeos em HD
-📷 Fotos em alta resolução  
-🎞️ GIFs animados
+✅ | Vídeos em HD
+✅ | Fotos em alta resolução  
+✅ | GIFs animados
 
 ✨ *Nossos recursos:*
 
-⚡ Processamento rápido
-🎨 Qualidade original
-📱 Interface intuitiva
-🆓 100% gratuito
-
-⚠️ *Este serviço não possui vínculo oficial com o Pinterest Inc.*
+✅ | Processamento rápido
+✅ | Qualidade original
+✅ | Interface intuitiva
+✅ | 100% gratuito
 
 Clique no botão abaixo para começar! 👇`,
     
@@ -142,24 +138,20 @@ Ao utilizar este serviço, você concorda com:
   // 🇺🇸 English
   en: {
     welcome_title: '📌 PinSave',
-    welcome_message: `Hello, {{name}}! 👋
-
-Welcome to *PinSave* - the best bot to download Pinterest content! 🎯
+    welcome_message: `Welcome *{{name}}* to PinSave - the best bot to download Pinterest content! 🎯
 
 📥 *What you can download:*
 
-🎬 HD Videos
-📷 High-resolution Photos
-🎞️ Animated GIFs
+✅ | HD Videos
+✅ | High-resolution Photos
+✅ | Animated GIFs
 
 ✨ *Our features:*
 
-⚡ Fast processing
-🎨 Original quality
-📱 Intuitive interface
-🆓 100% free
-
-⚠️ *This service has no official affiliation with Pinterest Inc.*
+✅ | Fast processing
+✅ | Original quality
+✅ | Intuitive interface
+✅ | 100% free
 
 Click the button below to get started! 👇`,
     
@@ -277,24 +269,20 @@ By using this service, you agree to:
   // 🇪🇸 Español
   es: {
     welcome_title: '📌 PinSave',
-    welcome_message: `¡Hola, {{name}}! 👋
-
-Bienvenido a *PinSave* - ¡el mejor bot para descargar contenido de Pinterest! 🎯
+    welcome_message: `¡Bienvenido *{{name}}* a PinSave - el mejor bot para descargar contenido de Pinterest! 🎯
 
 📥 *Lo que puedes descargar:*
 
-🎬 Videos en HD
-📷 Fotos en alta resolución
-🎞️ GIFs animados
+✅ | Videos en HD
+✅ | Fotos en alta resolución
+✅ | GIFs animados
 
 ✨ *Nuestras características:*
 
-⚡ Procesamiento rápido
-🎨 Calidad original
-📱 Interfaz intuitiva
-🆓 100% gratis
-
-⚠️ *Este servicio no tiene afiliación oficial con Pinterest Inc.*
+✅ | Procesamiento rápido
+✅ | Calidad original
+✅ | Interfaz intuitiva
+✅ | 100% gratis
 
 ¡Haz clic en el botón de abajo para comenzar! 👇`,
     
@@ -412,24 +400,20 @@ Al usar este servicio, aceptas:
   // 🇨🇳 中文 (简体)
   zh: {
     welcome_title: '📌 PinSave',
-    welcome_message: `你好，{{name}}！👋
-
-欢迎使用 *PinSave* - 下载 Pinterest 内容的最佳机器人！🎯
+    welcome_message: `欢迎 *{{name}}* 使用 PinSave - 下载 Pinterest 内容的最佳机器人！🎯
 
 📥 *可下载内容：*
 
-🎬 高清视频
-📷 高分辨率照片
-🎞️ 动态 GIF
+✅ | 高清视频
+✅ | 高分辨率照片
+✅ | 动态 GIF
 
 ✨ *我们的功能：*
 
-⚡ 快速处理
-🎨 原始质量
-📱 直观界面
-🆓 100% 免费
-
-⚠️ *本服务与 Pinterest Inc. 无官方关联*
+✅ | 快速处理
+✅ | 原始质量
+✅ | 直观界面
+✅ | 100% 免费
 
 点击下方按钮开始！👇`,
     
@@ -544,24 +528,20 @@ Al usar este servicio, aceptas:
   // 🇮🇳 हिन्दी (Hindi)
   hi: {
     welcome_title: '📌 PinSave',
-    welcome_message: `नमस्ते, {{name}}! 👋
-
-*PinSave* में आपका स्वागत है - Pinterest सामग्री डाउनलोड करने का सबसे अच्छा बॉट! 🎯
+    welcome_message: `स्वागत *{{name}}* PinSave में - Pinterest सामग्री डाउनलोड करने का सबसे अच्छा बॉट! 🎯
 
 📥 *आप क्या डाउनलोड कर सकते हैं:*
 
-🎬 HD वीडियो
-📷 उच्च रिज़ॉल्यूशन फ़ोटो
-🎞️ एनिमेटेड GIF
+✅ | HD वीडियो
+✅ | उच्च रिज़ॉल्यूशन फ़ोटो
+✅ | एनिमेटेड GIF
 
 ✨ *हमारी विशेषताएं:*
 
-⚡ तेज़ प्रोसेसिंग
-🎨 मूल गुणवत्ता
-📱 सहज इंटरफ़ेस
-🆓 100% मुफ़्त
-
-⚠️ *इस सेवा का Pinterest Inc. से कोई आधिकारिक संबंध नहीं है*
+✅ | तेज़ प्रोसेसिंग
+✅ | मूल गुणवत्ता
+✅ | सहज इंटरफ़ेस
+✅ | 100% मुफ़्त
 
 शुरू करने के लिए नीचे बटन पर क्लिक करें! 👇`,
     
@@ -678,24 +658,20 @@ Al usar este servicio, aceptas:
   // 🇸🇦 العربية (Arabic)
   ar: {
     welcome_title: '📌 PinSave',
-    welcome_message: `مرحباً، {{name}}! 👋
-
-مرحباً بك في *PinSave* - أفضل بوت لتحميل محتوى Pinterest! 🎯
+    welcome_message: `مرحباً *{{name}}* في PinSave - أفضل بوت لتحميل محتوى Pinterest! 🎯
 
 📥 *ما يمكنك تحميله:*
 
-🎬 فيديوهات HD
-📷 صور عالية الدقة
-🎞️ صور GIF متحركة
+✅ | فيديوهات HD
+✅ | صور عالية الدقة
+✅ | صور GIF متحركة
 
 ✨ *مميزاتنا:*
 
-⚡ معالجة سريعة
-🎨 جودة أصلية
-📱 واجهة سهلة
-🆓 مجاني 100%
-
-⚠️ *هذه الخدمة ليس لها أي ارتباط رسمي مع Pinterest Inc.*
+✅ | معالجة سريعة
+✅ | جودة أصلية
+✅ | واجهة سهلة
+✅ | مجاني 100%
 
 انقر على الزر أدناه للبدء! 👇`,
     
@@ -813,24 +789,20 @@ Al usar este servicio, aceptas:
   // 🇫🇷 Français
   fr: {
     welcome_title: '📌 PinSave',
-    welcome_message: `Bonjour, {{name}}! 👋
-
-Bienvenue sur *PinSave* - le meilleur bot pour télécharger du contenu Pinterest! 🎯
+    welcome_message: `Bienvenue *{{name}}* sur PinSave - le meilleur bot pour télécharger du contenu Pinterest! 🎯
 
 📥 *Ce que vous pouvez télécharger:*
 
-🎬 Vidéos HD
-📷 Photos haute résolution
-🎞️ GIFs animés
+✅ | Vidéos HD
+✅ | Photos haute résolution
+✅ | GIFs animés
 
 ✨ *Nos fonctionnalités:*
 
-⚡ Traitement rapide
-🎨 Qualité originale
-📱 Interface intuitive
-🆓 100% gratuit
-
-⚠️ *Ce service n'a aucune affiliation officielle avec Pinterest Inc.*
+✅ | Traitement rapide
+✅ | Qualité originale
+✅ | Interface intuitive
+✅ | 100% gratuit
 
 Cliquez sur le bouton ci-dessous pour commencer! 👇`,
     
@@ -948,24 +920,20 @@ En utilisant ce service, vous acceptez:
   // 🇷🇺 Русский (Russian)
   ru: {
     welcome_title: '📌 PinSave',
-    welcome_message: `Привет, {{name}}! 👋
-
-Добро пожаловать в *PinSave* - лучший бот для скачивания контента с Pinterest! 🎯
+    welcome_message: `Добро пожаловать *{{name}}* в PinSave - лучший бот для скачивания контента с Pinterest! 🎯
 
 📥 *Что можно скачать:*
 
-🎬 HD Видео
-📷 Фото высокого разрешения
-🎞️ Анимированные GIF
+✅ | HD Видео
+✅ | Фото высокого разрешения
+✅ | Анимированные GIF
 
 ✨ *Наши возможности:*
 
-⚡ Быстрая обработка
-🎨 Оригинальное качество
-📱 Интуитивный интерфейс
-🆓 100% бесплатно
-
-⚠️ *Этот сервис не имеет официальной связи с Pinterest Inc.*
+✅ | Быстрая обработка
+✅ | Оригинальное качество
+✅ | Интуитивный интерфейс
+✅ | 100% бесплатно
 
 Нажмите кнопку ниже, чтобы начать! 👇`,
     
@@ -1083,24 +1051,20 @@ En utilisant ce service, vous acceptez:
   // 🇩🇪 Deutsch (German)
   de: {
     welcome_title: '📌 PinSave',
-    welcome_message: `Hallo, {{name}}! 👋
-
-Willkommen bei *PinSave* - der beste Bot zum Herunterladen von Pinterest-Inhalten! 🎯
+    welcome_message: `Willkommen *{{name}}* bei PinSave - der beste Bot zum Herunterladen von Pinterest-Inhalten! 🎯
 
 📥 *Was Sie herunterladen können:*
 
-🎬 HD Videos
-📷 Hochauflösende Fotos
-🎞️ Animierte GIFs
+✅ | HD Videos
+✅ | Hochauflösende Fotos
+✅ | Animierte GIFs
 
 ✨ *Unsere Funktionen:*
 
-⚡ Schnelle Verarbeitung
-🎨 Originalqualität
-📱 Intuitive Oberfläche
-🆓 100% kostenlos
-
-⚠️ *Dieser Dienst hat keine offizielle Verbindung zu Pinterest Inc.*
+✅ | Schnelle Verarbeitung
+✅ | Originalqualität
+✅ | Intuitive Oberfläche
+✅ | 100% kostenlos
 
 Klicken Sie unten, um zu starten! 👇`,
     
@@ -1218,24 +1182,20 @@ Durch die Nutzung stimmen Sie zu:
   // 🇯🇵 日本語 (Japanese)
   ja: {
     welcome_title: '📌 PinSave',
-    welcome_message: `こんにちは、{{name}}さん！👋
-
-*PinSave*へようこそ - Pinterestコンテンツをダウンロードする最高のボット！🎯
+    welcome_message: `ようこそ *{{name}}* さん、PinSaveへ - Pinterestコンテンツをダウンロードする最高のボット！🎯
 
 📥 *ダウンロード可能：*
 
-🎬 HD動画
-📷 高解像度写真
-🎞️ アニメーションGIF
+✅ | HD動画
+✅ | 高解像度写真
+✅ | アニメーションGIF
 
 ✨ *機能：*
 
-⚡ 高速処理
-🎨 オリジナル品質
-📱 直感的なインターフェース
-🆓 100%無料
-
-⚠️ *このサービスはPinterest Inc.との公式な提携はありません*
+✅ | 高速処理
+✅ | オリジナル品質
+✅ | 直感的なインターフェース
+✅ | 100%無料
 
 下のボタンをクリックして開始！👇`,
     
@@ -1353,24 +1313,20 @@ Durch die Nutzung stimmen Sie zu:
   // 🇮🇹 Italiano
   it: {
     welcome_title: '📌 PinSave',
-    welcome_message: `Ciao, {{name}}! 👋
-
-Benvenuto su *PinSave* - il miglior bot per scaricare contenuti Pinterest! 🎯
+    welcome_message: `Benvenuto *{{name}}* su PinSave - il miglior bot per scaricare contenuti Pinterest! 🎯
 
 📥 *Cosa puoi scaricare:*
 
-🎬 Video HD
-📷 Foto alta risoluzione
-🎞️ GIF animate
+✅ | Video HD
+✅ | Foto alta risoluzione
+✅ | GIF animate
 
 ✨ *Le nostre funzionalità:*
 
-⚡ Elaborazione veloce
-🎨 Qualità originale
-📱 Interfaccia intuitiva
-🆓 100% gratuito
-
-⚠️ *Questo servizio non ha affiliazione ufficiale con Pinterest Inc.*
+✅ | Elaborazione veloce
+✅ | Qualità originale
+✅ | Interfaccia intuitiva
+✅ | 100% gratuito
 
 Clicca il pulsante sotto per iniziare! 👇`,
     
@@ -1488,24 +1444,20 @@ Usando questo servizio, accetti:
   // 🇰🇷 한국어 (Korean)
   ko: {
     welcome_title: '📌 PinSave',
-    welcome_message: `안녕하세요, {{name}}님! 👋
-
-*PinSave*에 오신 것을 환영합니다 - Pinterest 콘텐츠 다운로드 최고의 봇! 🎯
+    welcome_message: `환영합니다 *{{name}}*님, PinSave에 - Pinterest 콘텐츠 다운로드 최고의 봇! 🎯
 
 📥 *다운로드 가능:*
 
-🎬 HD 동영상
-📷 고해상도 사진
-🎞️ 애니메이션 GIF
+✅ | HD 동영상
+✅ | 고해상도 사진
+✅ | 애니메이션 GIF
 
 ✨ *기능:*
 
-⚡ 빠른 처리
-🎨 원본 품질
-📱 직관적인 인터페이스
-🆓 100% 무료
-
-⚠️ *이 서비스는 Pinterest Inc.와 공식적인 제휴가 없습니다*
+✅ | 빠른 처리
+✅ | 원본 품질
+✅ | 직관적인 인터페이스
+✅ | 100% 무료
 
 아래 버튼을 클릭하여 시작하세요! 👇`,
     
@@ -1622,24 +1574,20 @@ Usando questo servizio, accetti:
   // 🇹🇷 Türkçe (Turkish)
   tr: {
     welcome_title: '📌 PinSave',
-    welcome_message: `Merhaba, {{name}}! 👋
-
-*PinSave*'e hoş geldiniz - Pinterest içeriklerini indirmek için en iyi bot! 🎯
+    welcome_message: `Hoş geldiniz *{{name}}* PinSave'e - Pinterest içeriklerini indirmek için en iyi bot! 🎯
 
 📥 *İndirebilecekleriniz:*
 
-🎬 HD Videolar
-📷 Yüksek çözünürlüklü Fotoğraflar
-🎞️ Animasyonlu GIF'ler
+✅ | HD Videolar
+✅ | Yüksek çözünürlüklü Fotoğraflar
+✅ | Animasyonlu GIF'ler
 
 ✨ *Özelliklerimiz:*
 
-⚡ Hızlı işleme
-🎨 Orijinal kalite
-📱 Sezgisel arayüz
-🆓 %100 ücretsiz
-
-⚠️ *Bu hizmetin Pinterest Inc. ile resmi bir bağlantısı yoktur*
+✅ | Hızlı işleme
+✅ | Orijinal kalite
+✅ | Sezgisel arayüz
+✅ | %100 ücretsiz
 
 Başlamak için aşağıdaki düğmeye tıklayın! 👇`,
     
