@@ -411,13 +411,13 @@ Al usar este servicio, aceptas:
     language_changed: '✅ ¡Idioma cambiado con éxito!',
     
     // Download messages
-    processing: '⏳ *Procesando...*
+    processing: `⏳ *Procesando...*
 
-Espera mientras descargamos tu contenido de Pinterest.',
-    download_success: '✅ *¡Descarga completada!*
+Espera mientras descargamos tu contenido de Pinterest.`,
+    download_success: `✅ *¡Descarga completada!*
 
-¡Aquí está tu contenido, {{name}}! 🎉',
-    download_error: '❌ *Error de descarga*
+¡Aquí está tu contenido, {{name}}! 🎉`,
+    download_error: `❌ *Error de descarga*
 
 No se pudo descargar el contenido. Verifica si:
 
@@ -425,14 +425,14 @@ No se pudo descargar el contenido. Verifica si:
 • El pin es público
 • El contenido aún existe
 
-Intenta de nuevo con otra URL.',
-    send_pinterest_url: '📌 *Envía una URL de Pinterest*
+Intenta de nuevo con otra URL.`,
+    send_pinterest_url: `📌 *Envía una URL de Pinterest*
 
 Pega aquí el enlace del video, foto o GIF que deseas descargar:
 
 🔗 *Formatos aceptados:*
 • pinterest.com/pin/...
-• pin.it/...',
+• pin.it/...`,
     btn_download_more: '📥 Descargar Más',
   },
 
@@ -564,13 +564,13 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
     language_changed: '✅ 语言更改成功！',
     
     // Download messages
-    processing: '⏳ *处理中...*
+    processing: `⏳ *处理中...*
 
-请稍候，我们正在下载您的Pinterest内容。',
-    download_success: '✅ *下载完成！*
+请稍候，我们正在下载您的Pinterest内容。`,
+    download_success: `✅ *下载完成！*
 
-这是您的内容，{{name}}！🎉',
-    download_error: '❌ *下载错误*
+这是您的内容，{{name}}！🎉`,
+    download_error: `❌ *下载错误*
 
 无法下载内容。请检查：
 
@@ -578,14 +578,14 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
 • Pin是否公开
 • 内容是否仍然存在
 
-请使用其他URL重试。',
-    send_pinterest_url: '📌 *发送Pinterest链接*
+请使用其他URL重试。`,
+    send_pinterest_url: `📌 *发送Pinterest链接*
 
 粘贴您要下载的视频、照片或GIF链接：
 
 🔗 *支持的格式：*
 • pinterest.com/pin/...
-• pin.it/...',
+• pin.it/...`,
     btn_download_more: '📥 下载更多',
   },
 
@@ -719,18 +719,18 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
     language_changed: '✅ भाषा सफलतापूर्वक बदली गई!',
     
     // Download messages
-    processing: '⏳ *प्रोसेसिंग...*
+    processing: `⏳ *प्रोसेसिंग...*
 
-कृपया प्रतीक्षा करें।',
-    download_success: '✅ *डाउनलोड पूर्ण!*
+कृपया प्रतीक्षा करें।`,
+    download_success: `✅ *डाउनलोड पूर्ण!*
 
-यहाँ आपकी सामग्री है, {{name}}! 🎉',
-    download_error: '❌ *डाउनलोड त्रुटि*
+यहाँ आपकी सामग्री है, {{name}}! 🎉`,
+    download_error: `❌ *डाउनलोड त्रुटि*
 
-सामग्री डाउनलोड नहीं हो सकी।',
-    send_pinterest_url: '📌 *Pinterest URL भेजें*
+सामग्री डाउनलोड नहीं हो सकी।`,
+    send_pinterest_url: `📌 *Pinterest URL भेजें*
 
-वीडियो, फोटो या GIF का लिंक पेस्ट करें।',
+वीडियो, फोटो या GIF का लिंक पेस्ट करें।`,
     btn_download_more: '📥 और डाउनलोड करें',
   },
 
@@ -865,18 +865,18 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
     language_changed: '✅ تم تغيير اللغة بنجاح!',
     
     // Download messages
-    processing: '⏳ *جاري المعالجة...*
+    processing: `⏳ *جاري المعالجة...*
 
-يرجى الانتظار.',
-    download_success: '✅ *تم التحميل!*
+يرجى الانتظار.`,
+    download_success: `✅ *تم التحميل!*
 
-إليك المحتوى، {{name}}! 🎉',
-    download_error: '❌ *خطأ في التحميل*
+إليك المحتوى، {{name}}! 🎉`,
+    download_error: `❌ *خطأ في التحميل*
 
-تعذر تحميل المحتوى.',
-    send_pinterest_url: '📌 *أرسل رابط Pinterest*
+تعذر تحميل المحتوى.`,
+    send_pinterest_url: `📌 *أرسل رابط Pinterest*
 
-الصق رابط الفيديو أو الصورة.',
+الصق رابط الفيديو أو الصورة.`,
     btn_download_more: '📥 تحميل المزيد',
   },
 
@@ -1011,18 +1011,18 @@ En utilisant ce service, vous acceptez:
     language_changed: '✅ Langue changée avec succès!',
     
     // Download messages
-    processing: '⏳ *Traitement...*
+    processing: `⏳ *Traitement...*
 
-Veuillez patienter.',
-    download_success: '✅ *Téléchargement terminé!*
+Veuillez patienter.`,
+    download_success: `✅ *Téléchargement terminé!*
 
-Voici votre contenu, {{name}}! 🎉',
-    download_error: '❌ *Erreur de téléchargement*
+Voici votre contenu, {{name}}! 🎉`,
+    download_error: `❌ *Erreur de téléchargement*
 
-Impossible de télécharger.',
-    send_pinterest_url: '📌 *Envoyez une URL Pinterest*
+Impossible de télécharger.`,
+    send_pinterest_url: `📌 *Envoyez une URL Pinterest*
 
-Collez le lien de la vidéo, photo ou GIF.',
+Collez le lien de la vidéo, photo ou GIF.`,
     btn_download_more: '📥 Télécharger Plus',
   },
 
@@ -1157,18 +1157,18 @@ Collez le lien de la vidéo, photo ou GIF.',
     language_changed: '✅ Язык успешно изменён!',
     
     // Download messages
-    processing: '⏳ *Обработка...*
+    processing: `⏳ *Обработка...*
 
-Пожалуйста, подождите.',
-    download_success: '✅ *Загрузка завершена!*
+Пожалуйста, подождите.`,
+    download_success: `✅ *Загрузка завершена!*
 
-Вот ваш контент, {{name}}! 🎉',
-    download_error: '❌ *Ошибка загрузки*
+Вот ваш контент, {{name}}! 🎉`,
+    download_error: `❌ *Ошибка загрузки*
 
-Не удалось загрузить контент.',
-    send_pinterest_url: '📌 *Отправьте URL Pinterest*
+Не удалось загрузить контент.`,
+    send_pinterest_url: `📌 *Отправьте URL Pinterest*
 
-Вставьте ссылку на видео, фото или GIF.',
+Вставьте ссылку на видео, фото или GIF.`,
     btn_download_more: '📥 Скачать Ещё',
   },
 
@@ -1303,18 +1303,18 @@ Durch die Nutzung stimmen Sie zu:
     language_changed: '✅ Sprache erfolgreich geändert!',
     
     // Download messages
-    processing: '⏳ *Verarbeitung...*
+    processing: `⏳ *Verarbeitung...*
 
-Bitte warten Sie.',
-    download_success: '✅ *Download abgeschlossen!*
+Bitte warten Sie.`,
+    download_success: `✅ *Download abgeschlossen!*
 
-Hier ist Ihr Inhalt, {{name}}! 🎉',
-    download_error: '❌ *Download-Fehler*
+Hier ist Ihr Inhalt, {{name}}! 🎉`,
+    download_error: `❌ *Download-Fehler*
 
-Inhalt konnte nicht heruntergeladen werden.',
-    send_pinterest_url: '📌 *Senden Sie eine Pinterest-URL*
+Inhalt konnte nicht heruntergeladen werden.`,
+    send_pinterest_url: `📌 *Senden Sie eine Pinterest-URL*
 
-Fügen Sie den Link zum Video, Foto oder GIF ein.',
+Fügen Sie den Link zum Video, Foto oder GIF ein.`,
     btn_download_more: '📥 Mehr Herunterladen',
   },
 
@@ -1449,18 +1449,18 @@ Fügen Sie den Link zum Video, Foto oder GIF ein.',
     language_changed: '✅ 言語が正常に変更されました！',
     
     // Download messages
-    processing: '⏳ *処理中...*
+    processing: `⏳ *処理中...*
 
-お待ちください。',
-    download_success: '✅ *ダウンロード完了！*
+お待ちください。`,
+    download_success: `✅ *ダウンロード完了！*
 
-こちらがコンテンツです、{{name}}！🎉',
-    download_error: '❌ *ダウンロードエラー*
+こちらがコンテンツです、{{name}}！🎉`,
+    download_error: `❌ *ダウンロードエラー*
 
-コンテンツをダウンロードできませんでした。',
-    send_pinterest_url: '📌 *Pinterest URLを送信*
+コンテンツをダウンロードできませんでした。`,
+    send_pinterest_url: `📌 *Pinterest URLを送信*
 
-動画、写真、GIFのリンクを貼り付けてください。',
+動画、写真、GIFのリンクを貼り付けてください。`,
     btn_download_more: '📥 もっとダウンロード',
   },
 
@@ -1595,18 +1595,18 @@ Usando questo servizio, accetti:
     language_changed: '✅ Lingua cambiata con successo!',
     
     // Download messages
-    processing: '⏳ *Elaborazione...*
+    processing: `⏳ *Elaborazione...*
 
-Attendi per favore.',
-    download_success: '✅ *Download completato!*
+Attendi per favore.`,
+    download_success: `✅ *Download completato!*
 
-Ecco il tuo contenuto, {{name}}! 🎉',
-    download_error: '❌ *Errore di download*
+Ecco il tuo contenuto, {{name}}! 🎉`,
+    download_error: `❌ *Errore di download*
 
-Impossibile scaricare il contenuto.',
-    send_pinterest_url: '📌 *Invia un URL Pinterest*
+Impossibile scaricare il contenuto.`,
+    send_pinterest_url: `📌 *Invia un URL Pinterest*
 
-Incolla il link del video, foto o GIF.',
+Incolla il link del video, foto o GIF.`,
     btn_download_more: '📥 Scarica Altro',
   },
 
@@ -1740,18 +1740,18 @@ Incolla il link del video, foto o GIF.',
     language_changed: '✅ 언어가 성공적으로 변경되었습니다!',
     
     // Download messages
-    processing: '⏳ *처리 중...*
+    processing: `⏳ *처리 중...*
 
-잠시만 기다려 주세요.',
-    download_success: '✅ *다운로드 완료!*
+잠시만 기다려 주세요.`,
+    download_success: `✅ *다운로드 완료!*
 
-여기 콘텐츠입니다, {{name}}! 🎉',
-    download_error: '❌ *다운로드 오류*
+여기 콘텐츠입니다, {{name}}! 🎉`,
+    download_error: `❌ *다운로드 오류*
 
-콘텐츠를 다운로드할 수 없습니다.',
-    send_pinterest_url: '📌 *Pinterest URL 보내기*
+콘텐츠를 다운로드할 수 없습니다.`,
+    send_pinterest_url: `📌 *Pinterest URL 보내기*
 
-동영상, 사진 또는 GIF 링크를 붙여넣으세요.',
+동영상, 사진 또는 GIF 링크를 붙여넣으세요.`,
     btn_download_more: '📥 더 다운로드',
   },
 
@@ -1887,18 +1887,18 @@ Bu hizmeti kullanarak kabul edersiniz:
     language_changed: '✅ Dil başarıyla değiştirildi!',
     
     // Download messages
-    processing: '⏳ *İşleniyor...*
+    processing: `⏳ *İşleniyor...*
 
-Lütfen bekleyin.',
-    download_success: '✅ *İndirme tamamlandı!*
+Lütfen bekleyin.`,
+    download_success: `✅ *İndirme tamamlandı!*
 
-İşte içeriğiniz, {{name}}! 🎉',
-    download_error: '❌ *İndirme hatası*
+İşte içeriğiniz, {{name}}! 🎉`,
+    download_error: `❌ *İndirme hatası*
 
-İçerik indirilemedi.',
-    send_pinterest_url: '📌 *Pinterest URL gönderin*
+İçerik indirilemedi.`,
+    send_pinterest_url: `📌 *Pinterest URL gönderin*
 
-Video, fotoğraf veya GIF linkini yapıştırın.',
+Video, fotoğraf veya GIF linkini yapıştırın.`,
     btn_download_more: '📥 Daha Fazla İndir',
   },
 };
