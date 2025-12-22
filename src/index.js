@@ -5,8 +5,229 @@ import { detectLanguage, getLocalizedMessage, SUPPORTED_LANGUAGES } from './i18n
 const BOT_TOKEN = '8326140110:AAGOufTHcRuFJ6DmzzSevt2OAk4I4qk9hMU';
 const TELEGRAM_API = 'https://api.telegram.org/bot';
 
-// URL da API do Pinterest Downloader
-const PINTEREST_API_URL = 'https://pinterest-downloader-api.mogspm012.workers.dev/api/extract';
+// Funções de extração do Pinterest (integradas diretamente)
+
+/**
+ * Extrai o ID do pin da URL do Pinterest
+ */
+function extractPinId(url) {
+  // Handle pinterest.com/pin/123456789/ format
+  const pinterestMatch = url.match(/pinterest\.com\/pin\/(\d+)/);
+  if (pinterestMatch) {
+    return pinterestMatch[1];
+  }
+
+  // Handle pin.it/abc123 format - return as is
+  const pinItMatch = url.match(/pin\.it\/([a-zA-Z0-9]+)/);
+  if (pinItMatch) {
+    return pinItMatch[1];
+  }
+
+  return null;
+}
+
+/**
+ * Expande URL curta pin.it para URL completa
+ */
+async function expandShortUrl(shortCode) {
+  try {
+    const response = await fetch(`https://pin.it/${shortCode}`, {
+      redirect: 'follow',
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+      },
+    });
+
+    const finalUrl = response.url;
+    const match = finalUrl.match(/\/pin\/(\d+)/);
+    if (match) {
+      return match[1];
+    }
+    return null;
+  } catch (error) {
+    console.error('Error expanding short URL:', error);
+    return null;
+  }
+}
+
+/**
+ * Extrai URL de vídeo do HTML usando múltiplos padrões
+ */
+function extractVideoUrl(html) {
+  // Pattern 1: contentUrl with mp4
+  const pattern1 = html.match(/"contentUrl":"([^"]*\.mp4[^"]*)"/);
+  if (pattern1) {
+    return pattern1[1].replace(/\\\/g, '/');
+  }
+
+  // Pattern 2: video object with v_720p
+  const pattern2 = html.match(/"video":\s*\{[^}]*"v_720p":"([^"]*)"/);
+  if (pattern2) {
+    return pattern2[1].replace(/\\\/g, '/');
+  }
+
+  // Pattern 3: og:video meta tag
+  const pattern3 = html.match(/<meta\s+property="og:video"\s+content="([^"]*)"/);
+  if (pattern3) {
+    return pattern3[1];
+  }
+
+  // Pattern 4: Direct v.pinimg.com URL
+  const pattern4 = html.match(/(https:\/\/v\.pinimg\.com\/videos\/v1\/[^"<>]+\.mp4)/);
+  if (pattern4) {
+    return pattern4[1];
+  }
+
+  // Pattern 5: Video URL in JSON
+  const pattern5 = html.match(/"url":"(https:\/\/v\.pinimg\.com[^"]*\.mp4)"/);
+  if (pattern5) {
+    return pattern5[1];
+  }
+  
+  // Pattern 6: v1.pinimg.com videos
+  const pattern6 = html.match(/(https:\/\/v1\.pinimg\.com\/videos[^"<>]+\.mp4)/);
+  if (pattern6) {
+    return pattern6[1];
+  }
+
+  return null;
+}
+
+/**
+ * Extrai URL de imagem do HTML usando múltiplos padrões
+ */
+function extractImageUrl(html) {
+  // Pattern 1: image with orig
+  const pattern1 = html.match(/"image":\s*\{[^}]*"orig":\s*\{[^}]*"url":"([^"]*)"/);
+  if (pattern1) {
+    return pattern1[1].replace(/\\\/g, '/').split('?')[0];
+  }
+
+  // Pattern 2: Direct image URL in image field
+  const pattern2 = html.match(/"image":"(https:\/\/i\.pinimg\.com[^"]*)"/);
+  if (pattern2) {
+    return pattern2[1].replace(/\\\/g, '/').split('?')[0];
+  }
+
+  // Pattern 3: og:image meta tag
+  const pattern3 = html.match(/<meta\s+property="og:image"\s+content="([^"]*)"/);
+  if (pattern3) {
+    return pattern3[1].split('?')[0];
+  }
+
+  // Pattern 4: Direct i.pinimg.com/originals URL
+  const pattern4 = html.match(/(https:\/\/i\.pinimg\.com\/originals\/[^"<>]+\.(jpg|png|gif|webp))/);
+  if (pattern4) {
+    return pattern4[1];
+  }
+
+  // Pattern 5: i.pinimg.com URL in JSON
+  const pattern5 = html.match(/"url":"(https:\/\/i\.pinimg\.com[^"]*)"[^}]*"width":\d+/);
+  if (pattern5) {
+    return pattern5[1].replace(/\\\/g, '/').split('?')[0];
+  }
+
+  return null;
+}
+
+/**
+ * Detecta tipo de mídia a partir da URL e HTML
+ */
+function detectMediaType(videoUrl, imageUrl, html) {
+  // Check if it's animated (GIF)
+  if (html.includes('"is_animated":true') || html.includes('"type":"animated"')) {
+    return 'animated';
+  }
+
+  // If has video URL, it's a video
+  if (videoUrl) {
+    return 'video';
+  }
+
+  // Otherwise it's an image
+  if (imageUrl) {
+    return 'image';
+  }
+
+  return null;
+}
+
+/**
+ * Busca e extrai mídia da página do Pinterest
+ */
+async function extractMediaFromPage(pinId) {
+  try {
+    const url = `https://www.pinterest.com/pin/${pinId}/`;
+    console.log('[EXTRACTOR] Fetching Pinterest page:', url);
+
+    const response = await fetch(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Cache-Control': 'no-cache',
+      },
+    });
+
+    console.log('[EXTRACTOR] Response status:', response.status);
+
+    if (!response.ok) {
+      if (response.status === 404) {
+        return { success: false, error: 'Pin not found' };
+      }
+      return { success: false, error: `Failed to fetch pin (Status: ${response.status})` };
+    }
+
+    const html = await response.text();
+    console.log('[EXTRACTOR] HTML length:', html.length);
+
+    // Extract video URL
+    const videoUrl = extractVideoUrl(html);
+    console.log('[EXTRACTOR] Video URL:', videoUrl);
+
+    // Extract image URL
+    const imageUrl = extractImageUrl(html);
+    console.log('[EXTRACTOR] Image URL:', imageUrl);
+
+    // Detect media type
+    const mediaType = detectMediaType(videoUrl, imageUrl, html);
+    console.log('[EXTRACTOR] Media type:', mediaType);
+
+    if (!mediaType) {
+      return { success: false, error: 'Unable to extract media from pin' };
+    }
+
+    // Return appropriate media info
+    if (mediaType === 'video' || mediaType === 'animated') {
+      if (!videoUrl) {
+        return { success: false, error: 'Video URL not found' };
+      }
+      return {
+        success: true,
+        type: mediaType,
+        url: videoUrl,
+        resolution: [1280, 720],
+      };
+    }
+
+    if (mediaType === 'image') {
+      if (!imageUrl) {
+        return { success: false, error: 'Image URL not found' };
+      }
+      return {
+        success: true,
+        type: 'image',
+        url: imageUrl,
+        resolution: [1280, 1280],
+      };
+    }
+
+    return { success: false, error: 'Unable to determine media type' };
+  } catch (error) {
+    console.error('[EXTRACTOR] Error:', error);
+    return { success: false, error: error.message || 'Failed to extract media' };
+  }
+}
 
 // URL da imagem de boas-vindas
 const WELCOME_IMAGE_URL = 'https://iili.io/fERCEQ4.png';
@@ -191,56 +412,39 @@ function isPinterestUrl(text) {
 }
 
 /**
- * Extrai mídia do Pinterest usando a API
+ * Extrai mídia do Pinterest (integrado diretamente)
  */
 async function extractPinterestMedia(url) {
   try {
     console.log('[PINTEREST] Starting extraction for URL:', url);
-    console.log('[PINTEREST] API URL:', PINTEREST_API_URL);
     
-    const requestBody = JSON.stringify({ url: url.trim() });
-    console.log('[PINTEREST] Request body:', requestBody);
+    // Extrai o ID do pin
+    let pinId = extractPinId(url.trim());
+    console.log('[PINTEREST] Extracted pin ID:', pinId);
     
-    const response = await fetch(PINTEREST_API_URL, {
-      method: 'POST',
-      headers: { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'User-Agent': 'PinSave-Bot/3.0',
-      },
-      body: requestBody,
-    });
-
-    console.log('[PINTEREST] Response status:', response.status);
-    console.log('[PINTEREST] Response ok:', response.ok);
-    
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('[PINTEREST] API error response:', errorText);
-      return { success: false, error: `API returned status ${response.status}: ${errorText}` };
-    }
-
-    const responseText = await response.text();
-    console.log('[PINTEREST] Raw response:', responseText);
-    
-    let data;
-    try {
-      data = JSON.parse(responseText);
-    } catch (parseError) {
-      console.error('[PINTEREST] JSON parse error:', parseError.message);
-      return { success: false, error: 'Invalid JSON response from API' };
+    if (!pinId) {
+      return { success: false, error: 'Invalid Pinterest URL' };
     }
     
-    console.log('[PINTEREST] Parsed data:', JSON.stringify(data));
-    console.log('[PINTEREST] Success:', data.success, 'Type:', data.type, 'URL:', data.url);
+    // Se é uma URL curta (pin.it), expande primeiro
+    if (!pinId.match(/^\d+$/)) {
+      console.log('[PINTEREST] Expanding short URL...');
+      pinId = await expandShortUrl(pinId);
+      console.log('[PINTEREST] Expanded pin ID:', pinId);
+      
+      if (!pinId) {
+        return { success: false, error: 'Could not expand short URL' };
+      }
+    }
     
-    return data;
+    // Extrai a mídia da página
+    const result = await extractMediaFromPage(pinId);
+    console.log('[PINTEREST] Extraction result:', JSON.stringify(result));
+    
+    return result;
   } catch (error) {
     console.error('[PINTEREST] Exception caught:', error);
-    console.error('[PINTEREST] Error name:', error.name);
-    console.error('[PINTEREST] Error message:', error.message);
-    console.error('[PINTEREST] Error stack:', error.stack);
-    return { success: false, error: 'Failed to connect to Pinterest API: ' + (error.message || 'Unknown error') };
+    return { success: false, error: 'Failed to extract media: ' + (error.message || 'Unknown error') };
   }
 }
 
