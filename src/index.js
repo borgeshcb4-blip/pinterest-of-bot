@@ -57,13 +57,13 @@ function extractVideoUrl(html) {
   // Pattern 1: contentUrl with mp4
   const pattern1 = html.match(/"contentUrl":"([^"]*\.mp4[^"]*)"/);
   if (pattern1) {
-    return pattern1[1].replace(/\\\/g, '/');
+   return pattern1[1].split('\\').join('').split('\/').join('/');
   }
 
   // Pattern 2: video object with v_720p
   const pattern2 = html.match(/"video":\s*\{[^}]*"v_720p":"([^"]*)"/);
   if (pattern2) {
-    return pattern2[1].replace(/\\\/g, '/');
+  return pattern2[1].split('\\').join('').split('\/').join('/');
   }
 
   // Pattern 3: og:video meta tag
@@ -100,13 +100,13 @@ function extractImageUrl(html) {
   // Pattern 1: image with orig
   const pattern1 = html.match(/"image":\s*\{[^}]*"orig":\s*\{[^}]*"url":"([^"]*)"/);
   if (pattern1) {
-    return pattern1[1].replace(/\\\/g, '/').split('?')[0];
+   return pattern1[1].split('\\').join('').split('\/').join('/').split('?')[0];
   }
 
   // Pattern 2: Direct image URL in image field
   const pattern2 = html.match(/"image":"(https:\/\/i\.pinimg\.com[^"]*)"/);
   if (pattern2) {
-    return pattern2[1].replace(/\\\/g, '/').split('?')[0];
+  return pattern2[1].split('\\').join('').split('\/').join('/').split('?')[0];
   }
 
   // Pattern 3: og:image meta tag
@@ -124,7 +124,7 @@ function extractImageUrl(html) {
   // Pattern 5: i.pinimg.com URL in JSON
   const pattern5 = html.match(/"url":"(https:\/\/i\.pinimg\.com[^"]*)"[^}]*"width":\d+/);
   if (pattern5) {
-    return pattern5[1].replace(/\\\/g, '/').split('?')[0];
+  return pattern5[1].split('\\').join('').split('\/').join('/').split('?')[0];
   }
 
   return null;
