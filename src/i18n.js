@@ -25,10 +25,10 @@ export const translations = {
 Clique no botão abaixo para começar! 👇`,
     
     btn_open_app: '🚀 Abrir PinSave',
-    btn_how_it_works: 'Como Funciona',
-    btn_terms: 'Termos',
+    btn_how_it_works: '❓ Como Funciona',
+    btn_terms: '📜 Termos',
     
-    how_it_works_title: 'Como Funciona',
+    how_it_works_title: '❓ Como Funciona',
     how_it_works_message: `Olá, {{name}}.
 
 Este guia apresenta as instruções para utilizar o PinSave e baixar conteúdos do Pinterest.
@@ -55,7 +55,7 @@ Este guia apresenta as instruções para utilizar o PinSave e baixar conteúdos 
 • Tamanho máximo de 100 MB por arquivo.
 • Apenas conteúdo de acesso público pode ser baixado.`,
 
-    terms_title: 'Termos de Uso',
+    terms_title: '📜 Termos de Uso',
     terms_message: `*Termos de Uso do PinSave*
 
 Ao utilizar os serviços do PinSave, você concorda com os seguintes termos e condições:
