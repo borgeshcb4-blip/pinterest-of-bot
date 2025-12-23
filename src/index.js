@@ -519,7 +519,7 @@ async function handlePinterestDownload(chatId, url, firstName, language) {
     const btnDownloadMore = getLocalizedMessage('btn_download_more', language);
     const keyboard = {
       inline_keyboard: [
-        [{ text: btnDownloadMore, callback_data: 'start' }],
+        [{ text: btnDownloadMore, callback_data: 'download_media' }],
       ],
     };
 
