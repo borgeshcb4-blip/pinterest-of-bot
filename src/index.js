@@ -818,13 +818,9 @@ async function handleBackToStart(chatId, messageId, firstName, language, hasMedi
 
   const fullMessage = `${title}\n\n${message}`;
   
-  // Se tem foto/vídeo, deleta a mensagem e envia uma nova sem mídia
-  if (hasMedia) {
-    await deleteMessage(chatId, messageId);
-    await sendMessage(chatId, fullMessage, keyboard);
-  } else {
-    await editMessageText(chatId, messageId, fullMessage, keyboard);
-  }
+  // Sempre deleta a mensagem anterior e envia uma nova com a imagem
+  await deleteMessage(chatId, messageId);
+  await sendPhoto(chatId, WELCOME_IMAGE_URL, fullMessage, keyboard);
 }
 
 /**
