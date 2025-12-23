@@ -31,38 +31,31 @@ Clique no botão abaixo para começar! 👇`,
     how_it_works_title: '❓ Como Funciona',
     how_it_works_message: `*Guia de Utilização do PinSave*
 
-Este guia apresenta as instruções detalhadas para utilizar o PinSave e realizar o download de conteúdos da plataforma Pinterest de forma eficiente.
+Este guia apresenta as instruções para utilizar o PinSave e realizar o download de conteúdos do Pinterest.
 
 *Passo a Passo:*
 
-*1. Acesso ao Serviço*
-Clique no botão "Baixar Mídia" para abrir a interface principal do Mini App.
+*1. Enviar o Link*
+Copie a URL do conteúdo desejado no Pinterest e envie diretamente no chat do bot.
 
-*2. Inserção do Link*
-Copie a URL do conteúdo desejado no Pinterest e cole-a no campo de entrada indicado.
+*2. Processamento*
+Aguarde alguns instantes enquanto o sistema processa o seu pedido.
 
-*3. Processamento*
-Aguarde alguns instantes enquanto o nosso sistema processa o seu pedido e prepara o arquivo para download.
-
-*4. Conclusão*
-Assim que o processamento for finalizado, o conteúdo será transferido e salvo automaticamente no seu dispositivo.
-
-*Informações Adicionais:*
+*3. Conclusão*
+O conteúdo será enviado diretamente no chat. Para salvar, toque e segure o arquivo e selecione "Salvar na galeria".
 
 *Links Aceitos:*
-O serviço é compatível com os formatos de URL padrão da plataforma:
 • pinterest.com/pin/...
 • pin.it/...
 
 *Tipos de Conteúdo Suportados:*
-A ferramenta está otimizada para o download de:
 • Vídeos (MP4)
 • Fotos (JPEG/PNG)
 • GIFs Animados
 
-*Limitações e Restrições:*
-• *Capacidade:* O tamanho máximo permitido é de 100 MB por arquivo.
-• *Privacidade:* Por questões de segurança e ética, apenas conteúdos de acesso público podem ser baixados. Perfis privados não são suportados.`,
+*Limitações:*
+• Tamanho máximo: 100 MB por arquivo.
+• Apenas conteúdos públicos podem ser baixados.`,
 
     terms_title: '📜 Termos de Uso',
     terms_message: `*Termos de Uso do PinSave*
@@ -160,7 +153,7 @@ This guide provides detailed instructions for using PinSave and downloading cont
 *Step by Step:*
 
 *1. Access the Service*
-Click the "Download Media" button to open the Mini App's main interface.
+Copy the URL of the desired Pinterest content and send it directly in the bot chat.
 
 *2. Insert the Link*
 Copy the URL of the desired content on Pinterest and paste it into the indicated input field.
@@ -284,7 +277,7 @@ Esta guía presenta las instrucciones detalladas para utilizar PinSave y realiza
 *Paso a Paso:*
 
 *1. Acceso al Servicio*
-Haga clic en el botón "Descargar Medios" para abrir la interfaz principal del Mini App.
+Copie la URL del contenido deseado en Pinterest y envíela directamente en el chat del bot.
 
 *2. Inserción del Enlace*
 Copie la URL del contenido deseado en Pinterest y péguela en el campo de entrada indicado.
@@ -424,7 +417,7 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
 *操作步骤：*
 
 *1. 访问服务*
-点击"下载媒体"按钮打开 Mini App 的主界面。
+复制 Pinterest 内容的 URL，直接发送到机器人聊天中。
 
 *2. 插入链接*
 复制 Pinterest 上所需内容的 URL，并将其粘贴到指定的输入框中。
@@ -564,7 +557,7 @@ PinSave 致力于保护您的隐私。我们不存储下载内容的副本，也
 *चरण दर चरण:*
 
 *1. सेवा तक पहुंच*
-Mini App का मुख्य इंटरफ़ेस खोलने के लिए "मीडिया डाउनलोड करें" बटन पर क्लिक करें।
+Pinterest सामग्री का URL कॉपी करें और बॉट चैट में सीधे भेजें।
 
 *2. लिंक डालें*
 Pinterest पर वांछित सामग्री का URL कॉपी करें और इसे निर्दिष्ट इनपुट फ़ील्ड में पेस्ट करें।
@@ -824,7 +817,7 @@ Ce guide présente les instructions détaillées pour utiliser PinSave et télé
 *Étape par étape :*
 
 *1. Accès au service*
-Cliquez sur le bouton "Télécharger les médias" pour ouvrir l'interface principale du Mini App.
+Copiez l'URL du contenu Pinterest souhaité et envoyez-la directement dans le chat du bot.
 
 *2. Insertion du lien*
 Copiez l'URL du contenu souhaité sur Pinterest et collez-la dans le champ de saisie indiqué.
@@ -954,7 +947,7 @@ Collez le lien de la vidéo, photo ou GIF.`,
 *Пошаговая инструкция:*
 
 *1. Доступ к сервису*
-Нажмите кнопку "Скачать медиа", чтобы открыть главный интерфейс Mini App.
+Скопируйте URL нужного контента Pinterest и отправьте его прямо в чат бота.
 
 *2. Вставка ссылки*
 Скопируйте URL нужного контента на Pinterest и вставьте его в указанное поле ввода.
@@ -1084,7 +1077,7 @@ Diese Anleitung enthält detaillierte Anweisungen zur Nutzung von PinSave und zu
 *Schritt für Schritt:*
 
 *1. Zugang zum Service*
-Klicken Sie auf die Schaltfläche "Medien herunterladen", um die Hauptoberfläche der Mini App zu öffnen.
+Kopieren Sie die URL des gewünschten Pinterest-Inhalts und senden Sie sie direkt im Bot-Chat.
 
 *2. Link einfügen*
 Kopieren Sie die URL des gewünschten Inhalts auf Pinterest und fügen Sie sie in das angegebene Eingabefeld ein.
@@ -1214,7 +1207,7 @@ Fügen Sie den Link zum Video, Foto oder GIF ein.`,
 *ステップバイステップ：*
 
 *1. サービスへのアクセス*
-「メディアをダウンロード」ボタンをクリックして、Mini Appのメインインターフェースを開きます。
+PinterestコンテンツのURLをコピーして、ボットのチャットに直接送信してください。
 
 *2. リンクの挿入*
 Pinterest上の目的のコンテンツのURLをコピーし、指定された入力フィールドに貼り付けます。
@@ -1344,7 +1337,7 @@ Questa guida presenta le istruzioni dettagliate per utilizzare PinSave e scarica
 *Passo dopo passo:*
 
 *1. Accesso al servizio*
-Clicca sul pulsante "Scarica Media" per aprire l'interfaccia principale della Mini App.
+Copia l'URL del contenuto Pinterest desiderato e invialo direttamente nella chat del bot.
 
 *2. Inserimento del link*
 Copia l'URL del contenuto desiderato su Pinterest e incollalo nel campo di inserimento indicato.
@@ -1474,7 +1467,7 @@ Incolla il link del video, foto o GIF.`,
 *단계별 안내:*
 
 *1. 서비스 접속*
-"미디어 다운로드" 버튼을 클릭하여 Mini App의 메인 인터페이스를 엽니다.
+Pinterest 콘텐츠의 URL을 복사하여 봇 채팅에 직접 보내세요.
 
 *2. 링크 삽입*
 Pinterest에서 원하는 콘텐츠의 URL을 복사하여 지정된 입력 필드에 붙여넣습니다.
@@ -1604,7 +1597,7 @@ Bu kılavuz, PinSave'i kullanarak Pinterest platformundan verimli bir şekilde i
 *Adım Adım:*
 
 *1. Hizmete Erişim*
-Mini App'in ana arayüzünü açmak için "Medya İndir" düğmesine tıklayın.
+İstediğiniz Pinterest içeriğinin URL'sini kopyalayın ve doğrudan bot sohbetine gönderin.
 
 *2. Bağlantı Ekleme*
 Pinterest'teki istenen içeriğin URL'sini kopyalayın ve belirtilen giriş alanına yapıştırın.
