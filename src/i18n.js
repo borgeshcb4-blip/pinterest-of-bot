@@ -103,7 +103,7 @@ Ao continuar a utilizar o serviço, você confirma que leu, compreendeu e concor
     processing: '⏳ Processando...',
     download_success: '✅ *Download concluído!*\n\nAqui está seu conteúdo, {{name}}! 🎉',
     download_error: '❌ *Erro no download*\n\nNão foi possível baixar o conteúdo. Verifique se:\n\n• A URL está correta\n• O pin é público\n• O conteúdo ainda existe\n\nTente novamente com outra URL.',
-    invalid_url: '⚠️ *URL Inválida*\n\nO link enviado não é uma URL válida do Pinterest.\n\n*Formatos aceitos:*\n• pinterest.com/pin/...\n• pin.it/...\n\nPor favor, copie o link correto e tente novamente.',
+    invalid_url: '⚠️ O link enviado não é uma URL válida do Pinterest.\n\n*Formatos aceitos:*\n• pinterest.com/pin/...\n• pin.it/...\n\nPor favor, copie o link correto e tente novamente.',
     send_pinterest_url: '📌 *Envie uma URL do Pinterest*\n\nCole aqui o link do vídeo, foto ou GIF que deseja baixar:\n\n🔗 *Formatos aceitos:*\n• pinterest.com/pin/...\n• pin.it/...',
     btn_download_more: '📥 Baixar Mais',
     btn_download_media: '📥 Baixar Mídia',
@@ -227,7 +227,7 @@ By continuing to use the service, you confirm that you have read, understood, an
     processing: '⏳ Processing...',
     download_success: '✅ *Download complete!*\n\nHere is your content, {{name}}! 🎉',
     download_error: '❌ *Download error*\n\nCould not download the content. Please check if:\n\n• The URL is correct\n• The pin is public\n• The content still exists\n\nTry again with another URL.',
-    invalid_url: '⚠️ *Invalid URL*\n\nThe link you sent is not a valid Pinterest URL.\n\n*Accepted formats:*\n• pinterest.com/pin/...\n• pin.it/...\n\nPlease copy the correct link and try again.',
+    invalid_url: '⚠️ The link you sent is not a valid Pinterest URL.\n\n*Accepted formats:*\n• pinterest.com/pin/...\n• pin.it/...\n\nPlease copy the correct link and try again.',
     send_pinterest_url: '📌 *Send a Pinterest URL*\n\nPaste here the link to the video, photo or GIF you want to download:\n\n🔗 *Accepted formats:*\n• pinterest.com/pin/...\n• pin.it/...',
     btn_download_more: '📥 Download More',
     btn_download_media: '📥 Download Media',
@@ -361,7 +361,7 @@ No se pudo descargar el contenido. Verifica si:
 • El contenido aún existe
 
 Intenta de nuevo con otra URL.`,
-    invalid_url: '⚠️ *URL Inválida*\n\nEl enlace enviado no es una URL válida de Pinterest.\n\n*Formatos aceptados:*\n• pinterest.com/pin/...\n• pin.it/...\n\nPor favor, copie el enlace correcto e intente nuevamente.',
+    invalid_url: '⚠️ El enlace enviado no es una URL válida de Pinterest.\n\n*Formatos aceptados:*\n• pinterest.com/pin/...\n• pin.it/...\n\nPor favor, copie el enlace correcto e intente nuevamente.',
     send_pinterest_url: `📌 *Envía una URL de Pinterest*
 
 Pega aquí el enlace del video, foto o GIF que deseas descargar:
@@ -501,7 +501,7 @@ PinSave 致力于保护您的隐私。我们不存储下载内容的副本，也
 • 内容是否仍然存在
 
 请使用其他URL重试.`,
-    invalid_url: '⚠️ *无效链接*\n\n您发送的链接不是有效的 Pinterest URL。\n\n*支持的格式：*\n• pinterest.com/pin/...\n• pin.it/...\n\n请复制正确的链接后重试。',
+    invalid_url: '⚠️ 您发送的链接不是有效的 Pinterest URL。\n\n*支持的格式：*\n• pinterest.com/pin/...\n• pin.it/...\n\n请复制正确的链接后重试。',
     send_pinterest_url: `📌 *发送Pinterest链接*
 
 粘贴您要下载的视频、照片或GIF链接：
@@ -635,7 +635,7 @@ PinSave आपकी गोपनीयता की रक्षा के ल�
     download_error: `❌ *डाउनलोड त्रुटि*
 
 सामग्री डाउनलोड नहीं हो सकी।`,
-    invalid_url: '⚠️ *अमान्य URL*\n\nआपके द्वारा भेजा गया लिंक एक वैध Pinterest URL नहीं है।\n\n*स्वीकृत प्रारूप:*\n• pinterest.com/pin/...\n• pin.it/...\n\nकृपया सही लिंक कॉपी करें और पुनः प्रयास करें।',
+    invalid_url: '⚠️ आपके द्वारा भेजा गया लिंक एक वैध Pinterest URL नहीं है।\n\n*स्वीकृत प्रारूप:*\n• pinterest.com/pin/...\n• pin.it/...\n\nकृपया सही लिंक कॉपी करें और पुनः प्रयास करें।',
     send_pinterest_url: `📌 *Pinterest URL भेजें*
 
 वीडियो, फोटो या GIF का लिंक पेस्ट करें।`,
@@ -765,7 +765,7 @@ PinSave هي خدمة تجارية تتيح تنزيل المحتوى العام
     download_error: `❌ *خطأ في التحميل*
 
 تعذر تحميل المحتوى.`,
-    invalid_url: '⚠️ *رابط غير صالح*\n\nالرابط الذي أرسلته ليس رابط Pinterest صالحاً.\n\n*الصيغ المقبولة:*\n• pinterest.com/pin/...\n• pin.it/...\n\nيرجى نسخ الرابط الصحيح والمحاولة مرة أخرى.',
+    invalid_url: '⚠️ الرابط الذي أرسلته ليس رابط Pinterest صالحاً.\n\n*الصيغ المقبولة:*\n• pinterest.com/pin/...\n• pin.it/...\n\nيرجى نسخ الرابط الصحيح والمحاولة مرة أخرى.',
     send_pinterest_url: `📌 *أرسل رابط Pinterest*
 
 الصق رابط الفيديو أو الصورة.`,
@@ -895,7 +895,7 @@ Voici votre contenu, {{name}}! 🎉`,
     download_error: `❌ *Erreur de téléchargement*
 
 Impossible de télécharger.`,
-    invalid_url: '⚠️ *URL Invalide*\n\nLe lien envoyé n\'est pas une URL Pinterest valide.\n\n*Formats acceptés :*\n• pinterest.com/pin/...\n• pin.it/...\n\nVeuillez copier le lien correct et réessayer.',
+    invalid_url: '⚠️ Le lien envoyé n\'est pas une URL Pinterest valide.\n\n*Formats acceptés :*\n• pinterest.com/pin/...\n• pin.it/...\n\nVeuillez copier le lien correct et réessayer.',
     send_pinterest_url: `📌 *Envoyez une URL Pinterest*
 
 Collez le lien de la vidéo, photo ou GIF.`,
@@ -1025,7 +1025,7 @@ PinSave обязуется защищать вашу конфиденциаль�
     download_error: `❌ *Ошибка загрузки*
 
 Не удалось загрузить контент.`,
-    invalid_url: '⚠️ *Недействительная ссылка*\n\nОтправленная вами ссылка не является действительной ссылкой Pinterest.\n\n*Принимаемые форматы:*\n• pinterest.com/pin/...\n• pin.it/...\n\nПожалуйста, скопируйте правильную ссылку и попробуйте снова.',
+    invalid_url: '⚠️ Отправленная вами ссылка не является действительной ссылкой Pinterest.\n\n*Принимаемые форматы:*\n• pinterest.com/pin/...\n• pin.it/...\n\nПожалуйста, скопируйте правильную ссылку и попробуйте снова.',
     send_pinterest_url: `📌 *Отправьте URL Pinterest*
 
 Вставьте ссылку на видео, фото или GIF.`,
@@ -1155,7 +1155,7 @@ Hier ist Ihr Inhalt, {{name}}! 🎉`,
     download_error: `❌ *Download-Fehler*
 
 Inhalt konnte nicht heruntergeladen werden.`,
-    invalid_url: '⚠️ *Ungültige URL*\n\nDer gesendete Link ist keine gültige Pinterest-URL.\n\n*Akzeptierte Formate:*\n• pinterest.com/pin/...\n• pin.it/...\n\nBitte kopieren Sie den richtigen Link und versuchen Sie es erneut.',
+    invalid_url: '⚠️ Der gesendete Link ist keine gültige Pinterest-URL.\n\n*Akzeptierte Formate:*\n• pinterest.com/pin/...\n• pin.it/...\n\nBitte kopieren Sie den richtigen Link und versuchen Sie es erneut.',
     send_pinterest_url: `📌 *Senden Sie eine Pinterest-URL*
 
 Fügen Sie den Link zum Video, Foto oder GIF ein.`,
@@ -1285,7 +1285,7 @@ PinSaveはお客様のプライバシーを保護することをお約束しま�
     download_error: `❌ *ダウンロードエラー*
 
 コンテンツをダウンロードできませんでした。`,
-    invalid_url: '⚠️ *無効なURL*\n\n送信されたリンクは有効なPinterest URLではありません。\n\n*対応フォーマット：*\n• pinterest.com/pin/...\n• pin.it/...\n\n正しいリンクをコピーして、もう一度お試しください。',
+    invalid_url: '⚠️ 送信されたリンクは有効なPinterest URLではありません。\n\n*対応フォーマット：*\n• pinterest.com/pin/...\n• pin.it/...\n\n正しいリンクをコピーして、もう一度お試しください。',
     send_pinterest_url: `📌 *Pinterest URLを送信*
 
 動画、写真、GIFのリンクを貼り付けてください。`,
@@ -1415,7 +1415,7 @@ Ecco il tuo contenuto, {{name}}! 🎉`,
     download_error: `❌ *Errore di download*
 
 Impossibile scaricare il contenuto.`,
-    invalid_url: '⚠️ *URL Non Valido*\n\nIl link inviato non è un URL Pinterest valido.\n\n*Formati accettati:*\n• pinterest.com/pin/...\n• pin.it/...\n\nPer favore, copia il link corretto e riprova.',
+    invalid_url: '⚠️ Il link inviato non è un URL Pinterest valido.\n\n*Formati accettati:*\n• pinterest.com/pin/...\n• pin.it/...\n\nPer favore, copia il link corretto e riprova.',
     send_pinterest_url: `📌 *Invia un URL Pinterest*
 
 Incolla il link del video, foto o GIF.`,
@@ -1545,7 +1545,7 @@ PinSave는 귀하의 개인정보를 보호하기 위해 최선을 다합니다.
     download_error: `❌ *다운로드 오류*
 
 콘텐츠를 다운로드할 수 없습니다.`,
-    invalid_url: '⚠️ *잘못된 URL*\n\n보내신 링크는 유효한 Pinterest URL이 아닙니다.\n\n*허용되는 형식:*\n• pinterest.com/pin/...\n• pin.it/...\n\n올바른 링크를 복사하여 다시 시도해 주세요.',
+    invalid_url: '⚠️ 보내신 링크는 유효한 Pinterest URL이 아닙니다.\n\n*허용되는 형식:*\n• pinterest.com/pin/...\n• pin.it/...\n\n올바른 링크를 복사하여 다시 시도해 주세요.',
     send_pinterest_url: `📌 *Pinterest URL 보내기*
 
 동영상, 사진 또는 GIF 링크를 붙여넣으세요.`,
@@ -1675,7 +1675,7 @@ Hizmeti kullanmaya devam ederek, bu şartları okuduğunuzu, anladığınızı v
     download_error: `❌ *İndirme hatası*
 
 İçerik indirilemedi.`,
-    invalid_url: '⚠️ *Geçersiz URL*\n\nGönderdiğiniz bağlantı geçerli bir Pinterest URL\'si değil.\n\n*Kabul edilen formatlar:*\n• pinterest.com/pin/...\n• pin.it/...\n\nLütfen doğru bağlantıyı kopyalayın ve tekrar deneyin.',
+    invalid_url: '⚠️ Gönderdiğiniz bağlantı geçerli bir Pinterest URL\'si değil.\n\n*Kabul edilen formatlar:*\n• pinterest.com/pin/...\n• pin.it/...\n\nLütfen doğru bağlantıyı kopyalayın ve tekrar deneyin.',
     send_pinterest_url: `📌 *Pinterest URL gönderin*
 
 Video, fotoğraf veya GIF linkini yapıştırın.`,
