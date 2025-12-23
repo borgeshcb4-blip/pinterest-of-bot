@@ -107,7 +107,7 @@ Ao continuar a utilizar o serviço, você confirma que leu, compreendeu e concor
     send_pinterest_url: '📌 *Envie uma URL do Pinterest*\n\nCole aqui o link do vídeo, foto ou GIF que deseja baixar:\n\n🔗 *Formatos aceitos:*\n• pinterest.com/pin/...\n• pin.it/...',
     btn_download_more: '📥 Baixar Mais',
     btn_download_media: '📥 Baixar Mídia',
-    download_media_prompt: '📌 *Baixar Mídia do Pinterest*\n\nEnvie a URL do Pinterest que deseja baixar:\n\n🔗 *Formatos aceitos:*\n• pinterest.com/pin/...\n• pin.it/...',
+    download_media_prompt: '📌 Envie a URL do Pinterest que deseja baixar:\n\n🔗 *Formatos aceitos:*\n• pinterest.com/pin/...\n• pin.it/...',
     
     // Mensagens de limite e premium
     limit_reached: '⚠️ *Limite Diário Atingido*\n\nVocê usou {{used}}/{{limit}} downloads gratuitos hoje.\n\n⭐ *Assine o Premium* para downloads ilimitados!\n\n✅ Downloads ilimitados\n✅ Sem espera\n✅ Suporte prioritário',
@@ -231,7 +231,7 @@ By continuing to use the service, you confirm that you have read, understood, an
     send_pinterest_url: '📌 *Send a Pinterest URL*\n\nPaste here the link to the video, photo or GIF you want to download:\n\n🔗 *Accepted formats:*\n• pinterest.com/pin/...\n• pin.it/...',
     btn_download_more: '📥 Download More',
     btn_download_media: '📥 Download Media',
-    download_media_prompt: '📌 *Download Pinterest Media*\n\nSend the Pinterest URL you want to download:\n\n🔗 *Accepted formats:*\n• pinterest.com/pin/...\n• pin.it/...',
+    download_media_prompt: '📌 Send the Pinterest URL you want to download:\n\n🔗 *Accepted formats:*\n• pinterest.com/pin/...\n• pin.it/...',
     
     // Limit and premium messages
     limit_reached: '⚠️ *Daily Limit Reached*\n\nYou have used {{used}}/{{limit}} free downloads today.\n\n⭐ *Get Premium* for unlimited downloads!\n\n✅ Unlimited downloads\n✅ No waiting\n✅ Priority support',
@@ -371,7 +371,7 @@ Pega aquí el enlace del video, foto o GIF que deseas descargar:
 • pin.it/...`,
     btn_download_more: '📥 Descargar Más',
     btn_download_media: '📥 Descargar Medios',
-    download_media_prompt: '📌 *Descargar Medios de Pinterest*\n\nEnvía la URL de Pinterest que deseas descargar:\n\n🔗 *Formatos aceptados:*\n• pinterest.com/pin/...\n• pin.it/...',
+    download_media_prompt: '📌 Envía la URL de Pinterest que deseas descargar:\n\n🔗 *Formatos aceptados:*\n• pinterest.com/pin/...\n• pin.it/...',
     
     // Mensajes de límite y premium
     limit_reached: '⚠️ *Límite Diario Alcanzado*\n\nHas usado {{used}}/{{limit}} descargas gratuitas hoy.\n\n⭐ *Obtén Premium* para descargas ilimitadas!\n\n✅ Descargas ilimitadas\n✅ Sin esperas\n✅ Soporte prioritario',
@@ -511,7 +511,7 @@ PinSave 致力于保护您的隐私。我们不存储下载内容的副本，也
 • pin.it/...`,
     btn_download_more: '📥 下载更多',
     btn_download_media: '📥 下载媒体',
-    download_media_prompt: '📌 *下载Pinterest媒体*\n\n发送您要下载的Pinterest链接：\n\n🔗 *支持的格式：*\n• pinterest.com/pin/...\n• pin.it/...',
+    download_media_prompt: '📌 发送您要下载的Pinterest链接：\n\n🔗 *支持的格式：*\n• pinterest.com/pin/...\n• pin.it/...',
     
     // 限制和高级消息
     limit_reached: '⚠️ *已达到每日限制*\n\n您今天已使用 {{used}}/{{limit}} 次免费下载。\n\n⭐ *购买高级版* 获取无限下载！\n\n✅ 无限下载\n✅ 无需等待\n✅ 优先支持',
@@ -641,7 +641,7 @@ PinSave आपकी गोपनीयता की रक्षा के ल�
 वीडियो, फोटो या GIF का लिंक पेस्ट करें।`,
     btn_download_more: '📥 और डाउनलोड करें',
     btn_download_media: '📥 मीडिया डाउनलोड करें',
-    download_media_prompt: '📌 *Pinterest मीडिया डाउनलोड करें*\n\nवह Pinterest URL भेजें जिसे आप डाउनलोड करना चाहते हैं।',
+    download_media_prompt: '📌 वह Pinterest URL भेजें जिसे आप डाउनलोड करना चाहते हैं:\n\n🔗 *स्वीकृत प्रारूप:*\n• pinterest.com/pin/...\n• pin.it/...',
     
     // सीमा और प्रीमियम संदेश
     limit_reached: '⚠️ *दैनिक सीमा पूरी*\n\nआपने आज {{used}}/{{limit}} मुफ्त डाउनलोड का उपयोग किया।\n\n⭐ असीमित डाउनलोड के लिए *प्रीमियम* प्राप्त करें!\n\n✅ असीमित डाउनलोड\n✅ कोई प्रतीक्षा नहीं\n✅ प्राथमिकता समर्थन',
@@ -771,7 +771,7 @@ PinSave هي خدمة تجارية تتيح تنزيل المحتوى العام
 الصق رابط الفيديو أو الصورة.`,
     btn_download_more: '📥 تحميل المزيد',
     btn_download_media: '📥 تحميل الوسائط',
-    download_media_prompt: '📌 *تحميل وسائط Pinterest*\n\nأرسل رابط Pinterest الذي تريئ تحميله।',
+    download_media_prompt: '📌 أرسل رابط Pinterest الذي تريد تحميله:\n\n🔗 *الصيغ المقبولة:*\n• pinterest.com/pin/...\n• pin.it/...',
     
     // رسائل الحد والبريميوم
     limit_reached: '⚠️ *تم الوصول للحد اليومي*\n\nلقد استخدمت {{used}}/{{limit}} تحميلات مجانية اليوم.\n\n⭐ احصل على *البريميوم* لتحميلات غير محدودة!\n\n✅ تحميلات غير محدودة\n✅ بدون انتظار\n✅ دعم أولوي',
@@ -901,7 +901,7 @@ Impossible de télécharger.`,
 Collez le lien de la vidéo, photo ou GIF.`,
     btn_download_more: '📥 Télécharger Plus',
     btn_download_media: '📥 Télécharger Média',
-    download_media_prompt: '📌 *Télécharger Média Pinterest*\n\nEnvoyez l\'URL Pinterest que vous souhaitez télécharger:\n\n🔗 *Formats acceptés:*\n• pinterest.com/pin/...\n• pin.it/...',
+    download_media_prompt: '📌 Envoyez l\'URL Pinterest que vous souhaitez télécharger:\n\n🔗 *Formats acceptés:*\n• pinterest.com/pin/...\n• pin.it/...',
     
     // Messages de limite et premium
     limit_reached: '⚠️ *Limite Quotidienne Atteinte*\n\nVous avez utilisé {{used}}/{{limit}} téléchargements gratuits aujourd\'hui.\n\n⭐ *Obtenez Premium* pour des téléchargements illimités!\n\n✅ Téléchargements illimités\n✅ Sans attente\n✅ Support prioritaire',
@@ -1031,7 +1031,7 @@ PinSave обязуется защищать вашу конфиденциаль�
 Вставьте ссылку на видео, фото или GIF.`,
     btn_download_more: '📥 Скачать Ещё',
     btn_download_media: '📥 Скачать Медиа',
-    download_media_prompt: '📌 *Скачать медиа Pinterest*\n\nОтправьте URL Pinterest, который хотите скачать:\n\n🔗 *Поддерживаемые форматы:*\n• pinterest.com/pin/...\n• pin.it/...',
+    download_media_prompt: '📌 Отправьте URL Pinterest, который хотите скачать:\n\n🔗 *Поддерживаемые форматы:*\n• pinterest.com/pin/...\n• pin.it/...',
     
     // Сообщения о лимите и премиум
     limit_reached: '⚠️ *Дневной лимит достигнут*\n\nВы использовали {{used}}/{{limit}} бесплатных загрузок сегодня.\n\n⭐ *Получите Премиум* для неограниченных загрузок!\n\n✅ Неограниченные загрузки\n✅ Без ожидания\n✅ Приоритетная поддержка',
@@ -1161,7 +1161,7 @@ Inhalt konnte nicht heruntergeladen werden.`,
 Fügen Sie den Link zum Video, Foto oder GIF ein.`,
     btn_download_more: '📥 Mehr Herunterladen',
     btn_download_media: '📥 Medien Herunterladen',
-    download_media_prompt: '📌 *Pinterest-Medien Herunterladen*\n\nSenden Sie die Pinterest-URL, die Sie herunterladen möchten:\n\n🔗 *Akzeptierte Formate:*\n• pinterest.com/pin/...\n• pin.it/...',
+    download_media_prompt: '📌 Senden Sie die Pinterest-URL, die Sie herunterladen möchten:\n\n🔗 *Akzeptierte Formate:*\n• pinterest.com/pin/...\n• pin.it/...',
     
     // Limit- und Premium-Nachrichten
     limit_reached: '⚠️ *Tägliches Limit Erreicht*\n\nSie haben heute {{used}}/{{limit}} kostenlose Downloads verwendet.\n\n⭐ *Holen Sie sich Premium* für unbegrenzte Downloads!\n\n✅ Unbegrenzte Downloads\n✅ Keine Wartezeit\n✅ Prioritäts-Support',
@@ -1291,7 +1291,7 @@ PinSaveはお客様のプライバシーを保護することをお約束しま�
 動画、写真、GIFのリンクを貼り付けてください。`,
     btn_download_more: '📥 もっとダウンロード',
     btn_download_media: '📥 メディアをダウンロード',
-    download_media_prompt: '📌 *Pinterestメディアをダウンロード*\n\nダウンロードしたいPinterest URLを送信してください。',
+    download_media_prompt: '📌 ダウンロードしたいPinterest URLを送信してください:\n\n🔗 *対応フォーマット:*\n• pinterest.com/pin/...\n• pin.it/...',
     
     // 制限とプレミアムメッセージ
     limit_reached: '⚠️ *日次制限に達しました*\n\n今日{{used}}/{{limit}}回の無料ダウンロードを使用しました。\n\n⭐ *プレミアム*で無制限ダウンロード！\n\n✅ 無制限ダウンロード\n✅ 待ち時間なし\n✅ 優先サポート',
@@ -1421,7 +1421,7 @@ Impossibile scaricare il contenuto.`,
 Incolla il link del video, foto o GIF.`,
     btn_download_more: '📥 Scarica Altro',
     btn_download_media: '📥 Scarica Media',
-    download_media_prompt: '📌 *Scarica Media Pinterest*\n\nInvia l\'URL Pinterest che vuoi scaricare:\n\n🔗 *Formati accettati:*\n• pinterest.com/pin/...\n• pin.it/...',
+    download_media_prompt: '📌 Invia l\'URL Pinterest che vuoi scaricare:\n\n🔗 *Formati accettati:*\n• pinterest.com/pin/...\n• pin.it/...',
     
     // Messaggi limite e premium
     limit_reached: '⚠️ *Limite Giornaliero Raggiunto*\n\nHai usato {{used}}/{{limit}} download gratuiti oggi.\n\n⭐ *Ottieni Premium* per download illimitati!\n\n✅ Download illimitati\n✅ Nessuna attesa\n✅ Supporto prioritario',
@@ -1551,7 +1551,7 @@ PinSave는 귀하의 개인정보를 보호하기 위해 최선을 다합니다.
 동영상, 사진 또는 GIF 링크를 붙여넣으세요.`,
     btn_download_more: '📥 더 다운로드',
     btn_download_media: '📥 미디어 다운로드',
-    download_media_prompt: '📌 *Pinterest 미디어 다운로드*\n\n다운로드하려는 Pinterest URL을 보내주세요.',
+    download_media_prompt: '📌 다운로드하려는 Pinterest URL을 보내주세요:\n\n🔗 *허용되는 형식:*\n• pinterest.com/pin/...\n• pin.it/...',
     
     // 제한 및 프리미엄 메시지
     limit_reached: '⚠️ *일일 한도 도달*\n\n오늘 {{used}}/{{limit}}회 무료 다운로드를 사용했습니다.\n\n⭐ *프리미엄*으로 무제한 다운로드!\n\n✅ 무제한 다운로드\n✅ 대기 시간 없음\n✅ 우선 지원',
@@ -1681,7 +1681,7 @@ Hizmeti kullanmaya devam ederek, bu şartları okuduğunuzu, anladığınızı v
 Video, fotoğraf veya GIF linkini yapıştırın.`,
     btn_download_more: '📥 Daha Fazla İndir',
     btn_download_media: '📥 Medya İndir',
-    download_media_prompt: '📌 *Pinterest Medya İndir*\n\nİndirmek istediğiniz Pinterest URL\'sini gönderin:\n\n🔗 *Kabul edilen formatlar:*\n• pinterest.com/pin/...\n• pin.it/...',
+    download_media_prompt: '📌 İndirmek istediğiniz Pinterest URL\'sini gönderin:\n\n🔗 *Kabul edilen formatlar:*\n• pinterest.com/pin/...\n• pin.it/...',
     
     // Limit ve premium mesajları
     limit_reached: '⚠️ *Günlük Limite Ulaşıldı*\n\nBugün {{used}}/{{limit}} ücretsiz indirme kullandınız.\n\n⭐ Sınırsız indirme için *Premium* alın!\n\n✅ Sınırsız indirme\n✅ Bekleme yok\n✅ Öncelikli destek',
