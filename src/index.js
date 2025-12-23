@@ -860,9 +860,10 @@ async function handleMessage(chatId, text, firstName, userId, languageCode, env)
     return;
   }
 
-  // Se não for URL do Pinterest, mostra mensagem de URL inválida
+  // Se não for URL do Pinterest, mostra mensagem de URL inválida com botão Voltar
   const invalidUrlMsg = getLocalizedMessage('invalid_url', language);
-  await sendMessage(chatId, invalidUrlMsg);
+  const keyboard = buildBackKeyboard(language);
+  await sendMessage(chatId, invalidUrlMsg, keyboard);
 }
 
 /**
