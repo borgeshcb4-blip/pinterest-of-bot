@@ -860,7 +860,17 @@ async function handleMessage(chatId, text, firstName, userId, languageCode, env)
     return;
   }
 
-  // Se não for URL do Pinterest, mostra mensagem de ajuda
+  // Verifica se parece ser uma URL (contém http, www, ou domínio)
+  const urlPattern = /^(https?:\/\/|www\.|[a-zA-Z0-9-]+\.[a-zA-Z]{2,})/i;
+  
+  if (urlPattern.test(text)) {
+    // É uma URL, mas não é do Pinterest - mostra mensagem de URL inválida
+    const invalidUrlMsg = getLocalizedMessage('invalid_url', language);
+    await sendMessage(chatId, invalidUrlMsg);
+    return;
+  }
+
+  // Se não for URL, mostra mensagem de ajuda
   const helpMsg = getLocalizedMessage('send_pinterest_url', language);
   await sendMessage(chatId, helpMsg);
 }
