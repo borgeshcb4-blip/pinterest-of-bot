@@ -100,7 +100,7 @@ Ao continuar a utilizar o serviço, você confirma que leu, compreendeu e concor
     language_changed: '✅ Idioma alterado com sucesso!',
     
     // Mensagens de download
-    processing: '⏳ *Processando...*\n\nAguarde enquanto baixamos seu conteúdo do Pinterest.',
+    processing: '⏳ Processando...',
     download_success: '✅ *Download concluído!*\n\nAqui está seu conteúdo, {{name}}! 🎉',
     download_error: '❌ *Erro no download*\n\nNão foi possível baixar o conteúdo. Verifique se:\n\n• A URL está correta\n• O pin é público\n• O conteúdo ainda existe\n\nTente novamente com outra URL.',
     invalid_url: '⚠️ *URL Inválida*\n\nO link enviado não é uma URL válida do Pinterest.\n\n*Formatos aceitos:*\n• pinterest.com/pin/...\n• pin.it/...\n\nPor favor, copie o link correto e tente novamente.',
@@ -224,7 +224,7 @@ By continuing to use the service, you confirm that you have read, understood, an
     language_changed: '✅ Language changed successfully!',
     
     // Download messages
-    processing: '⏳ *Processing...*\n\nPlease wait while we download your Pinterest content.',
+    processing: '⏳ Processing...',
     download_success: '✅ *Download complete!*\n\nHere is your content, {{name}}! 🎉',
     download_error: '❌ *Download error*\n\nCould not download the content. Please check if:\n\n• The URL is correct\n• The pin is public\n• The content still exists\n\nTry again with another URL.'
     invalid_url: '⚠️ *Invalid URL*\n\nThe link you sent is not a valid Pinterest URL.\n\n*Accepted formats:*\n• pinterest.com/pin/...\n• pin.it/...\n\nPlease copy the correct link and try again.',
@@ -348,9 +348,7 @@ Al continuar utilizando el servicio, usted confirma que ha leído, comprendido y
     language_changed: '✅ ¡Idioma cambiado con éxito!',
     
     // Download messages
-    processing: `⏳ *Procesando...*
-
-Espera mientras descargamos tu contenido de Pinterest.`,
+    processing: '⏳ Procesando...',
     download_success: `✅ *¡Descarga completada!*
 
 ¡Aquí está tu contenido, {{name}}! 🎉`,
@@ -490,9 +488,7 @@ PinSave 致力于保护您的隐私。我们不存储下载内容的副本，也
     language_changed: '✅ 语言更改成功！',
     
     // Download messages
-    processing: `⏳ *处理中...*
-
-请稍候，我们正在下载您的Pinterest内容。`,
+    processing: '⏳ 处理中...',
     download_success: `✅ *下载完成！*
 
 这是您的内容，{{name}}！🎉`,
@@ -632,9 +628,7 @@ PinSave आपकी गोपनीयता की रक्षा के ल�
     language_changed: '✅ भाषा सफलतापूर्वक बदली गई!',
     
     // Download messages
-    processing: `⏳ *प्रोसेसिंग...*
-
-कृपया प्रतीक्षा करें।`,
+    processing: '⏳ प्रोसेसिंग...',
     download_success: `✅ *डाउनलोड पूर्ण!*
 
 यहाँ आपकी सामग्री है, {{name}}! 🎉`,
@@ -764,9 +758,7 @@ PinSave هي خدمة تجارية تتيح تنزيل المحتوى العام
     language_changed: '✅ تم تغيير اللغة بنجاح!',
     
     // Download messages
-    processing: `⏳ *جاري المعالجة...*
-
-يرجى الانتظار.`,
+    processing: '⏳ جاري المعالجة...',
     download_success: `✅ *تم التحميل!*
 
 إليك المحتوى، {{name}}! 🎉`,
@@ -896,9 +888,7 @@ En continuant à utiliser le service, vous confirmez avoir lu, compris et accept
     language_changed: '✅ Langue changée avec succès!',
     
     // Download messages
-    processing: `⏳ *Traitement...*
-
-Veuillez patienter.`,
+    processing: '⏳ Traitement...',
     download_success: `✅ *Téléchargement terminé!*
 
 Voici votre contenu, {{name}}! 🎉`,
@@ -1028,9 +1018,7 @@ PinSave обязуется защищать вашу конфиденциаль�
     language_changed: '✅ Язык успешно изменён!',
     
     // Download messages
-    processing: `⏳ *Обработка...*
-
-Пожалуйста, подождите.`,
+    processing: '⏳ Обработка...',
     download_success: `✅ *Загрузка завершена!*
 
 Вот ваш контент, {{name}}! 🎉`,
@@ -1160,9 +1148,7 @@ Durch die weitere Nutzung des Dienstes bestätigen Sie, dass Sie diese Bedingung
     language_changed: '✅ Sprache erfolgreich geändert!',
     
     // Download messages
-    processing: `⏳ *Verarbeitung...*
-
-Bitte warten Sie.`,
+    processing: '⏳ Verarbeitung...',
     download_success: `✅ *Download abgeschlossen!*
 
 Hier ist Ihr Inhalt, {{name}}! 🎉`,
@@ -1292,9 +1278,7 @@ PinSaveはお客様のプライバシーを保護することをお約束しま�
     language_changed: '✅ 言語が正常に変更されました！',
     
     // Download messages
-    processing: `⏳ *処理中...*
-
-お待ちください。`,
+    processing: '⏳ 処理中...',
     download_success: `✅ *ダウンロード完了！*
 
 こちらがコンテンツです、{{name}}！🎉`,
@@ -1424,9 +1408,7 @@ Continuando a utilizzare il servizio, confermi di aver letto, compreso e accetta
     language_changed: '✅ Lingua cambiata con successo!',
     
     // Download messages
-    processing: `⏳ *Elaborazione...*
-
-Attendi per favore.`,
+    processing: '⏳ Elaborazione...',
     download_success: `✅ *Download completato!*
 
 Ecco il tuo contenuto, {{name}}! 🎉`,
@@ -1556,9 +1538,7 @@ PinSave는 귀하의 개인정보를 보호하기 위해 최선을 다합니다.
     language_changed: '✅ 언어가 성공적으로 변경되었습니다!',
     
     // Download messages
-    processing: `⏳ *처리 중...*
-
-잠시만 기다려 주세요.`,
+    processing: '⏳ 처리 중...',
     download_success: `✅ *다운로드 완료!*
 
 여기 콘텐츠입니다, {{name}}! 🎉`,
@@ -1688,9 +1668,7 @@ Hizmeti kullanmaya devam ederek, bu şartları okuduğunuzu, anladığınızı v
     language_changed: '✅ Dil başarıyla değiştirildi!',
     
     // Download messages
-    processing: `⏳ *İşleniyor...*
-
-Lütfen bekleyin.`,
+    processing: '⏳ İşleniyor...',
     download_success: `✅ *İndirme tamamlandı!*
 
 İşte içeriğiniz, {{name}}! 🎉`,
